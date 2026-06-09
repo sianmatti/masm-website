@@ -1,4 +1,5 @@
 import { ButtonLink } from "./ui";
+import { sitePath } from "@/lib/site";
 
 function SystemGraphic() {
   return (
@@ -63,7 +64,7 @@ export function Hero() {
               as one.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/diagnostic">Explore the Growth Diagnostic</ButtonLink>
+              <ButtonLink href={sitePath("/diagnostic/")}>Explore the Growth Diagnostic</ButtonLink>
               <a
                 href="#services"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-ink/20 px-5 text-sm font-medium transition-colors hover:border-ink"
