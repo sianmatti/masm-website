@@ -1,4 +1,5 @@
 import { ArrowIcon, ButtonLink } from "./ui";
+import { sitePath } from "@/lib/site";
 
 const bookingUrl =
   process.env.NEXT_PUBLIC_DIAGNOSTIC_BOOKING_URL ??
@@ -89,7 +90,7 @@ function DiagnosticHeader() {
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <div className="section-shell flex h-20 items-center justify-between border-b border-ink/15">
-        <a href="/" className="flex items-center gap-3" aria-label="MASM homepage">
+        <a href={sitePath("/")} className="flex items-center gap-3" aria-label="MASM homepage">
           <BrandMark />
           <span className="text-sm font-semibold tracking-[-0.03em]">
             MASM<span className="text-muted">/GS</span>
@@ -499,13 +500,13 @@ function FinalCta() {
           </div>
         </div>
         <div className="mt-24 flex flex-col gap-8 border-t border-white/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <a href="/" className="flex items-center gap-3">
+          <a href={sitePath("/")} className="flex items-center gap-3">
             <BrandMark />
             <span className="text-sm font-semibold">MASM Growth Systems</span>
           </a>
           <div className="flex flex-wrap gap-6 text-sm text-white/45">
-            <a href="/#services" className="hover:text-white">Growth System</a>
-            <a href="/#work" className="hover:text-white">Client Outcomes</a>
+            <a href={sitePath("/#services")} className="hover:text-white">Growth System</a>
+            <a href={sitePath("/#work")} className="hover:text-white">Client Outcomes</a>
             <a href="mailto:growth@masmgrowth.com" className="button-arrow flex items-center gap-2 hover:text-white">
               Contact <ArrowIcon />
             </a>
