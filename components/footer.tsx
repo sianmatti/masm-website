@@ -1,4 +1,5 @@
 import { ArrowIcon, ButtonLink } from "./ui";
+import { sitePath } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -12,7 +13,7 @@ export function Footer() {
             </h2>
           </div>
           <div className="flex items-end lg:col-span-3">
-            <ButtonLink href="/diagnostic" inverted className="w-full sm:w-auto lg:w-full">
+            <ButtonLink href={sitePath("/diagnostic/")} inverted className="w-full sm:w-auto lg:w-full">
               Book a diagnostic
             </ButtonLink>
           </div>
