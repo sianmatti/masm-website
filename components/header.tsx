@@ -1,4 +1,5 @@
 import { ButtonLink } from "./ui";
+import { sitePath } from "@/lib/site";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -34,7 +35,7 @@ export function Header() {
           ))}
         </nav>
 
-        <ButtonLink href="/diagnostic" className="!h-10 !px-4">
+        <ButtonLink href={sitePath("/diagnostic/")} className="!h-10 !px-4">
           Book a diagnostic
         </ButtonLink>
       </div>
