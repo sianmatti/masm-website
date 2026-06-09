@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0a0a0a;
+  --paper: #f7f7f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.grid-field {
+  background-image:
+    linear-gradient(to right, rgba(10, 10, 10, 0.065) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 10, 10, 0.065) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.dot-field {
+  background-image: radial-gradient(rgba(10, 10, 10, 0.2) 0.7px, transparent 0.7px);
+  background-size: 12px 12px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.eyebrow {
+  @apply font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-muted;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12;
+}
+
+.display-xl {
+  font-size: clamp(3.6rem, 8.7vw, 8.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.075em;
+}
+
+.display-lg {
+  font-size: clamp(2.6rem, 5.4vw, 5.5rem);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+}
+
+.card-lift {
+  transition:
+    transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 300ms ease,
+    border-color 300ms ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  border-color: #aaa;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
+}
+
+.button-arrow svg {
+  transition: transform 200ms ease;
+}
+
+.button-arrow:hover svg {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
