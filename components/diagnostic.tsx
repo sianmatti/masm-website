@@ -1,4 +1,5 @@
 import { ButtonLink } from "./ui";
+import { sitePath } from "@/lib/site";
 
 const checks = [
   ["Acquisition efficiency", "72"],
@@ -23,7 +24,7 @@ export function Diagnostic() {
                 operations, then leave with a prioritized 90-day direction.
               </p>
               <div className="mt-9">
-                <ButtonLink href="/diagnostic">
+                <ButtonLink href={sitePath("/diagnostic/")}>
                   See the full diagnostic
                 </ButtonLink>
               </div>
