@@ -4,11 +4,11 @@ import { BookingCta } from "./booking-cta";
 export function Footer() {
   return (
     <footer className="overflow-hidden bg-ink text-white">
-      <div className="section-shell section-pad">
+      <div className="section-shell py-16 sm:py-20 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-9">
             <span className="eyebrow !text-white/45">Ready when you are</span>
-            <h2 className="display-lg mt-8 max-w-5xl">
+            <h2 className="display-lg mt-6 max-w-5xl">
               Build a growth system that gets smarter every quarter.
             </h2>
           </div>
@@ -30,7 +30,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-24 grid gap-12 border-t border-white/20 pt-8 sm:grid-cols-2 lg:grid-cols-12">
+        <div className="mt-16 grid gap-10 border-t border-white/20 pt-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <BrandLockup inverse />
             <p className="mt-5 max-w-xs text-sm leading-6 text-white/55">
@@ -63,7 +63,7 @@ export function Footer() {
             <p className="mt-4 text-sm text-white/65">New York / Manila / Remote</p>
           </div>
         </div>
-        <div className="mt-16 flex flex-col gap-3 border-t border-white/10 pt-5 font-mono text-[9px] uppercase tracking-wider text-white/30 sm:flex-row sm:justify-between">
+        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-5 font-mono text-[9px] uppercase tracking-wider text-white/30 sm:flex-row sm:justify-between">
           <span>© 2026 MASM Growth Systems</span>
           <span>Growth, engineered.</span>
         </div>
