@@ -1,3 +1,4 @@
+import { BookingCta } from "./booking-cta";
 import { ButtonLink } from "./ui";
 import { sitePath } from "@/lib/site";
 
@@ -10,26 +11,49 @@ const checks = [
 
 export function Diagnostic() {
   return (
-    <section id="diagnostic" className="bg-paper py-24 sm:py-32">
+    <section id="diagnostic" className="section-pad bg-paper">
       <div className="section-shell">
         <div className="overflow-hidden border border-ink/20 bg-white shadow-card">
           <div className="grid lg:grid-cols-2">
             <div className="p-7 sm:p-12 lg:p-16">
-              <span className="eyebrow">Growth Systems Diagnostic</span>
-              <h2 className="mt-8 text-4xl font-medium leading-[1] tracking-[-0.06em] sm:text-6xl">
-                Find the friction in your growth engine.
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="eyebrow">Recommended first step</span>
+                <span className="rounded-full border border-line px-3 py-1 text-[9px] font-medium uppercase tracking-[0.12em] text-muted">
+                  Fixed scope · $1,250
+                </span>
+              </div>
+              <h2 className="heading-section mt-8">
+                Find the constraint before investing more in growth.
               </h2>
-              <p className="mt-6 max-w-md text-base leading-7 text-muted">
-                Assess the gaps between your economics, demand, data, and
-                operations, then leave with a prioritized 90-day direction.
+              <p className="body-copy mt-6 max-w-md">
+                A senior-led strategic assessment of your economics, demand,
+                measurement, and operations, translated into a prioritized
+                90-day direction.
               </p>
-              <div className="mt-9">
-                <ButtonLink href={sitePath("/diagnostic/")}>
-                  See the full diagnostic
+              <div className="mt-8 grid gap-3 text-sm sm:grid-cols-2">
+                {[
+                  "Executive growth scorecard",
+                  "Primary constraint analysis",
+                  "Prioritized 90-day roadmap",
+                  "Leadership decision session",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ink" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <BookingCta source="homepage_diagnostic">
+                  Book a Diagnostic consultation
+                </BookingCta>
+                <ButtonLink href={sitePath("/diagnostic/")} variant="secondary">
+                  View full details
                 </ButtonLink>
               </div>
-              <p className="mt-4 font-mono text-[9px] uppercase tracking-wider text-muted">
-                Fixed scope · Senior-led · Yours to keep
+              <p className="mt-4 text-xs leading-5 text-muted">
+                Delivered in five business days. The full fee is credited
+                toward eligible Growth Engine engagements started within 30 days.
               </p>
             </div>
             <div className="border-t border-ink/20 bg-ink p-7 text-white sm:p-12 lg:border-l lg:border-t-0">
@@ -64,6 +88,16 @@ export function Diagnostic() {
                     <span className="mt-1 block font-mono text-[8px] uppercase tracking-wider text-white/40">{label}</span>
                   </div>
                 ))}
+              </div>
+              <div className="mt-8 border-t border-white/15 pt-6">
+                <span className="text-[9px] font-medium uppercase tracking-[0.14em] text-white/40">
+                  Natural next step
+                </span>
+                <p className="mt-3 text-sm leading-6 text-white/65">
+                  When MASM is the right execution partner, the roadmap becomes
+                  the operating brief for a Growth Engine engagement, typically
+                  $2,500–$5,000+ per month.
+                </p>
               </div>
             </div>
           </div>

@@ -1,12 +1,12 @@
-import { sitePath } from "@/lib/site";
 import { SiteHeader } from "./site-header";
 
 const navItems = [
+  { label: "Growth Diagnostic", href: "#diagnostic" },
   { label: "Growth System", href: "#services" },
-  { label: "Why MASM", href: "#approach" },
   { label: "Client Outcomes", href: "#work" },
+  { label: "Why MASM", href: "#approach" },
 ];
 
 export function Header() {
-  return <SiteHeader navItems={navItems} ctaHref={sitePath("/diagnostic/")} ctaLabel="View the diagnostic" />;
+  return <SiteHeader navItems={navItems} ctaLabel="Book a Diagnostic" bookingCta />;
 }

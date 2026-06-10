@@ -6,6 +6,7 @@ import { Hero } from "@/components/hero";
 import { Process } from "@/components/process";
 import { Services } from "@/components/services";
 import { WhyMasm } from "@/components/why-masm";
+import { AuthorityStrip } from "@/components/authority-strip";
 
 export default function Home() {
   return (
@@ -13,11 +14,12 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Services />
-        <WhyMasm />
+        <AuthorityStrip />
         <Diagnostic />
-        <Process />
+        <Services />
         <CaseStudies />
+        <WhyMasm />
+        <Process />
       </main>
       <Footer />
     </>

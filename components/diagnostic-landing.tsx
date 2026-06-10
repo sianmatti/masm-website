@@ -1,4 +1,4 @@
-import { ArrowIcon } from "./ui";
+import { ArrowIcon, BrandLockup } from "./ui";
 import { sitePath } from "@/lib/site";
 import { BookingCta } from "./booking-cta";
 import { SiteHeader } from "./site-header";
@@ -73,17 +73,6 @@ const faqs = [
   },
 ];
 
-function BrandMark() {
-  return (
-    <span className="grid h-8 w-8 grid-cols-2 gap-[2px]" aria-hidden="true">
-      <i className="bg-current" />
-      <i className="border border-current" />
-      <i className="border border-current" />
-      <i className="bg-current" />
-    </span>
-  );
-}
-
 function DiagnosticHeader() {
   const navItems = [
     { label: "What We Assess", href: "#assessment" },
@@ -110,7 +99,7 @@ function ScorecardPreview({ compact = false }: { compact?: boolean }) {
   ];
 
   return (
-    <div className={`border border-white/15 bg-[#0d0d0d] text-white ${compact ? "p-5" : "p-6 sm:p-8"}`}>
+    <div className={`card-system-dark ${compact ? "p-5" : "p-6 sm:p-8"}`}>
       <div className="flex items-center justify-between border-b border-white/15 pb-5">
         <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/45">Growth system / scorecard</span>
         <span className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-wider text-white/45">
@@ -150,7 +139,7 @@ function ScorecardPreview({ compact = false }: { compact?: boolean }) {
 
 function DiagnosticHero() {
   return (
-    <section className="grid-field relative overflow-hidden pb-14 pt-14 sm:pb-16 sm:pt-16 lg:pb-16">
+    <section className="grid-field section-pad-sm relative overflow-hidden">
       <div className="section-shell">
         <div className="flex items-center gap-3">
           <span className="h-2 w-2 rounded-full bg-ink" />
@@ -159,18 +148,18 @@ function DiagnosticHero() {
         </div>
         <div className="mt-9 grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <h1 className="max-w-5xl text-[clamp(3.6rem,7.4vw,7.5rem)] font-medium leading-[0.9] tracking-[-0.075em] text-balance">
+            <h1 className="display-xl max-w-5xl text-balance">
               Find what is limiting your <span className="text-muted">next stage of growth.</span>
             </h1>
           </div>
           <div className="lg:col-span-4 lg:pb-2">
-            <p className="max-w-md text-lg leading-8 tracking-[-0.02em] text-muted">
+            <p className="body-lead max-w-md">
               A rigorous assessment of your growth economics, demand system,
               measurement, and operations, translated into a clear 90-day direction.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
               <BookingCta source="diagnostic_hero">Book a diagnostic call</BookingCta>
-              <a href="#scorecard" className="inline-flex h-12 items-center justify-center rounded-full border border-ink/20 px-5 text-sm font-medium transition-colors hover:border-ink">
+              <a href="#scorecard" className="button-secondary">
                 View example output
               </a>
             </div>
@@ -179,7 +168,7 @@ function DiagnosticHero() {
             </p>
           </div>
         </div>
-        <div className="mt-12 grid border border-ink/15 bg-white/75 backdrop-blur sm:grid-cols-3">
+        <div className="card-system mt-12 grid sm:grid-cols-3">
           {[
             ["Built for decisions", "Not a channel checklist or automated report."],
             ["Senior analysis", "Strategy and interpretation handled by MASM directly."],
@@ -187,7 +176,7 @@ function DiagnosticHero() {
           ].map(([title, copy], index) => (
             <div key={title} className={`p-6 sm:p-7 ${index ? "border-t border-ink/15 sm:border-l sm:border-t-0" : ""}`}>
               <span className="text-sm font-medium">{title}</span>
-              <p className="mt-2 text-sm leading-6 text-muted">{copy}</p>
+              <p className="body-small mt-2">{copy}</p>
             </div>
           ))}
         </div>
@@ -198,18 +187,18 @@ function DiagnosticHero() {
 
 function ProblemSection() {
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="section-pad bg-white">
       <div className="section-shell">
         <div className="grid gap-12 border-t border-ink/20 pt-6 lg:grid-cols-12">
           <div className="lg:col-span-3">
             <span className="eyebrow">The real problem</span>
           </div>
           <div className="lg:col-span-9">
-            <h2 className="display-lg max-w-5xl font-medium text-balance">
+            <h2 className="display-lg max-w-5xl text-balance">
               More activity does not fix a system with an <span className="text-muted">unknown constraint.</span>
             </h2>
             <div className="mt-12 grid gap-10 sm:grid-cols-2">
-              <p className="max-w-md text-lg leading-8 text-muted">
+              <p className="body-lead max-w-md">
                 Growth teams often have plenty of ideas, reporting, and channel
                 activity. What they lack is a shared view of which problem is
                 actually limiting performance.
@@ -237,11 +226,11 @@ function ProblemSection() {
 
 function AssessmentSection() {
   return (
-    <section id="assessment" className="bg-ink py-24 text-white sm:py-32">
+    <section id="assessment" className="section-pad bg-ink text-white">
       <div className="section-shell">
         <div className="grid gap-8 border-t border-white/20 pt-6 lg:grid-cols-12">
           <span className="eyebrow !text-white/45 lg:col-span-3">What we assess</span>
-          <h2 className="display-lg max-w-5xl font-medium text-balance lg:col-span-9">
+          <h2 className="display-lg max-w-5xl text-balance lg:col-span-9">
             Four systems. <span className="text-white/35">One commercial reality.</span>
           </h2>
         </div>
@@ -253,8 +242,8 @@ function AssessmentSection() {
                 <span className="h-2 w-2 rounded-full border border-white/50" />
               </div>
               <div className="mt-24">
-                <h3 className="text-3xl font-medium tracking-[-0.05em]">{area.title}</h3>
-                <p className="mt-4 max-w-md text-sm leading-6 text-white/50">{area.copy}</p>
+                <h3 className="heading-card">{area.title}</h3>
+                <p className="body-small mt-4 max-w-md !text-white/55">{area.copy}</p>
               </div>
             </article>
           ))}
@@ -266,15 +255,15 @@ function AssessmentSection() {
 
 function DeliverablesSection() {
   return (
-    <section id="deliverables" className="bg-paper py-24 sm:py-32">
+    <section id="deliverables" className="section-pad bg-paper">
       <div className="section-shell">
         <div className="grid gap-8 border-t border-ink/20 pt-6 lg:grid-cols-12">
           <span className="eyebrow lg:col-span-3">What you receive</span>
           <div className="lg:col-span-9">
-            <h2 className="display-lg max-w-5xl font-medium text-balance">
+            <h2 className="display-lg max-w-5xl text-balance">
               A decision instrument, <span className="text-muted">not another deck.</span>
             </h2>
-            <p className="mt-7 max-w-xl text-base leading-7 text-muted">
+            <p className="body-copy mt-7 max-w-xl">
               Every output is designed to help leadership align resources,
               sequence priorities, and make the next growth decision with confidence.
             </p>
@@ -282,10 +271,10 @@ function DeliverablesSection() {
         </div>
         <div className="mt-16 grid gap-4 md:grid-cols-2">
           {deliverables.map(([title, copy], index) => (
-            <article key={title} className="card-lift border border-line bg-white p-7 sm:p-9">
+            <article key={title} className="card-system card-lift card-pad">
               <span className="font-mono text-[10px] text-muted">0{index + 1}</span>
-              <h3 className="mt-16 text-3xl font-medium tracking-[-0.05em]">{title}</h3>
-              <p className="mt-4 max-w-md text-sm leading-6 text-muted">{copy}</p>
+              <h3 className="heading-card mt-16">{title}</h3>
+              <p className="body-small mt-4 max-w-md">{copy}</p>
             </article>
           ))}
         </div>
@@ -296,15 +285,15 @@ function DeliverablesSection() {
 
 function ScorecardSection() {
   return (
-    <section id="scorecard" className="bg-white py-24 sm:py-32">
+    <section id="scorecard" className="section-pad bg-white">
       <div className="section-shell">
         <div className="grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <span className="eyebrow">Diagnostic scorecard / example</span>
-            <h2 className="mt-8 text-4xl font-medium leading-[0.98] tracking-[-0.06em] sm:text-6xl">
+            <h2 className="heading-section mt-8">
               See the whole system. Prioritize the real constraint.
             </h2>
-            <p className="mt-6 max-w-md text-base leading-7 text-muted">
+            <p className="body-copy mt-6 max-w-md">
               Scores are supported by evidence and interpreted in context.
               The goal is not to maximize every category. It is to identify the
               constraint that makes other improvements less valuable.
@@ -328,11 +317,11 @@ function ScorecardSection() {
 
 function ProcessSection() {
   return (
-    <section id="process" className="bg-paper py-24 sm:py-32">
+    <section id="process" className="section-pad bg-paper">
       <div className="section-shell">
         <div className="grid gap-8 border-t border-ink/20 pt-6 lg:grid-cols-12">
           <span className="eyebrow lg:col-span-3">How it works</span>
-          <h2 className="display-lg max-w-5xl font-medium text-balance lg:col-span-9">
+          <h2 className="display-lg max-w-5xl text-balance lg:col-span-9">
             From uncertainty to <span className="text-muted">clear direction in one week.</span>
           </h2>
         </div>
@@ -340,8 +329,8 @@ function ProcessSection() {
           {processSteps.map(([number, title, copy, timing]) => (
             <article key={number} className="grid gap-4 border-t border-ink/15 py-7 sm:grid-cols-12 sm:items-start">
               <span className="font-mono text-[10px] text-muted sm:col-span-1">{number}</span>
-              <h3 className="text-2xl font-medium tracking-[-0.04em] sm:col-span-3">{title}</h3>
-              <p className="max-w-xl text-sm leading-6 text-muted sm:col-span-6">{copy}</p>
+              <h3 className="text-2xl font-medium tracking-[-0.03em] sm:col-span-3">{title}</h3>
+              <p className="body-small max-w-xl sm:col-span-6">{copy}</p>
               <span className="font-mono text-[9px] uppercase tracking-wider text-muted sm:col-span-2 sm:text-right">{timing}</span>
             </article>
           ))}
@@ -353,21 +342,21 @@ function ProcessSection() {
 
 function PricingSection() {
   return (
-    <section id="pricing" className="bg-white py-24 sm:py-32">
+    <section id="pricing" className="section-pad bg-white">
       <div className="section-shell">
         <div className="overflow-hidden border border-ink bg-ink text-white">
           <div className="grid lg:grid-cols-12">
             <div className="p-7 sm:p-12 lg:col-span-7 lg:p-16">
               <span className="eyebrow !text-white/45">Fixed-scope engagement</span>
-              <h2 className="mt-8 text-5xl font-medium leading-[0.95] tracking-[-0.07em] sm:text-7xl">
+              <h2 className="heading-section mt-8 !text-white">
                 Growth Systems Diagnostic
               </h2>
-              <p className="mt-6 max-w-lg text-base leading-7 text-white/55">
+              <p className="body-copy mt-6 max-w-lg !text-white/60">
                 A senior-led strategic assessment for businesses that need clarity
                 before committing more budget, headcount, or time to growth.
               </p>
               <div className="mt-10 flex items-end gap-3">
-                <strong className="text-6xl font-medium tracking-[-0.08em] sm:text-7xl">$1,250</strong>
+                <strong className="text-heading-1 font-semibold">$1,250</strong>
                 <span className="pb-2 text-sm text-white/40">one-time</span>
               </div>
               <p className="mt-4 max-w-lg text-sm leading-6 text-white/55">
@@ -408,28 +397,28 @@ function PricingSection() {
 
 function GrowthEngineBridge() {
   return (
-    <section className="bg-paper py-24 sm:py-32">
+    <section className="section-pad bg-paper">
       <div className="section-shell">
         <div className="grid gap-12 border-t border-ink/20 pt-6 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <span className="eyebrow">What comes next</span>
           </div>
           <div className="lg:col-span-8">
-            <h2 className="display-lg max-w-4xl font-medium text-balance">
+            <h2 className="display-lg max-w-4xl text-balance">
               Clarity first. <span className="text-muted">Execution when it makes sense.</span>
             </h2>
             <div className="mt-12 grid gap-4 sm:grid-cols-2">
-              <div className="border border-line bg-white p-7">
+              <div className="card-system card-pad">
                 <span className="eyebrow">Path 01</span>
-                <h3 className="mt-8 text-2xl font-medium tracking-[-0.04em]">Take the roadmap</h3>
-                <p className="mt-3 text-sm leading-6 text-muted">
+                <h3 className="heading-card mt-8 !text-2xl">Take the roadmap</h3>
+                <p className="body-small mt-3">
                   Use the diagnostic to align your team and execute internally.
                   The work is complete and the deliverables are yours.
                 </p>
               </div>
-              <div className="border border-ink bg-ink p-7 text-white">
+              <div className="card-system-dark card-pad">
                 <span className="eyebrow !text-white/45">Path 02</span>
-                <h3 className="mt-8 text-2xl font-medium tracking-[-0.04em]">Build the Growth Engine</h3>
+                <h3 className="heading-card mt-8 !text-2xl">Build the Growth Engine</h3>
                 <p className="mt-3 text-sm leading-6 text-white/50">
                   When MASM is the right execution partner, the diagnostic becomes
                   the operating brief for an ongoing growth systems engagement.
@@ -445,12 +434,12 @@ function GrowthEngineBridge() {
 
 function FaqSection() {
   return (
-    <section id="faq" className="bg-white py-24 sm:py-32">
+    <section id="faq" className="section-pad bg-white">
       <div className="section-shell">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <span className="eyebrow">Frequently asked</span>
-            <h2 className="mt-8 text-4xl font-medium tracking-[-0.06em] sm:text-5xl">The practical details.</h2>
+            <h2 className="heading-section mt-8">The practical details.</h2>
           </div>
           <div className="lg:col-span-8">
             {faqs.map((item, index) => (
@@ -459,7 +448,7 @@ function FaqSection() {
                   {item.question}
                   <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-ink/20 text-lg transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-5 max-w-2xl pr-12 text-sm leading-7 text-muted">{item.answer}</p>
+                <p className="body-small mt-5 max-w-2xl pr-12">{item.answer}</p>
               </details>
             ))}
             <div className="border-t border-ink/15" />
@@ -473,11 +462,11 @@ function FaqSection() {
 function FinalCta() {
   return (
     <footer className="overflow-hidden bg-ink text-white">
-      <div className="section-shell py-24 sm:py-32">
+      <div className="section-shell section-pad">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-9">
             <span className="eyebrow !text-white/45">Stop guessing what to fix next</span>
-            <h2 className="mt-8 max-w-5xl text-5xl font-medium leading-[0.92] tracking-[-0.07em] sm:text-7xl lg:text-8xl">
+            <h2 className="display-lg mt-8 max-w-5xl">
               Turn growth uncertainty into a clear operating decision.
             </h2>
           </div>
@@ -491,9 +480,8 @@ function FinalCta() {
           </div>
         </div>
         <div className="mt-24 flex flex-col gap-8 border-t border-white/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <a href={sitePath("/")} className="flex items-center gap-3">
-            <BrandMark />
-            <span className="text-sm font-semibold">MASM Growth Systems</span>
+          <a href={sitePath("/")}>
+            <BrandLockup inverse />
           </a>
           <div className="flex flex-wrap gap-6 text-sm text-white/45">
             <a href={sitePath("/#services")} className="hover:text-white">Growth System</a>

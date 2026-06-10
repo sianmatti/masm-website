@@ -1,4 +1,48 @@
-import type { ReactNode } from "react";
+import type { InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from "react";
+
+export function BrandMark({ className = "h-8 w-8" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 64 64"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M8 54V10l24 24 24-24v44M18 54V31l14 14 14-14v23M28 51l4 4 4-4-4-4-4 4Z"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinejoin="miter"
+      />
+    </svg>
+  );
+}
+
+export function BrandLockup({
+  inverse = false,
+  compact = false,
+}: {
+  inverse?: boolean;
+  compact?: boolean;
+}) {
+  return (
+    <span className={`flex items-center ${compact ? "gap-2.5" : "gap-3.5"}`}>
+      <BrandMark className={compact ? "h-8 w-8" : "h-10 w-10"} />
+      <span className="block border-l border-current/20 pl-3">
+        <strong className="block text-sm font-semibold tracking-[0.24em]">
+          MASM
+        </strong>
+        <span
+          className={`mt-0.5 block text-[7px] font-medium uppercase tracking-[0.32em] ${
+            inverse ? "text-white/55" : "text-muted"
+          }`}
+        >
+          Growth Systems
+        </span>
+      </span>
+    </span>
+  );
+}
 
 export function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -25,6 +69,7 @@ type ButtonLinkProps = {
   children: ReactNode;
   href: string;
   inverted?: boolean;
+  variant?: "primary" | "secondary";
   className?: string;
 };
 
@@ -32,15 +77,18 @@ export function ButtonLink({
   children,
   href,
   inverted = false,
+  variant = "primary",
   className = "",
 }: ButtonLinkProps) {
   return (
     <a
       href={href}
-      className={`button-arrow inline-flex h-12 items-center justify-center gap-3 rounded-full border px-5 text-sm font-medium transition-colors ${
+      className={`${
         inverted
-          ? "border-white/20 bg-white text-ink hover:bg-white/90"
-          : "border-ink bg-ink text-white hover:bg-neutral-800"
+          ? "button-inverse"
+          : variant === "secondary"
+            ? "button-secondary"
+            : "button-primary"
       } ${className}`}
     >
       {children}
@@ -75,7 +123,7 @@ export function SectionHeading({
         <span className={`eyebrow ${light ? "!text-white/60" : ""}`}>{label}</span>
       </div>
       <div className="lg:col-span-9">
-        <h2 className="display-lg max-w-5xl font-medium text-balance">{title}</h2>
+        <h2 className="display-lg max-w-5xl text-balance">{title}</h2>
         {description ? (
           <p
             className={`mt-7 max-w-xl text-base leading-7 ${
@@ -87,5 +135,65 @@ export function SectionHeading({
         ) : null}
       </div>
     </div>
+  );
+}
+
+type FieldBaseProps = {
+  label: string;
+  name: string;
+  helpText?: string;
+};
+
+export function FormField({
+  label,
+  name,
+  helpText,
+  ...props
+}: FieldBaseProps & InputHTMLAttributes<HTMLInputElement>) {
+  const helpId = helpText ? `${name}-help` : undefined;
+
+  return (
+    <label className="block" htmlFor={name}>
+      <span className="form-label">{label}</span>
+      <input
+        {...props}
+        id={name}
+        name={name}
+        className={`form-control ${props.className ?? ""}`}
+        aria-describedby={helpId}
+      />
+      {helpText ? (
+        <span id={helpId} className="form-help">
+          {helpText}
+        </span>
+      ) : null}
+    </label>
+  );
+}
+
+export function TextAreaField({
+  label,
+  name,
+  helpText,
+  ...props
+}: FieldBaseProps & TextareaHTMLAttributes<HTMLTextAreaElement>) {
+  const helpId = helpText ? `${name}-help` : undefined;
+
+  return (
+    <label className="block" htmlFor={name}>
+      <span className="form-label">{label}</span>
+      <textarea
+        {...props}
+        id={name}
+        name={name}
+        className={`form-textarea ${props.className ?? ""}`}
+        aria-describedby={helpId}
+      />
+      {helpText ? (
+        <span id={helpId} className="form-help">
+          {helpText}
+        </span>
+      ) : null}
+    </label>
   );
 }

@@ -3,38 +3,38 @@ import { SectionHeading } from "./ui";
 const steps = [
   {
     number: "01",
-    title: "Diagnose",
-    copy: "Map the system, find the constraints, and quantify the opportunity.",
-    duration: "Week 1–2",
+    title: "Consultation",
+    copy: "Clarify the business context, current growth constraint, and whether MASM is the right fit.",
+    duration: "30 minutes",
   },
   {
     number: "02",
-    title: "Design",
-    copy: "Build the strategy, measurement model, and prioritized operating plan.",
-    duration: "Week 2–3",
+    title: "Growth Diagnostic",
+    copy: "Assess the system and turn fragmented signals into a prioritized 90-day direction.",
+    duration: "5 business days",
   },
   {
     number: "03",
-    title: "Deploy",
-    copy: "Launch, connect, and improve the highest-impact parts of the system.",
-    duration: "Week 3+",
+    title: "Decision & Proposal",
+    copy: "Review the evidence, agree on priorities, and define the right execution model when there is a fit.",
+    duration: "Leadership readout",
   },
   {
     number: "04",
-    title: "Compound",
-    copy: "Turn learnings into repeatable loops that make every next move smarter.",
-    duration: "Ongoing",
+    title: "Growth Engine",
+    copy: "MASM helps implement, operate, and improve the highest-value parts of the growth system.",
+    duration: "$2.5k–$5k+ / month",
   },
 ];
 
 export function Process() {
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="section-pad bg-white">
       <div className="section-shell">
         <SectionHeading
-          index="03"
+          index="04"
           label="Process"
-          title={<>From fragmented activity to <span className="text-muted">compounding growth.</span></>}
+          title={<>A clear path from first conversation to <span className="text-muted">compounding growth.</span></>}
         />
         <div className="mt-16 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
@@ -48,8 +48,8 @@ export function Process() {
               </div>
               <div className="mt-24">
                 <span className="font-mono text-[9px] uppercase tracking-wider text-muted">{step.duration}</span>
-                <h3 className="mt-4 text-3xl font-medium tracking-[-0.05em]">{step.title}</h3>
-                <p className="mt-4 text-sm leading-6 text-muted">{step.copy}</p>
+                <h3 className="heading-card mt-4">{step.title}</h3>
+                <p className="body-small mt-4">{step.copy}</p>
               </div>
             </article>
           ))}

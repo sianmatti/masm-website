@@ -3,34 +3,34 @@ import { ArrowIcon, SectionHeading } from "./ui";
 const services = [
   {
     number: "01",
-    title: "Performance",
+    title: "Strategy & Economics",
     description:
-      "Paid acquisition systems designed around contribution margin, not platform vanity metrics.",
-    tags: ["Paid social", "Paid search", "CRO"],
+      "Align growth priorities to commercial reality so investment follows margin, payback, and the highest-value constraint.",
+    tags: ["Growth strategy", "Unit economics", "Business optimization"],
     visual: <BarVisual />,
   },
   {
     number: "02",
-    title: "Organic Search",
+    title: "Acquisition",
     description:
-      "Technical and editorial SEO that turns demand capture into a durable compounding asset.",
-    tags: ["Technical SEO", "Content", "Authority"],
+      "Build paid and organic demand systems that improve revenue quality, conversion, and durable market visibility.",
+    tags: ["Performance marketing", "SEO", "CRO"],
     visual: <SearchVisual />,
   },
   {
     number: "03",
-    title: "Analytics",
+    title: "Growth Intelligence",
     description:
-      "Decision-grade measurement that tells your team what happened, why, and what to do next.",
+      "Create decision-grade measurement that shows what happened, why it happened, and where to allocate resources next.",
     tags: ["Attribution", "Dashboards", "Forecasting"],
     visual: <LineVisual />,
   },
   {
     number: "04",
-    title: "Automation",
+    title: "AI Automation",
     description:
-      "Connected workflows that move data, trigger actions, and remove costly manual operations.",
-    tags: ["Lifecycle", "AI workflows", "RevOps"],
+      "Connect data, lifecycle, and operating workflows to remove manual drag and create scalable execution capacity.",
+    tags: ["AI workflows", "Lifecycle", "Operating leverage"],
     visual: <NodeVisual />,
   },
 ];
@@ -70,16 +70,10 @@ function LineVisual() {
   return (
     <svg className="h-32 w-full" viewBox="0 0 300 120" fill="none" aria-hidden="true">
       {[20, 50, 80, 110].map((y) => (
-        <path key={y} d={`M0 ${y}h300`} stroke="#0a0a0a" strokeOpacity=".1" />
+        <path key={y} d={`M0 ${y}h300`} stroke="#000000" strokeOpacity=".1" />
       ))}
-      <path d="m0 103 38-9 35 5 42-30 38 8 47-45 45 11 55-32 40 4" stroke="#0a0a0a" strokeWidth="2" />
-      <path d="m0 103 38-9 35 5 42-30 38 8 47-45 45 11 55-32 40 4V120H0Z" fill="url(#fade)" />
-      <defs>
-        <linearGradient id="fade" x1="0" y1="0" x2="0" y2="120">
-          <stop stopColor="#0a0a0a" stopOpacity=".14" />
-          <stop offset="1" stopColor="#0a0a0a" stopOpacity="0" />
-        </linearGradient>
-      </defs>
+      <path d="m0 103 38-9 35 5 42-30 38 8 47-45 45 11 55-32 40 4" stroke="#000000" strokeWidth="2" />
+      <path d="m0 103 38-9 35 5 42-30 38 8 47-45 45 11 55-32 40 4" stroke="#000" strokeOpacity=".18" strokeWidth="8" />
     </svg>
   );
 }
@@ -88,7 +82,7 @@ function NodeVisual() {
   return (
     <div className="relative h-32" aria-hidden="true">
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 300 128">
-        <path d="M45 64h75m30 0h75m-75 0v-37m0 37v37" stroke="#0a0a0a" strokeOpacity=".25" strokeDasharray="3 3" />
+        <path d="M45 64h75m30 0h75m-75 0v-37m0 37v37" stroke="#000000" strokeOpacity=".25" strokeDasharray="3 3" />
       </svg>
       {[
         "left-[4%] top-[39%]",
@@ -110,27 +104,27 @@ function NodeVisual() {
 
 export function Services() {
   return (
-    <section id="services" className="bg-white py-24 sm:py-32">
+    <section id="services" className="section-pad bg-white">
       <div className="section-shell">
         <SectionHeading
           index="01"
-          label="Capabilities"
-          title={<>Four disciplines. <span className="text-muted">One growth system.</span></>}
-          description="We connect the parts most teams manage in isolation, so every channel gets smarter and more efficient over time."
+          label="The Growth System"
+          title={<>Four connected systems. <span className="text-muted">One commercial outcome.</span></>}
+          description="MASM does not sell disconnected channel retainers. We connect strategy, acquisition, intelligence, and automation around profitable growth."
         />
         <div className="mt-16 grid gap-4 md:grid-cols-2">
           {services.map((service) => (
             <article
               key={service.title}
-              className="card-lift group min-h-[470px] border border-line bg-paper p-6 sm:p-8"
+              className="card-system-muted card-lift card-pad group min-h-[470px]"
             >
               <div className="flex items-start justify-between">
                 <span className="font-mono text-[10px] text-muted">{service.number}</span>
                 <ArrowIcon className="h-5 w-5 -rotate-45 transition-transform group-hover:rotate-0" />
               </div>
               <div className="mt-12 border-b border-ink/15 pb-8">{service.visual}</div>
-              <h3 className="mt-7 text-3xl font-medium tracking-[-0.05em]">{service.title}</h3>
-              <p className="mt-3 max-w-md text-sm leading-6 text-muted">{service.description}</p>
+              <h3 className="heading-card mt-7">{service.title}</h3>
+              <p className="body-small mt-3 max-w-md">{service.description}</p>
               <div className="mt-7 flex flex-wrap gap-2">
                 {service.tags.map((tag) => (
                   <span key={tag} className="rounded-full border border-ink/15 px-3 py-1.5 font-mono text-[9px] uppercase tracking-wider">

@@ -7,7 +7,8 @@ const cases = [
     result: "2.7×",
     label: "pipeline efficiency",
     secondary: "−31% CAC",
-    theme: "bg-[#e8e8e3]",
+    scope: "Acquisition economics · Measurement · CRO",
+    theme: "bg-white",
   },
   {
     type: "Consumer / Organic search",
@@ -15,7 +16,8 @@ const cases = [
     result: "+184%",
     label: "non-brand revenue",
     secondary: "8 months",
-    theme: "bg-[#d8d8d2]",
+    scope: "Technical SEO · Content system · Conversion",
+    theme: "bg-paper",
   },
   {
     type: "Marketplace / Analytics",
@@ -23,19 +25,20 @@ const cases = [
     result: "14 hrs",
     label: "saved every week",
     secondary: "99.4% accuracy",
-    theme: "bg-[#c5c5be]",
+    scope: "Analytics architecture · Automation · Reporting",
+    theme: "bg-white",
   },
 ];
 
 export function CaseStudies() {
   return (
-    <section id="work" className="bg-paper py-24 sm:py-32">
+    <section id="work" className="section-pad bg-paper">
       <div className="section-shell">
         <SectionHeading
-          index="04"
+          index="02"
           label="Selected outcomes"
           title={<>Proof, measured in <span className="text-muted">business impact.</span></>}
-          description="Representative engagements across SaaS, consumer, and marketplace businesses."
+          description="Anonymized engagement outcomes showing how connected growth systems change commercial performance."
         />
         <div className="mt-16 space-y-4">
           {cases.map((item, index) => (
@@ -48,9 +51,12 @@ export function CaseStudies() {
                   <span className="font-mono text-[10px] text-muted">0{index + 1}</span>
                   <span className="eyebrow">{item.type}</span>
                 </div>
-                <h3 className="mt-16 max-w-2xl text-3xl font-medium leading-[1.05] tracking-[-0.05em] sm:text-5xl">
+                <h3 className="heading-card mt-16 max-w-2xl sm:text-5xl">
                   {item.title}
                 </h3>
+                <p className="mt-6 text-xs font-medium uppercase tracking-[0.12em] text-muted">
+                  Scope: {item.scope}
+                </p>
               </div>
               <div className="relative flex min-h-[250px] flex-col justify-between border-t border-ink/15 p-7 sm:p-10 lg:col-span-5 lg:border-l lg:border-t-0">
                 <div className="absolute right-8 top-8 grid h-10 w-10 place-items-center rounded-full border border-ink/20 transition-colors group-hover:bg-ink group-hover:text-white">

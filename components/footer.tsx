@@ -1,43 +1,46 @@
-import { ArrowIcon, ButtonLink } from "./ui";
-import { sitePath } from "@/lib/site";
+import { ArrowIcon, BrandLockup } from "./ui";
+import { BookingCta } from "./booking-cta";
 
 export function Footer() {
   return (
     <footer className="overflow-hidden bg-ink text-white">
-      <div className="section-shell py-24 sm:py-32">
+      <div className="section-shell section-pad">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-9">
             <span className="eyebrow !text-white/45">Ready when you are</span>
-            <h2 className="mt-8 max-w-5xl text-5xl font-medium leading-[0.92] tracking-[-0.07em] sm:text-7xl lg:text-8xl">
+            <h2 className="display-lg mt-8 max-w-5xl">
               Build a growth system that gets smarter every quarter.
             </h2>
           </div>
-          <div className="flex items-end lg:col-span-3">
-            <ButtonLink href={sitePath("/diagnostic/")} inverted className="w-full sm:w-auto lg:w-full">
-              Book a diagnostic
-            </ButtonLink>
+          <div className="flex flex-col justify-end gap-3 lg:col-span-3">
+            <BookingCta inverted className="w-full" source="homepage_footer">
+              Book a Growth Diagnostic consultation
+            </BookingCta>
+            <BookingCta
+              type="strategy"
+              variant="secondary"
+              source="homepage_footer_strategy"
+              className="w-full !border-white/30 !text-white hover:!bg-white hover:!text-ink"
+            >
+              Book a strategy call
+            </BookingCta>
+            <p className="text-center text-xs leading-5 text-white/45">
+              No generic sales pitch. Start with the business constraint.
+            </p>
           </div>
         </div>
 
         <div className="mt-24 grid gap-12 border-t border-white/20 pt-8 sm:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-3">
-              <span className="grid h-8 w-8 grid-cols-2 gap-[2px]">
-                <i className="bg-white" />
-                <i className="border border-white" />
-                <i className="border border-white" />
-                <i className="bg-white" />
-              </span>
-              <span className="text-sm font-semibold">MASM Growth Systems</span>
-            </div>
-            <p className="mt-5 max-w-xs text-sm leading-6 text-white/45">
+            <BrandLockup inverse />
+            <p className="mt-5 max-w-xs text-sm leading-6 text-white/55">
               Performance, SEO, analytics, and automation engineered as one.
             </p>
           </div>
           <div className="lg:col-span-2">
             <span className="font-mono text-[9px] uppercase tracking-wider text-white/35">Navigate</span>
             <div className="mt-4 space-y-3">
-              {["Services", "Approach", "Work"].map((item) => (
+              {["Diagnostic", "Services", "Approach", "Work"].map((item) => (
                 <a key={item} href={`#${item === "Approach" ? "approach" : item.toLowerCase()}`} className="block text-sm text-white/65 hover:text-white">
                   {item}
                 </a>
@@ -60,7 +63,7 @@ export function Footer() {
           <span>Growth, engineered.</span>
         </div>
       </div>
-      <div className="select-none whitespace-nowrap text-center text-[22vw] font-medium leading-[0.72] tracking-[-0.09em] text-white/[0.04]">
+      <div className="select-none whitespace-nowrap text-center text-[22vw] font-semibold leading-[0.72] tracking-[-0.075em] text-white/[0.04]">
         MASM
       </div>
     </footer>

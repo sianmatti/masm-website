@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --ink: #0a0a0a;
-  --paper: #f7f7f5;
+  --masm-black: #000000;
+  --masm-charcoal: #111111;
+  --masm-gray: #f5f5f5;
+  --masm-white: #ffffff;
+  --font-sora: "Sora";
+  --space-section-sm: clamp(4.5rem, 8vw, 7rem);
+  --space-section: clamp(5.5rem, 10vw, 9rem);
+  --space-section-lg: clamp(6.5rem, 12vw, 11rem);
+  --space-gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --container-site: 90rem;
 }
 
 * {
@@ -18,14 +26,25 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-geist-sans), Arial, sans-serif;
+  background: var(--masm-gray);
+  color: var(--masm-black);
+  font-family: var(--font-sora), Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 section[id] {
   scroll-margin-top: 88px;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 button,
@@ -41,64 +60,145 @@ summary:focus-visible {
 }
 
 ::selection {
-  background: #0a0a0a;
-  color: #fff;
+  background: var(--masm-black);
+  color: var(--masm-white);
 }
 
 .grid-field {
-  background-image:
-    linear-gradient(to right, rgba(10, 10, 10, 0.065) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(10, 10, 10, 0.065) 1px, transparent 1px);
-  background-size: 48px 48px;
+  background-color: var(--masm-gray);
 }
 
 .dot-field {
-  background-image: radial-gradient(rgba(10, 10, 10, 0.2) 0.7px, transparent 0.7px);
-  background-size: 12px 12px;
+  display: none;
 }
 
 .text-balance {
   text-wrap: balance;
 }
 
-.eyebrow {
-  @apply font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-muted;
+@layer components {
+  .section-shell,
+  .container-page {
+    @apply mx-auto w-full max-w-site px-gutter;
+  }
+
+  .section-pad {
+    @apply py-section;
+  }
+
+  .section-pad-sm {
+    @apply py-section-sm;
+  }
+
+  .section-pad-lg {
+    @apply py-section-lg;
+  }
+
+  .eyebrow {
+    @apply text-label font-medium uppercase text-muted;
+  }
+
+  .display-xl {
+    @apply text-display font-semibold;
+  }
+
+  .display-lg {
+    @apply text-heading-1 font-semibold;
+  }
+
+  .heading-section {
+    @apply text-heading-2 font-semibold text-balance;
+  }
+
+  .heading-card {
+    @apply text-heading-3 font-medium;
+  }
+
+  .body-lead {
+    @apply text-lead text-muted;
+  }
+
+  .body-copy {
+    @apply text-body text-muted;
+  }
+
+  .body-small {
+    @apply text-small text-muted;
+  }
+
+  .button-base {
+    @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full border px-6 text-sm font-medium transition-colors duration-200;
+  }
+
+  .button-primary {
+    @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 text-sm font-medium text-white transition-colors duration-200 hover:bg-charcoal;
+  }
+
+  .button-secondary {
+    @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-ink/20 bg-transparent px-6 text-sm font-medium text-ink transition-colors duration-200 hover:border-ink hover:bg-white;
+  }
+
+  .button-inverse {
+    @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-white bg-white px-6 text-sm font-medium text-ink transition-colors duration-200 hover:bg-paper;
+  }
+
+  .card-system {
+    @apply border border-line bg-white;
+  }
+
+  .card-system-muted {
+    @apply border border-line bg-paper;
+  }
+
+  .card-system-dark {
+    @apply border border-white/15 bg-charcoal text-white;
+  }
+
+  .card-pad {
+    @apply p-6 sm:p-8 lg:p-10;
+  }
+
+  .form-label {
+    @apply mb-2 block text-label font-medium uppercase text-muted;
+  }
+
+  .form-control {
+    @apply min-h-12 w-full rounded-none border border-line bg-white px-4 text-sm text-ink outline-none transition-colors placeholder:text-muted focus:border-ink;
+  }
+
+  .form-textarea {
+    @apply min-h-32 w-full resize-y rounded-none border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-muted focus:border-ink;
+  }
+
+  .form-help {
+    @apply mt-2 text-xs leading-5 text-muted;
+  }
+
+  .card-lift {
+    transition:
+      transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 300ms ease,
+      border-color 300ms ease;
+  }
+
+  .card-lift:hover {
+    @apply -translate-y-1 border-charcoal/35 shadow-card;
+  }
 }
 
-.section-shell {
-  @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12;
-}
-
-.display-xl {
-  font-size: clamp(3.6rem, 8.7vw, 8.5rem);
-  line-height: 0.88;
-  letter-spacing: -0.075em;
-}
-
-.display-lg {
-  font-size: clamp(2.6rem, 5.4vw, 5.5rem);
-  line-height: 0.94;
-  letter-spacing: -0.06em;
-}
-
-.card-lift {
-  transition:
-    transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 300ms ease,
-    border-color 300ms ease;
-}
-
-.card-lift:hover {
-  transform: translateY(-4px);
-  border-color: #aaa;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
-}
-
-.button-arrow svg {
+.button-arrow svg,
+.button-base svg,
+.button-primary svg,
+.button-secondary svg,
+.button-inverse svg {
   transition: transform 200ms ease;
 }
 
-.button-arrow:hover svg {
+.button-arrow:hover svg,
+.button-base:hover svg,
+.button-primary:hover svg,
+.button-secondary:hover svg,
+.button-inverse:hover svg {
   transform: translateX(3px);
 }
 
