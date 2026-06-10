@@ -6,10 +6,9 @@ export function BrandMark({ className = "h-8 w-8" }: { className?: string }) {
     <img
       className={className}
       src={sitePath("/masm-mark.svg")}
-      alt=""
+      alt="MASM Growth Systems"
       width="48"
       height="48"
-      aria-hidden="true"
     />
   );
 }
