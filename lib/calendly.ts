@@ -1,10 +1,6 @@
 export const calendlyUrl =
   process.env.NEXT_PUBLIC_CALENDLY_URL ??
-  "https://calendly.com/masm/growth-diagnostic";
-
-export const strategyCallUrl =
-  process.env.NEXT_PUBLIC_STRATEGY_CALL_URL ??
-  "https://calendly.com/masm/strategy-call";
+  "https://calendly.com/sianmatti11/30min";
 
 export function calendlyEmbedUrl(url = calendlyUrl) {
   const separator = url.includes("?") ? "&" : "?";
