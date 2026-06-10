@@ -36,7 +36,7 @@ export function SiteHeader({
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur-xl">
-      <div className="section-shell flex h-[72px] items-center justify-between">
+      <div className="section-shell flex h-[68px] items-center justify-between sm:h-[72px]">
         <a href={sitePath("/")} aria-label="MASM homepage">
           <BrandLockup compact />
         </a>
@@ -55,9 +55,8 @@ export function SiteHeader({
 
         <div className="flex items-center gap-2">
           {bookingCta ? (
-            <BookingCta className="!h-10 !px-4" source="sticky_header">
-              <span className="hidden sm:inline">{ctaLabel}</span>
-              <span className="sm:hidden">Book a call</span>
+            <BookingCta className="!min-h-10 !px-3 !text-xs sm:!px-4 sm:!text-sm" source="sticky_header">
+              <span>{ctaLabel}</span>
             </BookingCta>
           ) : (
             <a
