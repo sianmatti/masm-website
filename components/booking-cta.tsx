@@ -95,7 +95,7 @@ export function BookingCta({
               aria-label={
                 type === "strategy"
                   ? "Book a strategy call"
-                  : "Book a Growth Diagnostic consultation"
+                  : "Book a Diagnostic"
               }
               onClick={(event) => {
                 if (event.currentTarget === event.target) closeCalendly();
@@ -110,7 +110,7 @@ export function BookingCta({
                     <span className="eyebrow">
                       {type === "strategy"
                         ? "MASM strategy call"
-                        : "Growth Diagnostic consultation"}
+                        : "Growth Diagnostic"}
                     </span>
                     <span className="ml-3 hidden text-xs text-muted sm:inline">
                       Choose a time that works for you
@@ -130,7 +130,7 @@ export function BookingCta({
                   title={
                     type === "strategy"
                       ? "Schedule a MASM strategy call"
-                      : "Schedule a Growth Diagnostic consultation"
+                      : "Schedule a Growth Diagnostic"
                   }
                   src={calendlyEmbedUrl()}
                   className="relative z-0 block h-[calc(100%-3.5rem)] w-full"
