@@ -50,20 +50,21 @@ export function Hero() {
           </span>
         </div>
 
-        <h1 className="display-xl max-w-[1240px] text-balance">
-          Build a scalable <span className="text-muted">growth system.</span>
+        <h1 className="display-xl max-w-[1280px] text-balance">
+          Turn fragmented growth activity into one{" "}
+          <span className="text-muted">scalable operating system.</span>
         </h1>
 
         <div className="mt-10 grid items-center gap-10 lg:mt-5 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <p className="body-lead max-w-lg">
               MASM connects strategy, acquisition, analytics, AI automation,
-              and business optimization into one operating system for
+              and business optimization into one operating model for
               profitable growth.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <BookingCta source="homepage_hero">
-                Book a Growth Diagnostic consultation
+                Book a Diagnostic
               </BookingCta>
               <BookingCta
                 source="homepage_hero_strategy"
