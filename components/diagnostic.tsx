@@ -23,7 +23,8 @@ export function Diagnostic() {
                 </span>
               </div>
               <h2 className="heading-section mt-8">
-                Find the constraint before investing more in growth.
+                Before investing more in ads, SEO, tools, or automation,
+                identify the constraint limiting profitable growth.
               </h2>
               <p className="body-copy mt-6 max-w-md">
                 A senior-led strategic assessment of your economics, demand,
@@ -45,7 +46,7 @@ export function Diagnostic() {
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <BookingCta source="homepage_diagnostic">
-                  Book a Diagnostic consultation
+                  Book a Diagnostic
                 </BookingCta>
                 <ButtonLink href={sitePath("/diagnostic/")} variant="secondary">
                   View full details
