@@ -1,9 +1,7 @@
-import { ArrowIcon, ButtonLink } from "./ui";
+import { ArrowIcon } from "./ui";
 import { sitePath } from "@/lib/site";
-
-const bookingUrl =
-  process.env.NEXT_PUBLIC_DIAGNOSTIC_BOOKING_URL ??
-  "https://cal.com/masm/growth-diagnostic";
+import { BookingCta } from "./booking-cta";
+import { SiteHeader } from "./site-header";
 
 const assessmentAreas = [
   {
@@ -36,10 +34,10 @@ const deliverables = [
 ];
 
 const processSteps = [
-  ["01", "Intake", "Complete a focused questionnaire and share the core data already used to run growth.", "30 min"],
-  ["02", "Analysis", "MASM reviews the system, validates signals, and isolates the highest-cost constraint.", "3–4 days"],
-  ["03", "Readout", "Your leadership team receives the scorecard, roadmap, and facilitated decision session.", "60 min"],
-  ["04", "Direction", "Execute internally, engage specialists, or continue with MASM through the Growth Engine.", "Your call"],
+  ["01", "Consultation", "A focused call to understand the business, confirm fit, and define the decision the diagnostic must support.", "30 min"],
+  ["02", "Diagnostic", "Complete the intake, share existing data, and let MASM isolate the highest-cost growth constraint.", "5 days"],
+  ["03", "Readout", "Your leadership team receives the scorecard, roadmap, and a facilitated decision session.", "60 min"],
+  ["04", "Proposal", "If MASM is the right execution partner, receive a focused Growth Engine proposal built from the findings.", "Optional"],
 ];
 
 const faqs = [
@@ -87,26 +85,19 @@ function BrandMark() {
 }
 
 function DiagnosticHeader() {
+  const navItems = [
+    { label: "What We Assess", href: "#assessment" },
+    { label: "What You Receive", href: "#deliverables" },
+    { label: "How It Works", href: "#process" },
+    { label: "Investment", href: "#pricing" },
+  ];
+
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
-      <div className="section-shell flex h-20 items-center justify-between border-b border-ink/15">
-        <a href={sitePath("/")} className="flex items-center gap-3" aria-label="MASM homepage">
-          <BrandMark />
-          <span className="text-sm font-semibold tracking-[-0.03em]">
-            MASM<span className="text-muted">/GS</span>
-          </span>
-        </a>
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Diagnostic navigation">
-          <a href="#assessment" className="text-sm text-muted transition-colors hover:text-ink">Assessment</a>
-          <a href="#deliverables" className="text-sm text-muted transition-colors hover:text-ink">Deliverables</a>
-          <a href="#process" className="text-sm text-muted transition-colors hover:text-ink">Process</a>
-          <a href="#faq" className="text-sm text-muted transition-colors hover:text-ink">FAQ</a>
-        </nav>
-        <ButtonLink href={bookingUrl} className="!h-10 !px-4">
-          Book the diagnostic
-        </ButtonLink>
-      </div>
-    </header>
+    <SiteHeader
+      navItems={navItems}
+      bookingCta
+      ctaLabel="Book a diagnostic call"
+    />
   );
 }
 
@@ -159,14 +150,14 @@ function ScorecardPreview({ compact = false }: { compact?: boolean }) {
 
 function DiagnosticHero() {
   return (
-    <section className="grid-field relative overflow-hidden pb-20 pt-36 sm:pt-44 lg:min-h-[900px] lg:pb-24">
+    <section className="grid-field relative overflow-hidden pb-14 pt-14 sm:pb-16 sm:pt-16 lg:pb-16">
       <div className="section-shell">
         <div className="flex items-center gap-3">
           <span className="h-2 w-2 rounded-full bg-ink" />
           <span className="eyebrow">Strategic business assessment</span>
           <span className="hidden font-mono text-[10px] text-muted sm:block">FIXED SCOPE / SENIOR-LED</span>
         </div>
-        <div className="mt-12 grid gap-12 lg:grid-cols-12 lg:items-end">
+        <div className="mt-9 grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
             <h1 className="max-w-5xl text-[clamp(3.6rem,7.4vw,7.5rem)] font-medium leading-[0.9] tracking-[-0.075em] text-balance">
               Find what is limiting your <span className="text-muted">next stage of growth.</span>
@@ -177,8 +168,8 @@ function DiagnosticHero() {
               A rigorous assessment of your growth economics, demand system,
               measurement, and operations, translated into a clear 90-day direction.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-              <ButtonLink href={bookingUrl}>Book the diagnostic</ButtonLink>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+              <BookingCta source="diagnostic_hero">Book a diagnostic call</BookingCta>
               <a href="#scorecard" className="inline-flex h-12 items-center justify-center rounded-full border border-ink/20 px-5 text-sm font-medium transition-colors hover:border-ink">
                 View example output
               </a>
@@ -188,7 +179,7 @@ function DiagnosticHero() {
             </p>
           </div>
         </div>
-        <div className="mt-16 grid border border-ink/15 bg-white/75 backdrop-blur sm:grid-cols-3">
+        <div className="mt-12 grid border border-ink/15 bg-white/75 backdrop-blur sm:grid-cols-3">
           {[
             ["Built for decisions", "Not a channel checklist or automated report."],
             ["Senior analysis", "Strategy and interpretation handled by MASM directly."],
@@ -401,9 +392,9 @@ function PricingSection() {
                   </div>
                 ))}
               </div>
-              <ButtonLink href={bookingUrl} className="mt-8 w-full">
-                Book your diagnostic
-              </ButtonLink>
+              <BookingCta className="mt-8 w-full" source="diagnostic_pricing">
+                Book a diagnostic call
+              </BookingCta>
               <p className="mt-4 text-center font-mono text-[9px] uppercase tracking-wider text-muted">
                 Limited weekly capacity · Secure scheduling
               </p>
@@ -491,9 +482,9 @@ function FinalCta() {
             </h2>
           </div>
           <div className="lg:col-span-3">
-            <ButtonLink href={bookingUrl} inverted className="w-full">
-              Book the diagnostic
-            </ButtonLink>
+            <BookingCta inverted className="w-full" source="diagnostic_final_cta">
+              Book a diagnostic call
+            </BookingCta>
             <p className="mt-4 text-center font-mono text-[9px] uppercase tracking-wider text-white/35">
               $1,250 · Five business days
             </p>
