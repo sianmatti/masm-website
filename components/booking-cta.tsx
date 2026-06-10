@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { calendlyEmbedUrl, calendlyUrl, strategyCallUrl } from "@/lib/calendly";
+import { calendlyEmbedUrl, calendlyUrl } from "@/lib/calendly";
 import { ArrowIcon } from "./ui";
 
 type BookingCtaProps = {
@@ -42,8 +42,7 @@ export function BookingCta({
 
   const openCalendly = () => {
     const isMobile = window.matchMedia("(max-width: 767px)").matches;
-    const bookingUrl = type === "strategy" ? strategyCallUrl : calendlyUrl;
-    const url = new URL(bookingUrl);
+    const url = new URL(calendlyUrl);
     url.searchParams.set("utm_source", "masm_website");
     url.searchParams.set("utm_campaign", source);
 
@@ -104,7 +103,7 @@ export function BookingCta({
             </div>
             <iframe
               title={type === "strategy" ? "Schedule a MASM strategy call" : "Schedule a Growth Diagnostic consultation"}
-              src={calendlyEmbedUrl(type === "strategy" ? strategyCallUrl : calendlyUrl)}
+              src={calendlyEmbedUrl()}
               className="h-[calc(100%-3.5rem)] w-full"
             />
           </div>
