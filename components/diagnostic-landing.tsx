@@ -85,7 +85,7 @@ function DiagnosticHeader() {
     <SiteHeader
       navItems={navItems}
       bookingCta
-      ctaLabel="Book a diagnostic call"
+      ctaLabel="Book a Diagnostic"
     />
   );
 }
@@ -158,7 +158,7 @@ function DiagnosticHero() {
               measurement, and operations, translated into a clear 90-day direction.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-              <BookingCta source="diagnostic_hero">Book a diagnostic call</BookingCta>
+              <BookingCta source="diagnostic_hero">Book a Diagnostic</BookingCta>
               <a href="#scorecard" className="button-secondary">
                 View example output
               </a>
@@ -382,7 +382,7 @@ function PricingSection() {
                 ))}
               </div>
               <BookingCta className="mt-8 w-full" source="diagnostic_pricing">
-                Book a diagnostic call
+                Book a Diagnostic
               </BookingCta>
               <p className="mt-4 text-center font-mono text-[9px] uppercase tracking-wider text-muted">
                 Limited weekly capacity · Secure scheduling
@@ -472,7 +472,7 @@ function FinalCta() {
           </div>
           <div className="lg:col-span-3">
             <BookingCta inverted className="w-full" source="diagnostic_final_cta">
-              Book a diagnostic call
+              Book a Diagnostic
             </BookingCta>
             <p className="mt-4 text-center font-mono text-[9px] uppercase tracking-wider text-white/35">
               $1,250 · Five business days
