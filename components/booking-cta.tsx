@@ -15,7 +15,7 @@ type BookingCtaProps = {
 };
 
 export function BookingCta({
-  children = "Book a diagnostic call",
+  children = "Book a Diagnostic",
   className = "",
   inverted = false,
   source = "website",
