@@ -3,7 +3,7 @@ import { sitePath } from "@/lib/site";
 
 function SystemGraphic() {
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[520px]" aria-hidden="true">
+    <div className="relative mx-auto aspect-square w-full max-w-[360px] sm:max-w-[420px]" aria-hidden="true">
       <div className="absolute inset-[5%] rounded-full border border-ink/15" />
       <div className="absolute inset-[18%] rounded-full border border-dashed border-ink/30 animate-slow-spin" />
       <div className="absolute inset-[31%] rounded-full border border-ink/20" />
@@ -38,10 +38,9 @@ function SystemGraphic() {
 
 export function Hero() {
   return (
-    <section className="grid-field relative overflow-hidden pb-16 pt-36 sm:pt-44 lg:min-h-[900px] lg:pb-24">
-      <div className="absolute inset-x-0 top-20 h-px bg-ink/10" />
+    <section className="grid-field relative overflow-hidden pb-12 pt-14 sm:pb-16 sm:pt-16 lg:pb-14 lg:pt-16">
       <div className="section-shell">
-        <div className="mb-12 flex items-center gap-3">
+        <div className="mb-8 flex items-center gap-3 sm:mb-10">
           <span className="flex h-2 w-2 items-center justify-center rounded-full bg-ink">
             <span className="h-2 w-2 animate-ping rounded-full bg-ink" />
           </span>
@@ -52,12 +51,12 @@ export function Hero() {
           </span>
         </div>
 
-        <h1 className="display-xl max-w-[1300px] font-medium text-balance">
+        <h1 className="max-w-[1200px] text-[clamp(3.6rem,7.7vw,7.4rem)] font-medium leading-[0.88] tracking-[-0.075em] text-balance">
           Growth, <span className="text-muted">engineered.</span>
         </h1>
 
-        <div className="mt-12 grid items-end gap-12 lg:grid-cols-12 lg:mt-6">
-          <div className="lg:col-span-5 lg:pb-8">
+        <div className="mt-10 grid items-center gap-10 lg:mt-5 lg:grid-cols-12">
+          <div className="lg:col-span-6">
             <p className="max-w-lg text-lg leading-8 tracking-[-0.02em] text-muted sm:text-xl">
               Your growth channels should compound, not compete. We build the
               system that makes performance, search, data, and automation work
@@ -66,14 +65,14 @@ export function Hero() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={sitePath("/diagnostic/")}>Explore the Growth Diagnostic</ButtonLink>
               <a
-                href="#services"
+                href="#work"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-ink/20 px-5 text-sm font-medium transition-colors hover:border-ink"
               >
-                Explore capabilities
+                See client outcomes
               </a>
             </div>
           </div>
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-6">
             <SystemGraphic />
           </div>
         </div>
