@@ -4,6 +4,8 @@ const cases = [
   {
     type: "B2B SaaS / Growth system",
     title: "Rebuilding acquisition around revenue quality.",
+    context:
+      "Before MASM: acquisition reporting was channel-led, with limited visibility into lead quality and payback.",
     result: "2.7×",
     label: "pipeline efficiency",
     secondary: "−31% CAC",
@@ -13,6 +15,8 @@ const cases = [
   {
     type: "Consumer / Organic search",
     title: "Turning search demand into a compounding channel.",
+    context:
+      "Before MASM: organic traffic existed, but non-brand search was not translating into consistent revenue.",
     result: "+184%",
     label: "non-brand revenue",
     secondary: "8 months",
@@ -22,6 +26,8 @@ const cases = [
   {
     type: "Marketplace / Analytics",
     title: "Creating one source of truth for growth decisions.",
+    context:
+      "Before MASM: leadership relied on fragmented reports across platforms, creating slow and inconsistent growth decisions.",
     result: "14 hrs",
     label: "saved every week",
     secondary: "99.4% accuracy",
@@ -54,6 +60,9 @@ export function CaseStudies() {
                 <h3 className="heading-card mt-16 max-w-2xl sm:text-5xl">
                   {item.title}
                 </h3>
+                <p className="mt-5 max-w-2xl text-sm leading-6 text-muted sm:text-base sm:leading-7">
+                  {item.context}
+                </p>
                 <p className="mt-6 text-xs font-medium uppercase tracking-[0.12em] text-muted">
                   Scope: {item.scope}
                 </p>
@@ -73,7 +82,7 @@ export function CaseStudies() {
           ))}
         </div>
         <p className="mt-5 font-mono text-[9px] uppercase tracking-wider text-muted">
-          Client names withheld by agreement. Results vary by company, market, and starting point.
+          Client names are withheld by agreement. Outcomes vary by company, market, and starting point.
         </p>
       </div>
     </section>
