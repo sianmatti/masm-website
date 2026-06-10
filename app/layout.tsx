@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sitePath } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -35,6 +36,11 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  icons: {
+    icon: sitePath("/masm-mark.svg"),
+    shortcut: sitePath("/masm-mark.svg"),
+    apple: sitePath("/masm-mark.svg"),
   },
 };
 
