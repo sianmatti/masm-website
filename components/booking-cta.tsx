@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { calendlyEmbedUrl, calendlyUrl } from "@/lib/calendly";
 import { ArrowIcon } from "./ui";
 
@@ -22,23 +23,35 @@ export function BookingCta({
   variant = "primary",
 }: BookingCtaProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!isOpen) return;
 
-    const previousOverflow = document.body.style.overflow;
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
 
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setIsOpen(false);
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setIsOpen(false);
+      }
     };
 
-    window.addEventListener("keydown", closeOnEscape);
+    document.addEventListener("keydown", closeOnEscape);
     return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", closeOnEscape);
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+      document.removeEventListener("keydown", closeOnEscape);
+      triggerRef.current?.focus();
     };
   }, [isOpen]);
+
+  const closeCalendly = () => setIsOpen(false);
 
   const openCalendly = () => {
     const isMobile = window.matchMedia("(max-width: 767px)").matches;
@@ -57,6 +70,7 @@ export function BookingCta({
   return (
     <>
       <button
+        ref={triggerRef}
         type="button"
         onClick={openCalendly}
         className={`${
@@ -72,43 +86,60 @@ export function BookingCta({
         <ArrowIcon />
       </button>
 
-      {isOpen ? (
-        <div
-          className="fixed inset-0 z-[100] hidden items-center justify-center bg-ink/80 p-6 backdrop-blur-sm md:flex"
-          role="dialog"
-          aria-modal="true"
-          aria-label={type === "strategy" ? "Book a strategy call" : "Book a Growth Diagnostic consultation"}
-          onMouseDown={(event) => {
-            if (event.currentTarget === event.target) setIsOpen(false);
-          }}
-        >
-          <div className="relative h-[min(820px,90vh)] w-full max-w-5xl overflow-hidden border border-white/20 bg-paper shadow-modal">
-            <div className="flex h-14 items-center justify-between border-b border-ink/15 bg-white px-5">
-              <div>
-                <span className="eyebrow">
-                  {type === "strategy" ? "MASM strategy call" : "Growth Diagnostic consultation"}
-                </span>
-                <span className="ml-3 hidden text-xs text-muted sm:inline">
-                  Choose a time that works for you
-                </span>
-              </div>
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                className="grid h-8 w-8 place-items-center rounded-full border border-line text-lg transition-colors hover:bg-ink hover:text-white"
-                aria-label="Close booking window"
+      {isOpen && typeof document !== "undefined"
+        ? createPortal(
+            <div
+              className="fixed inset-0 z-[9999] flex items-center justify-center overscroll-none bg-ink/80 p-3 backdrop-blur-sm sm:p-6"
+              role="dialog"
+              aria-modal="true"
+              aria-label={
+                type === "strategy"
+                  ? "Book a strategy call"
+                  : "Book a Growth Diagnostic consultation"
+              }
+              onClick={(event) => {
+                if (event.currentTarget === event.target) closeCalendly();
+              }}
+            >
+              <div
+                className="relative h-[min(820px,90vh)] w-full max-w-5xl overflow-hidden border border-white/20 bg-paper shadow-modal"
+                onClick={(event) => event.stopPropagation()}
               >
-                ×
-              </button>
-            </div>
-            <iframe
-              title={type === "strategy" ? "Schedule a MASM strategy call" : "Schedule a Growth Diagnostic consultation"}
-              src={calendlyEmbedUrl()}
-              className="h-[calc(100%-3.5rem)] w-full"
-            />
-          </div>
-        </div>
-      ) : null}
+                <div className="relative z-20 flex h-14 items-center justify-between border-b border-ink/15 bg-white px-5">
+                  <div>
+                    <span className="eyebrow">
+                      {type === "strategy"
+                        ? "MASM strategy call"
+                        : "Growth Diagnostic consultation"}
+                    </span>
+                    <span className="ml-3 hidden text-xs text-muted sm:inline">
+                      Choose a time that works for you
+                    </span>
+                  </div>
+                  <button
+                    ref={closeButtonRef}
+                    type="button"
+                    onClick={closeCalendly}
+                    className="relative z-20 grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line bg-white text-xl leading-none transition-colors hover:bg-ink hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+                    aria-label="Close booking window"
+                  >
+                    ×
+                  </button>
+                </div>
+                <iframe
+                  title={
+                    type === "strategy"
+                      ? "Schedule a MASM strategy call"
+                      : "Schedule a Growth Diagnostic consultation"
+                  }
+                  src={calendlyEmbedUrl()}
+                  className="relative z-0 block h-[calc(100%-3.5rem)] w-full"
+                />
+              </div>
+            </div>,
+            document.body,
+          )
+        : null}
     </>
   );
 }
