@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -20,18 +20,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Apply synchronized website update
-        if: ${{ hashFiles('update.patch.gz.b64') != '' }}
-        run: |
-          base64 --decode update.patch.gz.b64 | gzip -d > /tmp/masm-update.patch
-          git apply /tmp/masm-update.patch
-          rm update.patch.gz.b64
-          git config user.name "sianmatti"
-          git config user.email "sianmatti11@gmail.com"
-          git add -A
-          git commit -m "Apply MASM design and conversion updates"
-          git push origin HEAD:main
 
       - name: Set up Node
         uses: actions/setup-node@v4
