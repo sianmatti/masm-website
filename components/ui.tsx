@@ -1,20 +1,16 @@
 import type { InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from "react";
+import { sitePath } from "@/lib/site";
 
 export function BrandMark({ className = "h-8 w-8" }: { className?: string }) {
   return (
-    <svg
+    <img
       className={className}
-      viewBox="0 0 64 64"
-      fill="none"
+      src={sitePath("/masm-mark.svg")}
+      alt=""
+      width="48"
+      height="48"
       aria-hidden="true"
-    >
-      <path
-        d="M8 54V10l24 24 24-24v44M18 54V31l14 14 14-14v23M28 51l4 4 4-4-4-4-4 4Z"
-        stroke="currentColor"
-        strokeWidth="5"
-        strokeLinejoin="miter"
-      />
-    </svg>
+    />
   );
 }
 
@@ -26,14 +22,14 @@ export function BrandLockup({
   compact?: boolean;
 }) {
   return (
-    <span className={`flex items-center ${compact ? "gap-2.5" : "gap-3.5"}`}>
-      <BrandMark className={compact ? "h-8 w-8" : "h-10 w-10"} />
-      <span className="block border-l border-current/20 pl-3">
-        <strong className="block text-sm font-semibold tracking-[0.24em]">
+    <span className={`flex items-center ${compact ? "gap-2 sm:gap-3" : "gap-3.5"}`}>
+      <BrandMark className={compact ? "h-9 w-9 shrink-0 sm:h-10 sm:w-10" : "h-12 w-12 shrink-0"} />
+      <span className={`${compact ? "hidden min-[430px]:block" : "block"} border-l border-current/20 ${compact ? "pl-3" : "pl-3.5"}`}>
+        <strong className={`block font-semibold leading-none ${compact ? "text-[13px] tracking-[0.2em] sm:text-sm sm:tracking-[0.24em]" : "text-base tracking-[0.24em]"}`}>
           MASM
         </strong>
         <span
-          className={`mt-0.5 block text-[7px] font-medium uppercase tracking-[0.32em] ${
+          className={`mt-1 block font-medium uppercase leading-none ${compact ? "text-[7px] tracking-[0.28em] sm:tracking-[0.32em]" : "text-[7px] tracking-[0.32em]"} ${
             inverse ? "text-white/55" : "text-muted"
           }`}
         >
