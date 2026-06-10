@@ -14,7 +14,7 @@ export function Footer() {
           </div>
           <div className="flex flex-col justify-end gap-3 lg:col-span-3">
             <BookingCta inverted className="w-full" source="homepage_footer">
-              Book a Growth Diagnostic consultation
+              Book a Diagnostic
             </BookingCta>
             <BookingCta
               type="strategy"
@@ -40,9 +40,14 @@ export function Footer() {
           <div className="lg:col-span-2">
             <span className="font-mono text-[9px] uppercase tracking-wider text-white/35">Navigate</span>
             <div className="mt-4 space-y-3">
-              {["Diagnostic", "Services", "Approach", "Work"].map((item) => (
-                <a key={item} href={`#${item === "Approach" ? "approach" : item.toLowerCase()}`} className="block text-sm text-white/65 hover:text-white">
-                  {item}
+              {[
+                ["Diagnostic", "#diagnostic"],
+                ["Growth System", "#services"],
+                ["Client Outcomes", "#work"],
+                ["Why MASM", "#approach"],
+              ].map(([label, href]) => (
+                <a key={label} href={href} className="block text-sm text-white/65 hover:text-white">
+                  {label}
                 </a>
               ))}
             </div>
