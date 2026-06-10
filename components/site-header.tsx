@@ -36,12 +36,12 @@ export function SiteHeader({
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur-xl">
-      <div className="section-shell flex h-[68px] items-center justify-between sm:h-[72px]">
+      <div className="section-shell flex h-16 items-center justify-between sm:h-[68px]">
         <a href={sitePath("/")} aria-label="MASM homepage">
           <BrandLockup compact />
         </a>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
           {navItems.map((item) => (
             <a
               key={item.label}
