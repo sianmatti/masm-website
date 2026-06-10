@@ -36,17 +36,17 @@ export function Process() {
           label="Process"
           title={<>A clear path from first conversation to <span className="text-muted">compounding growth.</span></>}
         />
-        <div className="mt-16 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid border-l border-t border-line sm:mt-14 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
             <article
               key={step.number}
-              className="group min-h-[350px] border-b border-r border-line p-6 transition-colors hover:bg-paper sm:p-8"
+              className="group flex min-h-[290px] flex-col justify-between border-b border-r border-line p-6 transition-colors hover:bg-paper sm:p-8"
             >
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[10px] text-muted">{step.number}</span>
                 <span className="h-2 w-2 rounded-full border border-ink transition-colors group-hover:bg-ink" />
               </div>
-              <div className="mt-24">
+              <div className="mt-14">
                 <span className="font-mono text-[9px] uppercase tracking-wider text-muted">{step.duration}</span>
                 <h3 className="heading-card mt-4">{step.title}</h3>
                 <p className="body-small mt-4">{step.copy}</p>
@@ -54,6 +54,10 @@ export function Process() {
             </article>
           ))}
         </div>
+        <p className="mt-5 max-w-2xl text-sm leading-6 text-muted">
+          The Diagnostic creates the evidence base. A Growth Engine proposal is
+          made only when ongoing execution is the commercially sensible next step.
+        </p>
       </div>
     </section>
   );
