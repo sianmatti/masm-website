@@ -2,7 +2,10 @@ import { BookingCta } from "./booking-cta";
 
 function SystemGraphic() {
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[360px] sm:max-w-[420px]" aria-hidden="true">
+    <div
+      className="relative mx-auto aspect-square w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[330px]"
+      aria-hidden="true"
+    >
       <div className="absolute inset-[5%] rounded-full border border-ink/15" />
       <div className="absolute inset-[18%] rounded-full border border-dashed border-ink/30 animate-slow-spin" />
       <div className="absolute inset-[31%] rounded-full border border-ink/20" />
@@ -15,17 +18,17 @@ function SystemGraphic() {
         </div>
       </div>
       {[
-        ["PERFORMANCE", "left-[3%] top-[46%]"],
-        ["SEO", "right-[9%] top-[13%]"],
-        ["ANALYTICS", "right-0 top-[58%]"],
-        ["AUTOMATION", "bottom-[5%] left-[29%]"],
+        ["PERFORMANCE", "-left-[4%] top-[46%]"],
+        ["SEO", "right-[7%] top-[11%]"],
+        ["ANALYTICS", "-right-[4%] top-[58%]"],
+        ["AUTOMATION", "bottom-[3%] left-[27%]"],
       ].map(([label, position]) => (
         <div
           key={label}
-          className={`absolute ${position} flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-2 shadow-card`}
+          className={`absolute ${position} flex items-center gap-2 rounded-full border border-line bg-white px-2.5 py-1.5 shadow-card sm:px-3 sm:py-2`}
         >
           <span className="h-1.5 w-1.5 rounded-full bg-ink" />
-          <span className="text-[8px] font-medium tracking-[0.12em]">{label}</span>
+          <span className="text-[7px] font-medium tracking-[0.12em] sm:text-[8px]">{label}</span>
         </div>
       ))}
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 500 500">
@@ -37,9 +40,9 @@ function SystemGraphic() {
 
 export function Hero() {
   return (
-    <section className="grid-field relative overflow-hidden py-section-sm">
+    <section className="grid-field relative overflow-hidden pb-14 pt-10 sm:pb-16 sm:pt-12 lg:pb-20 lg:pt-14">
       <div className="section-shell">
-        <div className="mb-8 flex items-center gap-3 sm:mb-10">
+        <div className="mb-7 flex items-center gap-3 sm:mb-8">
           <span className="flex h-2 w-2 items-center justify-center rounded-full bg-ink">
             <span className="h-2 w-2 animate-ping rounded-full bg-ink" />
           </span>
@@ -55,14 +58,14 @@ export function Hero() {
           <span className="text-muted">scalable operating system.</span>
         </h1>
 
-        <div className="mt-10 grid items-center gap-10 lg:mt-5 lg:grid-cols-12">
-          <div className="lg:col-span-6">
+        <div className="mt-8 grid items-center gap-10 md:grid-cols-12 md:gap-6 lg:mt-7 lg:gap-10">
+          <div className="md:col-span-7 lg:col-span-7">
             <p className="body-lead max-w-lg">
               MASM connects strategy, acquisition, analytics, AI automation,
               and business optimization into one operating model for
               profitable growth.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <BookingCta source="homepage_hero">
                 Book a Diagnostic
               </BookingCta>
@@ -78,12 +81,12 @@ export function Hero() {
               Start with a focused consultation. If there is a fit, MASM will
               recommend the right next step.
             </p>
-            <p className="mt-6 border-l-2 border-ink pl-4 text-sm leading-6 text-muted">
+            <p className="mt-5 max-w-xl border-l-2 border-ink pl-4 text-sm leading-6 text-muted">
               Built for founders and growth leaders who are investing across
               multiple channels but lack one clear operating model.
             </p>
           </div>
-          <div className="lg:col-span-6">
+          <div className="md:col-span-5 lg:col-span-5">
             <SystemGraphic />
           </div>
         </div>
