@@ -37,7 +37,7 @@ const services = [
 
 function BarVisual() {
   return (
-    <div className="flex h-32 items-end gap-2" aria-hidden="true">
+    <div className="flex h-24 items-end gap-2" aria-hidden="true">
       {[24, 40, 34, 55, 49, 76, 68, 94].map((height, index) => (
         <span
           key={index}
@@ -51,7 +51,7 @@ function BarVisual() {
 
 function SearchVisual() {
   return (
-    <div className="relative h-32 overflow-hidden border border-ink/15 bg-white p-3" aria-hidden="true">
+    <div className="relative h-24 overflow-hidden border border-ink/15 bg-white p-3" aria-hidden="true">
       <div className="flex h-7 items-center gap-2 border-b border-ink/10">
         <span className="h-2.5 w-2.5 rounded-full border border-ink" />
         <span className="h-1.5 w-24 bg-ink/15" />
@@ -68,7 +68,7 @@ function SearchVisual() {
 
 function LineVisual() {
   return (
-    <svg className="h-32 w-full" viewBox="0 0 300 120" fill="none" aria-hidden="true">
+    <svg className="h-24 w-full" viewBox="0 0 300 120" fill="none" aria-hidden="true">
       {[20, 50, 80, 110].map((y) => (
         <path key={y} d={`M0 ${y}h300`} stroke="#000000" strokeOpacity=".1" />
       ))}
@@ -80,22 +80,22 @@ function LineVisual() {
 
 function NodeVisual() {
   return (
-    <div className="relative h-32" aria-hidden="true">
+    <div className="relative h-24" aria-hidden="true">
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 300 128">
         <path d="M45 64h75m30 0h75m-75 0v-37m0 37v37" stroke="#000000" strokeOpacity=".25" strokeDasharray="3 3" />
       </svg>
       {[
-        "left-[4%] top-[39%]",
-        "left-[42%] top-[39%]",
-        "right-[4%] top-[39%]",
-        "left-[42%] top-0",
-        "bottom-0 left-[42%]",
-      ].map((position, index) => (
+        ["IN", "left-[4%] top-[34%]"],
+        ["AI", "left-[42%] top-[34%]"],
+        ["OUT", "right-[4%] top-[34%]"],
+        ["CRM", "left-[42%] top-0"],
+        ["OPS", "bottom-0 left-[42%]"],
+      ].map(([label, position]) => (
         <span
-          key={position}
-          className={`absolute ${position} grid h-8 w-8 place-items-center border border-ink bg-paper font-mono text-[9px]`}
+          key={label}
+          className={`absolute ${position} grid h-8 w-8 place-items-center border border-ink bg-paper font-mono text-[7px]`}
         >
-          {index + 1}
+          {label}
         </span>
       ))}
     </div>
@@ -112,20 +112,36 @@ export function Services() {
           title={<>Four connected systems. <span className="text-muted">One commercial outcome.</span></>}
           description="MASM does not sell disconnected channel retainers. We connect strategy, acquisition, intelligence, and automation around profitable growth."
         />
-        <div className="mt-16 grid gap-4 md:grid-cols-2">
+        <div className="mt-10 border border-ink/15 bg-paper p-5 sm:mt-12 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-6">
+          <p className="max-w-3xl text-sm leading-6 text-muted">
+            Each system informs the next, so decisions, demand generation,
+            reporting, and automation operate from the same commercial model.
+          </p>
+          <div className="mt-4 flex items-center gap-2 sm:mt-0" aria-hidden="true">
+            {services.map((service, index) => (
+              <div key={service.number} className="flex items-center gap-2">
+                <span className="grid h-7 w-7 place-items-center rounded-full bg-ink font-mono text-[8px] text-white">
+                  {service.number}
+                </span>
+                {index < services.length - 1 ? <span className="h-px w-4 bg-ink/25" /> : null}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-4 grid border-l border-t border-line md:grid-cols-2">
           {services.map((service) => (
             <article
               key={service.title}
-              className="card-system-muted card-lift card-pad group min-h-[470px]"
+              className="group min-h-[390px] border-b border-r border-line bg-white p-6 transition-colors hover:bg-paper sm:p-8 lg:p-10"
             >
               <div className="flex items-start justify-between">
                 <span className="font-mono text-[10px] text-muted">{service.number}</span>
                 <ArrowIcon className="h-5 w-5 -rotate-45 transition-transform group-hover:rotate-0" />
               </div>
-              <div className="mt-12 border-b border-ink/15 pb-8">{service.visual}</div>
-              <h3 className="heading-card mt-7">{service.title}</h3>
-              <p className="body-small mt-3 max-w-md">{service.description}</p>
-              <div className="mt-7 flex flex-wrap gap-2">
+              <div className="mt-8 border-b border-ink/15 pb-6">{service.visual}</div>
+              <h3 className="heading-card mt-6">{service.title}</h3>
+              <p className="mt-3 max-w-md text-base leading-7 text-muted">{service.description}</p>
+              <div className="mt-6 flex flex-wrap gap-2">
                 {service.tags.map((tag) => (
                   <span key={tag} className="rounded-full border border-ink/15 px-3 py-1.5 font-mono text-[9px] uppercase tracking-wider">
                     {tag}
