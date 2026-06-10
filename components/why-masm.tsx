@@ -29,15 +29,15 @@ export function WhyMasm() {
           title={<>Traditional agencies optimize activity. <span className="text-white/40">MASM optimizes the business system.</span></>}
           light
         />
-        <div className="mt-20 grid lg:grid-cols-12">
-          <div className="border-y border-white/20 py-10 lg:col-span-4 lg:border-r lg:pr-12">
+        <div className="mt-14 grid lg:mt-16 lg:grid-cols-12">
+          <div className="border-y border-white/20 py-9 lg:col-span-4 lg:border-r lg:pr-12">
             <p className="body-lead max-w-sm !text-white/70">
               MASM combines consulting discipline with hands-on execution.
               Leadership gets one view of the constraint, the priorities, and
               the economics behind every recommendation.
             </p>
-            <div className="mt-16 flex items-end gap-3">
-              <span className="text-7xl font-medium tracking-[-0.08em]">1</span>
+            <div className="mt-12 flex items-end gap-3">
+              <span className="text-6xl font-medium tracking-[-0.08em] sm:text-7xl">1</span>
               <span className="pb-2 text-sm text-white/45">accountable growth system</span>
             </div>
           </div>
@@ -45,7 +45,7 @@ export function WhyMasm() {
             {principles.map((principle) => (
               <div
                 key={principle.metric}
-                className="group grid gap-4 border-b border-white/20 py-8 transition-colors hover:bg-white/[0.03] sm:grid-cols-12 sm:px-8"
+                className="group grid gap-4 border-b border-white/20 py-7 transition-colors hover:bg-white/[0.03] sm:grid-cols-12 sm:px-8"
               >
                 <span className="font-mono text-[10px] text-white/35 sm:col-span-1">{principle.metric}</span>
                 <h3 className="text-xl tracking-[-0.03em] sm:col-span-5">{principle.title}</h3>
