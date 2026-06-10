@@ -8,9 +8,9 @@
   --masm-gray: #f5f5f5;
   --masm-white: #ffffff;
   --font-sora: "Sora";
-  --space-section-sm: clamp(4.5rem, 8vw, 7rem);
-  --space-section: clamp(5.5rem, 10vw, 9rem);
-  --space-section-lg: clamp(6.5rem, 12vw, 11rem);
+  --space-section-sm: clamp(4rem, 7vw, 6.5rem);
+  --space-section: clamp(5rem, 9vw, 8rem);
+  --space-section-lg: clamp(6rem, 11vw, 10rem);
   --space-gutter: clamp(1.25rem, 4vw, 3.5rem);
   --container-site: 90rem;
 }
@@ -21,7 +21,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 88px;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -36,7 +36,7 @@ body {
 }
 
 section[id] {
-  scroll-margin-top: 88px;
+  scroll-margin-top: 80px;
 }
 
 button,
@@ -131,15 +131,15 @@ summary:focus-visible {
   }
 
   .button-primary {
-    @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 text-sm font-medium text-white transition-colors duration-200 hover:bg-charcoal;
+    @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 text-sm font-medium tracking-[-0.01em] text-white transition-colors duration-200 hover:bg-charcoal;
   }
 
   .button-secondary {
-    @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-ink/20 bg-transparent px-6 text-sm font-medium text-ink transition-colors duration-200 hover:border-ink hover:bg-white;
+    @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-ink/20 bg-transparent px-6 text-sm font-medium tracking-[-0.01em] text-ink transition-colors duration-200 hover:border-ink hover:bg-white;
   }
 
   .button-inverse {
-    @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-white bg-white px-6 text-sm font-medium text-ink transition-colors duration-200 hover:bg-paper;
+    @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-white bg-white px-6 text-sm font-medium tracking-[-0.01em] text-ink transition-colors duration-200 hover:bg-paper;
   }
 
   .card-system {
