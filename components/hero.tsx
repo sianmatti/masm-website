@@ -86,7 +86,7 @@ export function Hero() {
               multiple channels but lack one clear operating model.
             </p>
           </div>
-          <div className="md:col-span-5 lg:col-span-5">
+          <div className="hidden sm:block md:col-span-5 lg:col-span-5">
             <SystemGraphic />
           </div>
         </div>
