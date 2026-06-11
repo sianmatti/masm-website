@@ -9,12 +9,16 @@ export function Footer() {
           <div className="lg:col-span-9">
             <span className="eyebrow !text-white/45">Ready when you are</span>
             <h2 className="display-lg mt-6 max-w-5xl">
-              Build a growth system that gets smarter every quarter.
+              Ready to find the constraint limiting profitable growth?
             </h2>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-white/55">
+              Start with a focused consultation. If there is a fit, MASM will
+              recommend the right Diagnostic or execution path.
+            </p>
           </div>
           <div className="flex flex-col justify-end gap-3 lg:col-span-3">
             <BookingCta inverted className="w-full" source="homepage_footer">
-              Book a Diagnostic
+              Book a Growth Diagnostic
             </BookingCta>
             <BookingCta
               type="strategy"
@@ -57,6 +61,17 @@ export function Footer() {
             <a href="mailto:growth@masmgrowth.com" className="button-arrow mt-4 flex items-center gap-2 text-sm text-white/65 hover:text-white">
               Email us <ArrowIcon />
             </a>
+            <a href="#diagnostic" className="mt-3 block text-sm text-white/65 hover:text-white">
+              Start here: Growth Diagnostic
+            </a>
+            <BookingCta
+              type="strategy"
+              variant="secondary"
+              source="homepage_footer_fit"
+              className="mt-3 !min-h-0 !justify-start !border-0 !p-0 !text-sm !text-white/65 hover:!bg-transparent hover:!text-white"
+            >
+              For fit questions: Book a strategy call
+            </BookingCta>
           </div>
           <div className="lg:col-span-3 lg:text-right">
             <span className="font-mono text-[9px] uppercase tracking-wider text-white/35">Operating globally</span>
