@@ -16,16 +16,16 @@ export function Diagnostic() {
         <div className="overflow-hidden border border-ink/20 bg-white shadow-card">
           <div className="grid md:grid-cols-2">
             <div className="p-7 sm:p-10 lg:p-14">
-              <div className="border border-ink bg-paper p-4 sm:flex sm:items-center sm:justify-between sm:gap-6">
-                <div>
+              <div className="grid overflow-hidden border border-ink sm:grid-cols-[1fr_auto]">
+                <div className="bg-paper p-4 sm:p-5">
                   <span className="eyebrow">Recommended first step</span>
-                  <p className="mt-1 text-sm font-medium">Growth Diagnostic</p>
+                  <p className="mt-1.5 text-base font-medium tracking-[-0.02em]">Growth Diagnostic</p>
                 </div>
-                <div className="mt-4 border-t border-ink/15 pt-4 sm:mt-0 sm:border-l sm:border-t-0 sm:pl-6 sm:pt-0 sm:text-right">
-                  <span className="block font-mono text-[9px] uppercase tracking-[0.14em] text-muted">
+                <div className="flex items-center justify-between gap-6 border-t border-ink bg-ink px-4 py-4 text-white sm:min-w-[170px] sm:flex-col sm:items-end sm:justify-center sm:border-l sm:border-t-0 sm:px-6 sm:text-right">
+                  <span className="block font-mono text-[9px] font-medium uppercase tracking-[0.16em] text-white/60">
                     Fixed scope
                   </span>
-                  <strong className="mt-1 block text-3xl font-semibold tracking-[-0.06em]">$1,250</strong>
+                  <strong className="block text-4xl font-semibold leading-none tracking-[-0.07em]">$1,250</strong>
                 </div>
               </div>
               <h2 className="mt-7 text-[clamp(2rem,3.2vw,3.5rem)] font-semibold leading-[1.03] tracking-[-0.045em] text-balance">
@@ -59,8 +59,8 @@ export function Diagnostic() {
                 </ButtonLink>
               </div>
               <div className="mt-5 grid gap-2 border-t border-ink/15 pt-4 text-xs leading-5 text-muted sm:grid-cols-2">
-                <p><strong className="font-medium text-ink">Delivery:</strong> Five business days.</p>
-                <p><strong className="font-medium text-ink">Fee credit:</strong> Applied to eligible Growth Engine engagements started within 30 days.</p>
+                <p><strong className="font-medium text-ink">Delivered in five business days.</strong></p>
+                <p><strong className="font-medium text-ink">Fee credited toward eligible Growth Engine engagements started within 30 days.</strong></p>
               </div>
             </div>
             <div className="border-t border-ink/20 bg-ink p-7 text-white sm:p-10 md:border-l md:border-t-0 lg:p-12">
