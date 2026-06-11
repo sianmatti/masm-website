@@ -58,7 +58,7 @@ export function Footer() {
           </div>
           <div className="lg:col-span-2">
             <span className="font-mono text-[9px] uppercase tracking-wider text-white/35">Connect</span>
-            <a href="mailto:growth@masmgrowth.com" className="button-arrow mt-4 flex items-center gap-2 text-sm text-white/65 hover:text-white">
+            <a href="mailto:info@masmgrowth.com" className="button-arrow mt-4 flex items-center gap-2 text-sm text-white/65 hover:text-white">
               Email us <ArrowIcon />
             </a>
             <a href="#diagnostic" className="mt-3 block text-sm text-white/65 hover:text-white">
