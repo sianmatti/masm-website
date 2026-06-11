@@ -1,49 +1,44 @@
 import { BookingCta } from "./booking-cta";
 
 function SystemGraphic() {
-  const inputs = ["Performance", "SEO", "Analytics", "Automation"];
-  const outputs = ["Cleaner decisions", "Better payback", "Scalable execution"];
-
   return (
-    <div
-      className="relative mx-auto grid h-[260px] w-full max-w-[390px] grid-cols-[1fr_112px_1fr] items-center gap-3"
-      aria-hidden="true"
-    >
-      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 390 260">
-        <path d="M112 54h54M112 103h54M112 152h54M112 201h54M224 78h54M224 130h54M224 182h54" stroke="#000" strokeOpacity=".18" strokeDasharray="3 5" />
-      </svg>
-      <div className="relative z-10 space-y-3">
-        <span className="block font-mono text-[8px] font-medium uppercase tracking-[0.14em] text-muted">
-          Fragmented inputs
-        </span>
-        {inputs.map((label) => (
-          <div key={label} className="border border-ink/15 bg-white px-3 py-2 text-[10px] font-medium">
-            {label}
+    <figure className="mx-auto w-full max-w-[280px] sm:max-w-[310px] lg:max-w-[340px]">
+      <div className="relative aspect-square w-full" aria-hidden="true">
+        <div className="absolute inset-[5%] rounded-full border border-ink/15" />
+        <div className="absolute inset-[18%] animate-slow-spin rounded-full border border-dashed border-ink/25" />
+        <div className="absolute inset-[31%] rounded-full border border-ink/20" />
+        <div className="absolute left-1/2 top-1/2 z-10 grid h-[34%] w-[34%] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-ink px-3 text-center text-white shadow-card">
+          <div className="flex flex-col items-center justify-center">
+            <span className="block whitespace-nowrap text-[7px] font-medium uppercase leading-none tracking-[0.15em] text-white/55 sm:text-[8px]">
+              Growth OS
+            </span>
+            <span className="my-2.5 block h-px w-7 bg-white/25 sm:my-3 sm:w-8" />
+            <strong className="block whitespace-nowrap text-base font-semibold leading-none tracking-[-0.04em] sm:text-lg">
+              MASM
+            </strong>
           </div>
-        ))}
-      </div>
-      <div className="relative z-10 grid aspect-square place-items-center rounded-full bg-ink px-3 text-center text-white shadow-card">
-        <div>
-          <span className="block text-[8px] font-semibold uppercase tracking-[0.16em]">
-            MASM Growth OS
-          </span>
-          <span className="mx-auto my-3 block h-px w-10 bg-white/25" />
-          <span className="block text-[8px] leading-4 text-white/65">
-            Strategy<br />Economics<br />Operating model
-          </span>
         </div>
-      </div>
-      <div className="relative z-10 space-y-3">
-        <span className="block font-mono text-[8px] font-medium uppercase tracking-[0.14em] text-muted">
-          Commercial outputs
-        </span>
-        {outputs.map((label) => (
-          <div key={label} className="border border-ink/15 bg-paper px-3 py-3 text-[10px] font-medium">
-            {label}
+        {[
+          ["Performance", "left-0 top-[43%]"],
+          ["SEO", "right-[8%] top-[10%]"],
+          ["Analytics", "right-0 top-[59%]"],
+          ["Automation", "bottom-[3%] left-[25%]"],
+        ].map(([label, position]) => (
+          <div
+            key={label}
+            className={`absolute ${position} z-20 flex items-center gap-2 rounded-full border border-ink/15 bg-white/95 px-3 py-2 shadow-card backdrop-blur-sm`}
+          >
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ink" />
+            <span className="whitespace-nowrap text-[8px] font-medium uppercase tracking-[0.1em] sm:text-[9px]">
+              {label}
+            </span>
           </div>
         ))}
       </div>
-    </div>
+      <figcaption className="mx-auto mt-3 max-w-[270px] text-center text-[10px] leading-5 text-muted sm:mt-4 sm:text-xs">
+        Fragmented growth inputs organized into one operating system.
+      </figcaption>
+    </figure>
   );
 }
 
@@ -96,7 +91,7 @@ export function Hero() {
               wasting money, and what to fix next.
             </p>
           </div>
-          <div className="hidden sm:block md:col-span-5 lg:col-span-5">
+          <div className="mt-1 md:col-span-5 md:mt-0 lg:col-span-5">
             <SystemGraphic />
           </div>
         </div>
