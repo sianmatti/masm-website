@@ -5,11 +5,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://masmgrowth.com"),
   title: {
-    default: "MASM Growth Systems | Engineered Growth",
+    default: "MASM Growth Systems | Growth Strategy, Analytics, SEO & AI Automation",
     template: "%s | MASM Growth Systems",
   },
   description:
-    "MASM builds integrated growth systems across performance marketing, SEO, analytics, and automation for ambitious companies.",
+    "MASM helps founders and growth leaders connect strategy, acquisition, SEO, analytics, AI automation, and business optimization into one operating model for profitable growth.",
   keywords: [
     "growth consultancy",
     "performance marketing",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     "growth systems",
   ],
   openGraph: {
-    title: "MASM Growth Systems | Engineered Growth",
+    title: "MASM Growth Systems | Growth Strategy, Analytics, SEO & AI Automation",
     description:
-      "Your growth channels should compound, not compete. We build the system that makes them work together.",
+      "MASM helps founders and growth leaders connect strategy, acquisition, SEO, analytics, AI automation, and business optimization into one operating model for profitable growth.",
     url: "https://masmgrowth.com",
     siteName: "MASM Growth Systems",
     locale: "en_US",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MASM Growth Systems | Engineered Growth",
+    title: "MASM Growth Systems | Growth Strategy, Analytics, SEO & AI Automation",
     description:
-      "Integrated performance, SEO, analytics, and automation systems for ambitious companies.",
+      "MASM helps founders and growth leaders connect strategy, acquisition, SEO, analytics, AI automation, and business optimization into one operating model for profitable growth.",
   },
   robots: {
     index: true,
