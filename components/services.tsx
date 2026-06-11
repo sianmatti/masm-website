@@ -80,24 +80,32 @@ function LineVisual() {
 
 function NodeVisual() {
   return (
-    <div className="relative h-24" aria-hidden="true">
-      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 300 128">
-        <path d="M45 64h75m30 0h75m-75 0v-37m0 37v37" stroke="#000000" strokeOpacity=".25" strokeDasharray="3 3" />
-      </svg>
-      {[
-        ["IN", "left-[4%] top-[34%]"],
-        ["AI", "left-[42%] top-[34%]"],
-        ["OUT", "right-[4%] top-[34%]"],
-        ["CRM", "left-[42%] top-0"],
-        ["OPS", "bottom-0 left-[42%]"],
-      ].map(([label, position]) => (
-        <span
-          key={label}
-          className={`absolute ${position} grid h-8 w-8 place-items-center border border-ink bg-paper font-mono text-[7px]`}
-        >
-          {label}
+    <div className="grid h-24 grid-cols-[1fr_auto_1.25fr_auto_1fr] items-center" aria-hidden="true">
+      <div className="grid min-h-12 place-items-center border border-ink/20 bg-white px-2 text-center">
+        <span className="font-mono text-[8px] font-medium uppercase tracking-[0.12em] text-muted">
+          Input
         </span>
-      ))}
+      </div>
+      <div className="flex items-center">
+        <span className="h-px w-3 bg-ink/25 sm:w-5" />
+        <span className="text-[10px] text-ink/45">→</span>
+        <span className="h-px w-3 bg-ink/25 sm:w-5" />
+      </div>
+      <div className="grid min-h-16 place-items-center border border-ink bg-ink px-2 text-center text-white">
+        <span className="font-mono text-[8px] font-medium uppercase leading-4 tracking-[0.12em]">
+          AI Workflow
+        </span>
+      </div>
+      <div className="flex items-center">
+        <span className="h-px w-3 bg-ink/25 sm:w-5" />
+        <span className="text-[10px] text-ink/45">→</span>
+        <span className="h-px w-3 bg-ink/25 sm:w-5" />
+      </div>
+      <div className="grid min-h-12 place-items-center border border-ink/20 bg-white px-2 text-center">
+        <span className="font-mono text-[8px] font-medium uppercase tracking-[0.12em] text-muted">
+          Output
+        </span>
+      </div>
     </div>
   );
 }
