@@ -49,10 +49,10 @@ export function Diagnostic() {
                 investing in growth but lacking one clear view of what is working,
                 what is wasting budget, and what should be prioritized next.
               </p>
-              <span className="eyebrow mt-7 block">You leave with</span>
-              <div className="mt-7 grid border-l border-t border-line text-sm sm:grid-cols-2">
+              <span className="eyebrow mt-6 block sm:mt-7">You leave with</span>
+              <div className="mt-4 grid border-l border-t border-line text-sm sm:mt-5 sm:grid-cols-2">
                 {deliverables.map(([title, outcome]) => (
-                  <div key={title} className="flex min-h-24 items-start gap-3 border-b border-r border-line px-4 py-4">
+                  <div key={title} className="flex items-start gap-2.5 border-b border-r border-line px-3.5 py-3.5 sm:min-h-24 sm:gap-3 sm:px-4 sm:py-4">
                     <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-ink text-[10px] text-white">✓</span>
                     <span>
                       <strong className="block font-medium">{title}</strong>
