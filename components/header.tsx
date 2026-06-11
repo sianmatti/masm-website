@@ -8,5 +8,5 @@ const navItems = [
 ];
 
 export function Header() {
-  return <SiteHeader navItems={navItems} ctaLabel="Book a Diagnostic" bookingCta />;
+  return <SiteHeader navItems={navItems} ctaLabel="Book a Growth Diagnostic" bookingCta />;
 }
