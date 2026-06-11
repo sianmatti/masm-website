@@ -16,7 +16,7 @@ export default function Home() {
       "@type": "Organization",
       name: "MASM Growth Systems",
       url: "https://masmgrowth.com",
-      email: "growth@masmgrowth.com",
+      email: "info@masmgrowth.com",
       logo: "https://masmgrowth.com/masm-mark.svg",
       description:
         "A growth systems consultancy connecting strategy, acquisition, SEO, analytics, AI automation, and business optimization.",
@@ -26,7 +26,7 @@ export default function Home() {
       "@type": "ProfessionalService",
       name: "MASM Growth Systems",
       url: "https://masmgrowth.com",
-      email: "growth@masmgrowth.com",
+      email: "info@masmgrowth.com",
       areaServed: "Worldwide",
       serviceType: [
         "Growth strategy",
