@@ -501,7 +501,7 @@ function FinalCta() {
           <div className="flex flex-wrap gap-6 text-sm text-white/45">
             <a href={sitePath("/#services")} className="hover:text-white">Growth System</a>
             <a href={sitePath("/#work")} className="hover:text-white">Client Outcomes</a>
-            <a href="mailto:growth@masmgrowth.com" className="button-arrow flex items-center gap-2 hover:text-white">
+            <a href="mailto:info@masmgrowth.com" className="button-arrow flex items-center gap-2 hover:text-white">
               Contact <ArrowIcon />
             </a>
           </div>
