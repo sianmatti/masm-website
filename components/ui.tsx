@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from "react";
+import type { ReactNode } from "react";
 import { sitePath } from "@/lib/site";
 
 export function BrandMark({ className = "h-8 w-8" }: { className?: string }) {
@@ -48,14 +48,6 @@ export function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
       aria-hidden="true"
     >
       <path d="M4 10h11M11 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
-  );
-}
-
-export function PlusIcon() {
-  return (
-    <svg className="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M10 3v14M3 10h14" stroke="currentColor" strokeWidth="1.4" />
     </svg>
   );
 }
@@ -130,65 +122,5 @@ export function SectionHeading({
         ) : null}
       </div>
     </div>
-  );
-}
-
-type FieldBaseProps = {
-  label: string;
-  name: string;
-  helpText?: string;
-};
-
-export function FormField({
-  label,
-  name,
-  helpText,
-  ...props
-}: FieldBaseProps & InputHTMLAttributes<HTMLInputElement>) {
-  const helpId = helpText ? `${name}-help` : undefined;
-
-  return (
-    <label className="block" htmlFor={name}>
-      <span className="form-label">{label}</span>
-      <input
-        {...props}
-        id={name}
-        name={name}
-        className={`form-control ${props.className ?? ""}`}
-        aria-describedby={helpId}
-      />
-      {helpText ? (
-        <span id={helpId} className="form-help">
-          {helpText}
-        </span>
-      ) : null}
-    </label>
-  );
-}
-
-export function TextAreaField({
-  label,
-  name,
-  helpText,
-  ...props
-}: FieldBaseProps & TextareaHTMLAttributes<HTMLTextAreaElement>) {
-  const helpId = helpText ? `${name}-help` : undefined;
-
-  return (
-    <label className="block" htmlFor={name}>
-      <span className="form-label">{label}</span>
-      <textarea
-        {...props}
-        id={name}
-        name={name}
-        className={`form-textarea ${props.className ?? ""}`}
-        aria-describedby={helpId}
-      />
-      {helpText ? (
-        <span id={helpId} className="form-help">
-          {helpText}
-        </span>
-      ) : null}
-    </label>
   );
 }
