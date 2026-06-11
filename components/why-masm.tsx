@@ -32,10 +32,23 @@ export function WhyMasm() {
         <div className="mt-14 grid lg:mt-16 lg:grid-cols-12">
           <div className="border-y border-white/20 py-9 lg:col-span-4 lg:border-r lg:pr-12">
             <p className="body-lead max-w-sm !text-white/70">
-              MASM combines consulting discipline with hands-on execution.
-              Leadership gets one view of the constraint, the priorities, and
-              the economics behind every recommendation.
+              MASM is built for leaders who do not need more disconnected
+              activity. They need one operating model that tells them what to
+              fix, what to fund, what to stop, and what to systematize.
             </p>
+            <div className="mt-9 space-y-3 border-t border-white/15 pt-6">
+              {[
+                "Not disconnected channel retainers.",
+                "Not reports without decisions.",
+                "Not automation without operating logic.",
+                "Not strategy without execution.",
+              ].map((item) => (
+                <p key={item} className="flex gap-3 text-xs leading-5 text-white/55">
+                  <span className="text-white/30">—</span>
+                  {item}
+                </p>
+              ))}
+            </div>
             <div className="mt-12 flex items-end gap-3">
               <span className="text-6xl font-medium tracking-[-0.08em] sm:text-7xl">1</span>
               <span className="pb-2 text-sm text-white/45">accountable growth system</span>
