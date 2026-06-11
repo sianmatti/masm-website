@@ -57,8 +57,8 @@ export function Process() {
           ))}
         </div>
         <p className="mt-5 max-w-2xl text-sm leading-6 text-muted">
-          The Diagnostic creates the evidence base. A Growth Engine proposal is
-          made only when ongoing execution is the commercially sensible next step.
+          MASM does not recommend an ongoing engagement unless the Diagnostic
+          shows a clear execution case.
         </p>
       </div>
     </section>
