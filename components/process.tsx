@@ -5,25 +5,25 @@ const steps = [
     number: "01",
     title: "Consultation",
     copy: "Clarify the business context, current growth constraint, and whether MASM is the right fit.",
-    duration: "30 minutes",
+    duration: "30 MINUTES",
   },
   {
     number: "02",
     title: "Growth Diagnostic",
     copy: "Assess the system and turn fragmented signals into a prioritized 90-day direction.",
-    duration: "5 business days",
+    duration: "5 BUSINESS DAYS",
   },
   {
     number: "03",
     title: "Decision & Proposal",
     copy: "Review the evidence, agree on priorities, and define the right execution model when there is a fit.",
-    duration: "Leadership readout",
+    duration: "LEADERSHIP READOUT",
   },
   {
     number: "04",
     title: "Growth Engine",
     copy: "MASM helps implement, operate, and improve the highest-value parts of the growth system.",
-    duration: "$2.5k–$5k+ / month",
+    duration: "$2.5K–$5K+ / MONTH",
   },
 ];
 
@@ -46,9 +46,11 @@ export function Process() {
                 <span className="font-mono text-[10px] text-muted">{step.number}</span>
                 <span className="h-2 w-2 rounded-full border border-ink transition-colors group-hover:bg-ink" />
               </div>
-              <div className="mt-14">
-                <span className="font-mono text-[9px] uppercase tracking-wider text-muted">{step.duration}</span>
-                <h3 className="heading-card mt-4">{step.title}</h3>
+              <div className="mt-12">
+                <span className="inline-flex min-h-7 items-center rounded-full border border-ink/20 bg-paper px-3 font-mono text-[9px] font-medium uppercase tracking-[0.12em] text-ink">
+                  {step.duration}
+                </span>
+                <h3 className="heading-card mt-5">{step.title}</h3>
                 <p className="body-small mt-4">{step.copy}</p>
               </div>
             </article>
