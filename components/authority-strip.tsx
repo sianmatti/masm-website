@@ -1,8 +1,8 @@
 const authoritySignals = [
-  ["Senior-led", "Strategy and delivery stay close to experienced operators."],
-  ["Economics-first", "Decisions connect to margin, payback, and growth quality."],
-  ["System-wide", "Acquisition, intelligence, and automation move together."],
-  ["Built to execute", "Every recommendation is sequenced into an operating plan."],
+  ["Senior-led", "Strategy and delivery stay close to experienced operators — not junior account handoffs."],
+  ["Economics-first", "Priorities are tied to margin, payback, CAC, revenue quality, and operating capacity."],
+  ["System-wide", "Paid, organic, analytics, automation, and conversion are managed as one model."],
+  ["Built to execute", "Recommendations become sequenced operating plans, not slideware."],
 ];
 
 export function AuthorityStrip() {
@@ -16,8 +16,8 @@ export function AuthorityStrip() {
               index ? "border-t border-line sm:border-l sm:border-t-0" : ""
             }`}
           >
-            <strong className="block text-sm font-semibold">{title}</strong>
-            <p className="mt-2 text-xs leading-5 text-muted">{copy}</p>
+            <strong className="block text-sm font-semibold tracking-[-0.02em]">{title}</strong>
+            <p className="mt-2 max-w-xs text-xs leading-5 text-muted">{copy}</p>
           </div>
         ))}
       </div>
