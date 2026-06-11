@@ -25,6 +25,17 @@ export function BookingCta({
   const [isOpen, setIsOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const bookingUrl = new URL(calendlyUrl);
+  bookingUrl.searchParams.set("utm_source", "masm_website");
+  bookingUrl.searchParams.set("utm_campaign", source);
+
+  const buttonClassName = `${
+    inverted
+      ? "button-inverse"
+      : variant === "secondary"
+        ? "button-secondary"
+        : "button-primary"
+  } ${className}`;
 
   useEffect(() => {
     if (!isOpen) return;
@@ -53,33 +64,25 @@ export function BookingCta({
 
   const closeCalendly = () => setIsOpen(false);
 
-  const openCalendly = () => {
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
-    const url = new URL(calendlyUrl);
-    url.searchParams.set("utm_source", "masm_website");
-    url.searchParams.set("utm_campaign", source);
-
-    if (isMobile) {
-      window.open(url.toString(), "_blank", "noopener,noreferrer");
-      return;
-    }
-
-    setIsOpen(true);
-  };
+  const openCalendly = () => setIsOpen(true);
 
   return (
     <>
+      <a
+        href={bookingUrl.toString()}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${buttonClassName} md:hidden`}
+        data-booking-source={source}
+      >
+        {children}
+        <ArrowIcon />
+      </a>
       <button
         ref={triggerRef}
         type="button"
         onClick={openCalendly}
-        className={`${
-          inverted
-            ? "button-inverse"
-            : variant === "secondary"
-              ? "button-secondary"
-              : "button-primary"
-        } ${className}`}
+        className={`${buttonClassName} hidden md:inline-flex`}
         data-booking-source={source}
       >
         {children}
