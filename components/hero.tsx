@@ -2,27 +2,27 @@ import { BookingCta } from "./booking-cta";
 
 function SystemGraphic() {
   return (
-    <figure className="mx-auto w-full max-w-[220px] sm:max-w-[310px] lg:max-w-[340px]">
+    <figure className="mx-auto w-full max-w-[200px] sm:max-w-[280px] lg:max-w-[340px]">
       <div className="relative aspect-square w-full" aria-hidden="true">
         <div className="absolute inset-[5%] rounded-full border border-ink/15" />
         <div className="absolute inset-[18%] animate-slow-spin rounded-full border border-dashed border-ink/25" />
         <div className="absolute inset-[31%] rounded-full border border-ink/20" />
-        <div className="absolute left-1/2 top-1/2 z-10 grid h-[34%] w-[34%] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-ink px-3 text-center text-white shadow-card">
+        <div className="absolute left-1/2 top-1/2 z-10 grid h-[35%] w-[35%] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-ink px-3 text-center text-white shadow-card">
           <div className="flex flex-col items-center justify-center">
-            <span className="block whitespace-nowrap text-[6px] font-medium uppercase leading-none tracking-[0.14em] text-white/55 sm:text-[8px] sm:tracking-[0.15em]">
+            <span className="block whitespace-nowrap text-[6px] font-medium uppercase leading-none tracking-[0.14em] text-white/70 sm:text-[8px] sm:tracking-[0.15em]">
               Growth OS
             </span>
-            <span className="my-2 block h-px w-6 bg-white/25 sm:my-3 sm:w-8" />
+            <span className="my-2 block h-px w-6 bg-white/30 sm:my-2.5 sm:w-8" />
             <strong className="block whitespace-nowrap text-sm font-semibold leading-none tracking-[-0.04em] sm:text-lg">
               MASM
             </strong>
           </div>
         </div>
         {[
-          ["Performance", "left-0 top-[43%]"],
-          ["SEO", "right-[8%] top-[10%]"],
-          ["Analytics", "right-0 top-[59%]"],
-          ["Automation", "bottom-[3%] left-[25%]"],
+          ["Performance", "left-[4%] top-[43%]"],
+          ["SEO", "right-[9%] top-[10%]"],
+          ["Analytics", "right-[2%] top-[59%]"],
+          ["Automation", "bottom-[4%] left-[26%]"],
         ].map(([label, position]) => (
           <div
             key={label}
@@ -35,7 +35,7 @@ function SystemGraphic() {
           </div>
         ))}
       </div>
-      <figcaption className="mx-auto mt-2 max-w-[220px] text-center text-[9px] leading-4 text-muted sm:mt-4 sm:max-w-[270px] sm:text-xs sm:leading-5">
+      <figcaption className="mx-auto mt-2.5 max-w-[210px] text-center text-[9px] leading-[1.55] text-ink/45 sm:mt-3 sm:max-w-[250px] sm:text-[10px] sm:leading-[1.6]">
         Fragmented growth inputs organized into one operating system.
       </figcaption>
     </figure>
