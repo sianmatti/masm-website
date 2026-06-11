@@ -2,18 +2,18 @@ import { BookingCta } from "./booking-cta";
 
 function SystemGraphic() {
   return (
-    <figure className="mx-auto w-full max-w-[280px] sm:max-w-[310px] lg:max-w-[340px]">
+    <figure className="mx-auto w-full max-w-[220px] sm:max-w-[310px] lg:max-w-[340px]">
       <div className="relative aspect-square w-full" aria-hidden="true">
         <div className="absolute inset-[5%] rounded-full border border-ink/15" />
         <div className="absolute inset-[18%] animate-slow-spin rounded-full border border-dashed border-ink/25" />
         <div className="absolute inset-[31%] rounded-full border border-ink/20" />
         <div className="absolute left-1/2 top-1/2 z-10 grid h-[34%] w-[34%] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-ink px-3 text-center text-white shadow-card">
           <div className="flex flex-col items-center justify-center">
-            <span className="block whitespace-nowrap text-[7px] font-medium uppercase leading-none tracking-[0.15em] text-white/55 sm:text-[8px]">
+            <span className="block whitespace-nowrap text-[6px] font-medium uppercase leading-none tracking-[0.14em] text-white/55 sm:text-[8px] sm:tracking-[0.15em]">
               Growth OS
             </span>
-            <span className="my-2.5 block h-px w-7 bg-white/25 sm:my-3 sm:w-8" />
-            <strong className="block whitespace-nowrap text-base font-semibold leading-none tracking-[-0.04em] sm:text-lg">
+            <span className="my-2 block h-px w-6 bg-white/25 sm:my-3 sm:w-8" />
+            <strong className="block whitespace-nowrap text-sm font-semibold leading-none tracking-[-0.04em] sm:text-lg">
               MASM
             </strong>
           </div>
@@ -26,16 +26,16 @@ function SystemGraphic() {
         ].map(([label, position]) => (
           <div
             key={label}
-            className={`absolute ${position} z-20 flex items-center gap-2 rounded-full border border-ink/15 bg-white/95 px-3 py-2 shadow-card backdrop-blur-sm`}
+            className={`absolute ${position} z-20 flex items-center gap-1.5 rounded-full border border-ink/15 bg-white/95 px-2.5 py-1.5 shadow-card backdrop-blur-sm sm:gap-2 sm:px-3 sm:py-2`}
           >
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ink" />
-            <span className="whitespace-nowrap text-[8px] font-medium uppercase tracking-[0.1em] sm:text-[9px]">
+            <span className="whitespace-nowrap text-[7px] font-medium uppercase tracking-[0.08em] sm:text-[9px] sm:tracking-[0.1em]">
               {label}
             </span>
           </div>
         ))}
       </div>
-      <figcaption className="mx-auto mt-3 max-w-[270px] text-center text-[10px] leading-5 text-muted sm:mt-4 sm:text-xs">
+      <figcaption className="mx-auto mt-2 max-w-[220px] text-center text-[9px] leading-4 text-muted sm:mt-4 sm:max-w-[270px] sm:text-xs sm:leading-5">
         Fragmented growth inputs organized into one operating system.
       </figcaption>
     </figure>
@@ -62,7 +62,7 @@ export function Hero() {
           <span className="text-muted">scalable operating system.</span>
         </h1>
 
-        <div className="mt-8 grid items-center gap-10 md:grid-cols-12 md:gap-6 lg:mt-7 lg:gap-10">
+        <div className="mt-8 grid items-center gap-6 md:grid-cols-12 md:gap-6 lg:mt-7 lg:gap-10">
           <div className="md:col-span-7 lg:col-span-7">
             <p className="body-lead max-w-lg">
               MASM helps growth-stage companies align acquisition, SEO,
