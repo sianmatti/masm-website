@@ -122,8 +122,9 @@ export function Services() {
         />
         <div className="mt-10 border border-ink/15 bg-paper p-5 sm:mt-12 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-6">
           <p className="max-w-3xl text-sm leading-6 text-muted">
-            Each system informs the next, so decisions, demand generation,
-            reporting, and automation operate from the same commercial model.
+            MASM starts with the commercial constraint, then aligns acquisition,
+            measurement, and automation around the highest-value path to
+            profitable growth.
           </p>
           <div className="mt-4 flex items-center sm:mt-0" aria-hidden="true">
             {services.map((service, index) => (
