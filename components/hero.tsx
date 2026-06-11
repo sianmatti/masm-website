@@ -1,48 +1,55 @@
 import { BookingCta } from "./booking-cta";
 
 function SystemGraphic() {
+  const inputs = ["Performance", "SEO", "Analytics", "Automation"];
+  const outputs = ["Cleaner decisions", "Better payback", "Scalable execution"];
+
   return (
     <div
-      className="relative mx-auto aspect-square w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[330px]"
+      className="relative mx-auto grid h-[260px] w-full max-w-[390px] grid-cols-[1fr_112px_1fr] items-center gap-3"
       aria-hidden="true"
     >
-      <div className="absolute inset-[5%] rounded-full border border-ink/15" />
-      <div className="absolute inset-[18%] rounded-full border border-dashed border-ink/30 animate-slow-spin" />
-      <div className="absolute inset-[31%] rounded-full border border-ink/20" />
-      <div className="absolute inset-[35%] grid place-items-center overflow-hidden rounded-full bg-ink text-white shadow-card">
-        <div className="flex flex-col items-center justify-center text-center">
-          <span className="block whitespace-nowrap text-[7px] font-medium uppercase leading-none tracking-[0.16em] text-white/55 sm:text-[8px]">
-            Growth OS
+      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 390 260">
+        <path d="M112 54h54M112 103h54M112 152h54M112 201h54M224 78h54M224 130h54M224 182h54" stroke="#000" strokeOpacity=".18" strokeDasharray="3 5" />
+      </svg>
+      <div className="relative z-10 space-y-3">
+        <span className="block font-mono text-[8px] font-medium uppercase tracking-[0.14em] text-muted">
+          Fragmented inputs
+        </span>
+        {inputs.map((label) => (
+          <div key={label} className="border border-ink/15 bg-white px-3 py-2 text-[10px] font-medium">
+            {label}
+          </div>
+        ))}
+      </div>
+      <div className="relative z-10 grid aspect-square place-items-center rounded-full bg-ink px-3 text-center text-white shadow-card">
+        <div>
+          <span className="block text-[8px] font-semibold uppercase tracking-[0.16em]">
+            MASM Growth OS
           </span>
-          <span className="mt-2 block whitespace-nowrap text-lg font-semibold leading-none tracking-[-0.05em] sm:text-xl">
-            MASM
+          <span className="mx-auto my-3 block h-px w-10 bg-white/25" />
+          <span className="block text-[8px] leading-4 text-white/65">
+            Strategy<br />Economics<br />Operating model
           </span>
         </div>
       </div>
-      {[
-        ["PERFORMANCE", "-left-[4%] top-[46%]"],
-        ["SEO", "right-[7%] top-[11%]"],
-        ["ANALYTICS", "-right-[4%] top-[58%]"],
-        ["AUTOMATION", "bottom-[3%] left-[27%]"],
-      ].map(([label, position]) => (
-        <div
-          key={label}
-          className={`absolute ${position} flex items-center gap-2 rounded-full border border-line bg-white px-2.5 py-1.5 shadow-card sm:px-3 sm:py-2`}
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-ink" />
-          <span className="text-[7px] font-medium tracking-[0.12em] sm:text-[8px]">{label}</span>
-        </div>
-      ))}
-      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 500 500">
-        <path d="M250 54v145M414 165 301 221M435 296l-134-34M300 430l-35-131M75 250h126" stroke="#000000" strokeOpacity=".16" strokeDasharray="3 5" />
-      </svg>
+      <div className="relative z-10 space-y-3">
+        <span className="block font-mono text-[8px] font-medium uppercase tracking-[0.14em] text-muted">
+          Commercial outputs
+        </span>
+        {outputs.map((label) => (
+          <div key={label} className="border border-ink/15 bg-paper px-3 py-3 text-[10px] font-medium">
+            {label}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export function Hero() {
   return (
-    <section className="grid-field relative overflow-hidden pb-14 pt-10 sm:pb-16 sm:pt-12 lg:pb-20 lg:pt-14">
+    <section className="grid-field relative overflow-hidden pb-12 pt-8 sm:pb-14 sm:pt-10 lg:pb-16 lg:pt-11">
       <div className="section-shell">
         <div className="mb-7 flex items-center gap-3 sm:mb-8">
           <span className="flex h-2 w-2 items-center justify-center rounded-full bg-ink">
@@ -63,13 +70,14 @@ export function Hero() {
         <div className="mt-8 grid items-center gap-10 md:grid-cols-12 md:gap-6 lg:mt-7 lg:gap-10">
           <div className="md:col-span-7 lg:col-span-7">
             <p className="body-lead max-w-lg">
-              MASM connects strategy, acquisition, analytics, AI automation,
-              and business optimization into one operating model for
-              profitable growth.
+              MASM helps growth-stage companies align acquisition, SEO,
+              analytics, AI automation, and business optimization into one
+              operating model — so spend, decisions, and execution compound
+              instead of competing.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <BookingCta source="homepage_hero">
-                Book a Diagnostic
+                Book a Growth Diagnostic
               </BookingCta>
               <BookingCta
                 source="homepage_hero_strategy"
@@ -80,12 +88,12 @@ export function Hero() {
               </BookingCta>
             </div>
             <p className="mt-4 text-xs leading-5 text-muted">
-              Start with a focused consultation. If there is a fit, MASM will
-              recommend the right next step.
+              Not sure where to start? Book a strategy call first.
             </p>
             <p className="mt-5 max-w-xl border-l-2 border-ink pl-4 text-sm leading-6 text-muted">
-              Built for founders and growth leaders who are investing across
-              multiple channels but lack one clear operating model.
+              For founders and growth leaders spending across multiple channels
+              but still lacking one clear view of what is working, what is
+              wasting money, and what to fix next.
             </p>
           </div>
           <div className="hidden sm:block md:col-span-5 lg:col-span-5">
