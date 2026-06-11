@@ -9,12 +9,14 @@ function SystemGraphic() {
       <div className="absolute inset-[5%] rounded-full border border-ink/15" />
       <div className="absolute inset-[18%] rounded-full border border-dashed border-ink/30 animate-slow-spin" />
       <div className="absolute inset-[31%] rounded-full border border-ink/20" />
-      <div className="absolute inset-[39%] grid place-items-center rounded-full bg-ink text-white shadow-card">
-        <div className="text-center">
-          <span className="block text-[9px] font-medium uppercase tracking-[0.2em] text-white/45">
+      <div className="absolute inset-[35%] grid place-items-center overflow-hidden rounded-full bg-ink text-white shadow-card">
+        <div className="flex flex-col items-center justify-center text-center">
+          <span className="block whitespace-nowrap text-[7px] font-medium uppercase leading-none tracking-[0.16em] text-white/55 sm:text-[8px]">
             Growth OS
           </span>
-          <span className="mt-2 block text-2xl font-medium tracking-[-0.06em]">MASM</span>
+          <span className="mt-2 block whitespace-nowrap text-lg font-semibold leading-none tracking-[-0.05em] sm:text-xl">
+            MASM
+          </span>
         </div>
       </div>
       {[
