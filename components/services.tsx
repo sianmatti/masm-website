@@ -117,13 +117,11 @@ export function Services() {
             Each system informs the next, so decisions, demand generation,
             reporting, and automation operate from the same commercial model.
           </p>
-          <div className="mt-4 flex items-center gap-2 sm:mt-0" aria-hidden="true">
+          <div className="mt-4 flex items-center sm:mt-0" aria-hidden="true">
             {services.map((service, index) => (
-              <div key={service.number} className="flex items-center gap-2">
-                <span className="grid h-7 w-7 place-items-center rounded-full bg-ink font-mono text-[8px] text-white">
-                  {service.number}
-                </span>
-                {index < services.length - 1 ? <span className="h-px w-4 bg-ink/25" /> : null}
+              <div key={service.number} className="flex items-center">
+                <span className="h-2 w-2 rounded-full border border-ink bg-white" />
+                {index < services.length - 1 ? <span className="h-px w-7 bg-ink/25 sm:w-9" /> : null}
               </div>
             ))}
           </div>
