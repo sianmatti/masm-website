@@ -68,7 +68,7 @@ export function Footer() {
               type="strategy"
               variant="secondary"
               source="homepage_footer_fit"
-              className="mt-3 !min-h-0 !justify-start !border-0 !p-0 !text-sm !text-white/65 hover:!bg-transparent hover:!text-white"
+              className="mt-1 !min-h-11 !justify-start !border-0 !px-0 !py-2 !text-sm !text-white/65 hover:!bg-transparent hover:!text-white"
             >
               For fit questions: Book a strategy call
             </BookingCta>
