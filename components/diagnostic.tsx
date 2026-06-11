@@ -9,6 +9,13 @@ const checks = [
   ["Automation maturity", "38"],
 ];
 
+const deliverables = [
+  ["Executive growth scorecard", "A clear diagnosis of the primary growth constraint"],
+  ["Primary constraint analysis", "A ranked 90-day action direction"],
+  ["Prioritized 90-day roadmap", "A leadership-ready decision readout"],
+  ["Leadership decision session", "A recommendation on whether MASM should execute or not"],
+];
+
 export function Diagnostic() {
   return (
     <section id="diagnostic" className="bg-paper py-16 sm:py-20 lg:py-24">
@@ -29,33 +36,37 @@ export function Diagnostic() {
                 </div>
               </div>
               <h2 className="mt-7 text-[clamp(2rem,3.2vw,3.5rem)] font-semibold leading-[1.03] tracking-[-0.045em] text-balance">
-                Before investing more in ads, SEO, tools, or automation,
+                Before spending more on ads, SEO, dashboards, or automation,
                 identify the constraint limiting profitable growth.
               </h2>
               <p className="body-copy mt-5 max-w-lg">
-                A senior-led strategic assessment of your economics, demand,
-                measurement, and operations, translated into a prioritized
-                90-day direction.
+                The Growth Diagnostic gives leadership a clear read on where
+                growth is breaking down, which fixes matter most, and what to
+                prioritize over the next 90 days.
               </p>
+              <p className="mt-5 border-l-2 border-ink pl-4 text-sm leading-6 text-ink">
+                <strong className="font-semibold">Best for:</strong> teams already
+                investing in growth but lacking one clear view of what is working,
+                what is wasting budget, and what should be prioritized next.
+              </p>
+              <span className="eyebrow mt-7 block">You leave with</span>
               <div className="mt-7 grid border-l border-t border-line text-sm sm:grid-cols-2">
-                {[
-                  "Executive growth scorecard",
-                  "Primary constraint analysis",
-                  "Prioritized 90-day roadmap",
-                  "Leadership decision session",
-                ].map((item) => (
-                  <div key={item} className="flex min-h-16 items-center gap-3 border-b border-r border-line px-4 py-3">
+                {deliverables.map(([title, outcome]) => (
+                  <div key={title} className="flex min-h-24 items-start gap-3 border-b border-r border-line px-4 py-4">
                     <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-ink text-[10px] text-white">✓</span>
-                    <span>{item}</span>
+                    <span>
+                      <strong className="block font-medium">{title}</strong>
+                      <span className="mt-1.5 block text-xs leading-5 text-muted">{outcome}</span>
+                    </span>
                   </div>
                 ))}
               </div>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <BookingCta source="homepage_diagnostic">
-                  Book a Diagnostic
+                  Book a Growth Diagnostic
                 </BookingCta>
                 <ButtonLink href={sitePath("/diagnostic/")} variant="secondary">
-                  See what’s included
+                  See what’s included in the Growth Diagnostic
                 </ButtonLink>
               </div>
               <div className="mt-5 grid gap-2 border-t border-ink/15 pt-4 text-xs leading-5 text-muted sm:grid-cols-2">
@@ -75,8 +86,9 @@ export function Diagnostic() {
                 </span>
               </div>
               <p className="mt-6 max-w-md text-sm leading-6 text-white/55">
-                A decision tool that exposes the weakest links across acquisition,
-                search, measurement, and operating maturity.
+                The scorecard gives leadership a structured view of where the
+                growth system is strong, where it is leaking performance, and
+                which constraints deserve priority.
               </p>
               <div className="mt-8 space-y-6">
                 {checks.map(([label, value]) => (
@@ -103,6 +115,11 @@ export function Diagnostic() {
                   </div>
                 ))}
               </div>
+              <p className="mt-6 text-xs leading-5 text-white/45">
+                Signals may include economics, attribution quality, conversion
+                flow, channel dependency, search visibility, reporting
+                reliability, and workflow maturity.
+              </p>
               <div className="mt-7 border-t border-white/15 pt-6">
                 <span className="text-[9px] font-medium uppercase tracking-[0.14em] text-white/40">
                   Natural next step
