@@ -84,6 +84,8 @@ export function BookingCta({
         onClick={openCalendly}
         className={`${buttonClassName} hidden md:inline-flex`}
         data-booking-source={source}
+        aria-haspopup="dialog"
+        aria-expanded={isOpen}
       >
         {children}
         <ArrowIcon />
@@ -135,7 +137,7 @@ export function BookingCta({
                       ? "Schedule a MASM strategy call"
                       : "Schedule a Growth Diagnostic"
                   }
-                  src={calendlyEmbedUrl()}
+                  src={calendlyEmbedUrl(bookingUrl.toString())}
                   className="relative z-0 block h-[calc(100%-3.5rem)] w-full"
                 />
               </div>
