@@ -19,9 +19,9 @@ function SystemGraphic() {
           </div>
         </div>
         {[
-          ["Performance", "left-[4%] top-[43%]"],
-          ["SEO", "right-[9%] top-[10%]"],
-          ["Analytics", "right-[2%] top-[59%]"],
+          ["SEO", "right-[72%] top-[43%]"],
+          ["Performance", "right-[9%] top-[10%]"],
+          ["Analytics", "left-[72%] top-[59%]"],
           ["Automation", "bottom-[4%] left-[26%]"],
         ].map(([label, position]) => (
           <div

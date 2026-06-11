@@ -12,6 +12,7 @@ type BookingCtaProps = {
   source?: string;
   type?: "diagnostic" | "strategy";
   variant?: "primary" | "secondary";
+  onActivate?: () => void;
 };
 
 export function BookingCta({
@@ -21,6 +22,7 @@ export function BookingCta({
   source = "website",
   type = "diagnostic",
   variant = "primary",
+  onActivate,
 }: BookingCtaProps) {
   const [isOpen, setIsOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -64,7 +66,10 @@ export function BookingCta({
 
   const closeCalendly = () => setIsOpen(false);
 
-  const openCalendly = () => setIsOpen(true);
+  const openCalendly = () => {
+    onActivate?.();
+    setIsOpen(true);
+  };
 
   return (
     <>
@@ -72,8 +77,9 @@ export function BookingCta({
         href={bookingUrl.toString()}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${buttonClassName} md:hidden`}
+        className={`${buttonClassName} lg:hidden`}
         data-booking-source={source}
+        onClick={onActivate}
       >
         {children}
         <ArrowIcon />
@@ -82,8 +88,10 @@ export function BookingCta({
         ref={triggerRef}
         type="button"
         onClick={openCalendly}
-        className={`${buttonClassName} hidden md:inline-flex`}
+        className={`${buttonClassName} hidden lg:inline-flex`}
         data-booking-source={source}
+        aria-haspopup="dialog"
+        aria-expanded={isOpen}
       >
         {children}
         <ArrowIcon />
@@ -135,7 +143,7 @@ export function BookingCta({
                       ? "Schedule a MASM strategy call"
                       : "Schedule a Growth Diagnostic"
                   }
-                  src={calendlyEmbedUrl()}
+                  src={calendlyEmbedUrl(bookingUrl.toString())}
                   className="relative z-0 block h-[calc(100%-3.5rem)] w-full"
                 />
               </div>

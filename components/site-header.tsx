@@ -55,14 +55,14 @@ export function SiteHeader({
 
         <div className="flex items-center gap-2">
           {bookingCta ? (
-            <BookingCta className="!min-h-10 !px-3 !text-xs sm:!px-4 sm:!text-sm" source="sticky_header">
+            <BookingCta className="!min-h-11 !px-3 !text-xs sm:!px-4 sm:!text-sm" source="sticky_header">
               <span className="hidden sm:inline">{ctaLabel}</span>
               <span className="sm:hidden">Growth Diagnostic</span>
             </BookingCta>
           ) : (
             <a
               href={ctaHref}
-              className="button-primary !min-h-10 px-5"
+              className="button-primary !min-h-11 px-5"
             >
               <span className="hidden sm:inline">{ctaLabel}</span>
               <span className="sm:hidden">Diagnostic</span>
@@ -71,9 +71,9 @@ export function SiteHeader({
           )}
           <button
             type="button"
-            className="grid h-10 w-10 place-items-center rounded-full border border-line bg-white lg:hidden"
+            className="grid h-11 w-11 place-items-center rounded-full border border-line bg-white lg:hidden"
             aria-expanded={menuOpen}
-            aria-controls="mobile-navigation"
+            aria-controls={menuOpen ? "mobile-navigation" : undefined}
             aria-label={menuOpen ? "Close navigation" : "Open navigation"}
             onClick={() => setMenuOpen((current) => !current)}
           >
@@ -85,41 +85,45 @@ export function SiteHeader({
         </div>
       </div>
 
-      <div
-        id="mobile-navigation"
-        className={`overflow-hidden border-t border-ink/10 bg-paper transition-[max-height,opacity] duration-300 lg:hidden ${
-          menuOpen ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <nav className="section-shell py-5" aria-label="Mobile navigation">
-          {navItems.map((item, index) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-between border-b border-line py-4 text-lg font-medium tracking-[-0.025em]"
-            >
-              <span>{item.label}</span>
-              <span className="font-mono text-[9px] text-muted">0{index + 1}</span>
-            </a>
-          ))}
-          <div className="pt-5">
-            {bookingCta ? (
-              <BookingCta className="w-full" source="mobile_menu">
-                {ctaLabel}
-              </BookingCta>
-            ) : (
+      {menuOpen ? (
+        <div
+          id="mobile-navigation"
+          className="border-t border-ink/10 bg-paper lg:hidden"
+        >
+          <nav className="section-shell py-5" aria-label="Mobile navigation">
+            {navItems.map((item, index) => (
               <a
-                href={ctaHref}
+                key={item.label}
+                href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="button-primary w-full"
+                className="flex items-center justify-between border-b border-line py-4 text-lg font-medium tracking-[-0.025em]"
               >
-                {ctaLabel} <span aria-hidden="true">→</span>
+                <span>{item.label}</span>
+                <span className="font-mono text-[9px] text-muted">0{index + 1}</span>
               </a>
-            )}
-          </div>
-        </nav>
-      </div>
+            ))}
+            <div className="pt-5">
+              {bookingCta ? (
+                <BookingCta
+                  className="w-full"
+                  source="mobile_menu"
+                  onActivate={() => setMenuOpen(false)}
+                >
+                  {ctaLabel}
+                </BookingCta>
+              ) : (
+                <a
+                  href={ctaHref}
+                  onClick={() => setMenuOpen(false)}
+                  className="button-primary w-full"
+                >
+                  {ctaLabel} <span aria-hidden="true">→</span>
+                </a>
+              )}
+            </div>
+          </nav>
+        </div>
+      ) : null}
     </header>
   );
 }
