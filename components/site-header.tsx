@@ -56,7 +56,8 @@ export function SiteHeader({
         <div className="flex items-center gap-2">
           {bookingCta ? (
             <BookingCta className="!min-h-10 !px-3 !text-xs sm:!px-4 sm:!text-sm" source="sticky_header">
-              <span>{ctaLabel}</span>
+              <span className="hidden sm:inline">{ctaLabel}</span>
+              <span className="sm:hidden">Growth Diagnostic</span>
             </BookingCta>
           ) : (
             <a
