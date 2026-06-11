@@ -15,7 +15,7 @@ type BookingCtaProps = {
 };
 
 export function BookingCta({
-  children = "Book a Diagnostic",
+  children = "Book a Growth Diagnostic",
   className = "",
   inverted = false,
   source = "website",
@@ -95,7 +95,7 @@ export function BookingCta({
               aria-label={
                 type === "strategy"
                   ? "Book a strategy call"
-                  : "Book a Diagnostic"
+                  : "Book a Growth Diagnostic"
               }
               onClick={(event) => {
                 if (event.currentTarget === event.target) closeCalendly();
