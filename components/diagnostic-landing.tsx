@@ -85,7 +85,7 @@ function DiagnosticHeader() {
     <SiteHeader
       navItems={navItems}
       bookingCta
-      ctaLabel="Book a Diagnostic"
+      ctaLabel="Book a Growth Diagnostic"
     />
   );
 }
@@ -158,11 +158,18 @@ function DiagnosticHero() {
               measurement, and operations, translated into a clear 90-day direction.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-              <BookingCta source="diagnostic_hero">Book a Diagnostic</BookingCta>
-              <a href="#scorecard" className="button-secondary">
-                View example output
-              </a>
+              <BookingCta source="diagnostic_hero">Book a Growth Diagnostic</BookingCta>
+              <BookingCta
+                source="diagnostic_hero_strategy"
+                type="strategy"
+                variant="secondary"
+              >
+                Book a strategy call
+              </BookingCta>
             </div>
+            <a href="#scorecard" className="mt-4 inline-block text-xs font-medium underline decoration-ink/30 underline-offset-4 hover:decoration-ink">
+              View example output
+            </a>
             <p className="mt-4 font-mono text-[9px] uppercase tracking-[0.12em] text-muted">
               $1,250 · Delivered in 5 business days
             </p>
@@ -382,7 +389,7 @@ function PricingSection() {
                 ))}
               </div>
               <BookingCta className="mt-8 w-full" source="diagnostic_pricing">
-                Book a Diagnostic
+                Book a Growth Diagnostic
               </BookingCta>
               <p className="mt-4 text-center font-mono text-[9px] uppercase tracking-wider text-muted">
                 Limited weekly capacity · Secure scheduling
@@ -472,7 +479,15 @@ function FinalCta() {
           </div>
           <div className="lg:col-span-3">
             <BookingCta inverted className="w-full" source="diagnostic_final_cta">
-              Book a Diagnostic
+              Book a Growth Diagnostic
+            </BookingCta>
+            <BookingCta
+              type="strategy"
+              variant="secondary"
+              source="diagnostic_final_cta_strategy"
+              className="mt-3 w-full !border-white/30 !text-white hover:!bg-white hover:!text-ink"
+            >
+              Book a strategy call
             </BookingCta>
             <p className="mt-4 text-center font-mono text-[9px] uppercase tracking-wider text-white/35">
               $1,250 · Five business days
