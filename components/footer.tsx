@@ -1,3 +1,4 @@
+import { growthDiagnosticEmailUrl } from "@/lib/contact";
 import { ArrowIcon, BrandLockup } from "./ui";
 import { BookingCta } from "./booking-cta";
 
@@ -20,14 +21,12 @@ export function Footer() {
             <BookingCta inverted className="w-full" source="homepage_footer">
               Book a Growth Diagnostic
             </BookingCta>
-            <BookingCta
-              type="strategy"
-              variant="secondary"
-              source="homepage_footer_strategy"
-              className="w-full !border-white/30 !text-white hover:!bg-white hover:!text-ink"
+            <a
+              href={growthDiagnosticEmailUrl}
+              className="button-secondary w-full !border-white/30 !text-white hover:!bg-white hover:!text-ink"
             >
-              Book a strategy call
-            </BookingCta>
+              Email us <ArrowIcon />
+            </a>
             <p className="text-center text-xs leading-5 text-white/45">
               No generic sales pitch. Start with the business constraint.
             </p>
