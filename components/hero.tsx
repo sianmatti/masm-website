@@ -1,4 +1,6 @@
+import { growthDiagnosticEmailUrl } from "@/lib/contact";
 import { BookingCta } from "./booking-cta";
+import { ButtonLink } from "./ui";
 
 function SystemGraphic() {
   return (
@@ -74,16 +76,13 @@ export function Hero() {
               <BookingCta source="homepage_hero">
                 Book a Growth Diagnostic
               </BookingCta>
-              <BookingCta
-                source="homepage_hero_strategy"
-                type="strategy"
-                variant="secondary"
-              >
-                Book a strategy call
-              </BookingCta>
+              <ButtonLink href={growthDiagnosticEmailUrl} variant="secondary">
+                Email us
+              </ButtonLink>
             </div>
             <p className="mt-4 text-xs leading-5 text-muted">
-              Not sure where to start? Book a strategy call first.
+              Start with a focused strategy call to confirm whether the Growth
+              Diagnostic is the right next step.
             </p>
             <p className="mt-5 max-w-xl border-l-2 border-ink pl-4 text-sm leading-6 text-muted">
               For founders and growth leaders spending across multiple channels
