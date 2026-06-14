@@ -60,16 +60,12 @@ export function Footer() {
             <a href="mailto:info@masmgrowth.com" className="button-arrow mt-4 flex items-center gap-2 text-sm text-white/65 hover:text-white">
               Email us <ArrowIcon />
             </a>
-            <a href="#diagnostic" className="mt-3 block text-sm text-white/65 hover:text-white">
-              Start here: Growth Diagnostic
-            </a>
             <BookingCta
-              type="strategy"
               variant="secondary"
               source="homepage_footer_fit"
-              className="mt-1 !min-h-11 !justify-start !border-0 !px-0 !py-2 !text-sm !text-white/65 hover:!bg-transparent hover:!text-white"
+              className="mt-3 !min-h-11 !justify-start !border-0 !px-0 !py-2 !text-sm !text-white/65 hover:!bg-transparent hover:!text-white"
             >
-              For fit questions: Book a Growth Diagnostic
+              Book a Growth Diagnostic
             </BookingCta>
           </div>
           <div className="lg:col-span-3 lg:text-right">
