@@ -1,8 +1,8 @@
 const authoritySignals = [
-  ["Senior-led", "Strategy and delivery stay close to experienced operators — not junior account handoffs."],
-  ["Economics-first", "Priorities are tied to margin, payback, CAC, revenue quality, and operating capacity."],
-  ["System-wide", "Paid, organic, analytics, automation, and conversion are managed as one model."],
-  ["Built to execute", "Recommendations become sequenced operating plans, not slideware."],
+  ["Senior-led clarity", "Growth decisions stay close to experienced operators, not account handoff layers."],
+  ["Commercial prioritization", "Every recommendation is tied to margin, payback, revenue quality, or operating capacity."],
+  ["Connected growth model", "Acquisition, SEO, analytics, automation, and conversion are reviewed as one system."],
+  ["Execution-ready roadmap", "The output is a sequenced operating plan, not a static audit deck."],
 ];
 
 export function AuthorityStrip() {
