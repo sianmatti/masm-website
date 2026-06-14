@@ -69,7 +69,7 @@ export function Footer() {
               source="homepage_footer_fit"
               className="mt-1 !min-h-11 !justify-start !border-0 !px-0 !py-2 !text-sm !text-white/65 hover:!bg-transparent hover:!text-white"
             >
-              For fit questions: Book a strategy call
+              For fit questions: Book a Growth Diagnostic
             </BookingCta>
           </div>
           <div className="lg:col-span-3 lg:text-right">
