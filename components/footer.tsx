@@ -55,17 +55,18 @@ export function Footer() {
               ))}
             </div>
           </div>
-          <div className="lg:col-span-2">
+          <div className="flex flex-col items-start lg:col-span-2">
             <span className="font-mono text-[9px] uppercase tracking-wider text-white/35">Connect</span>
-            <a href="mailto:info@masmgrowth.com" className="button-arrow mt-4 flex items-center gap-2 text-sm text-white/65 hover:text-white">
-              Email us <ArrowIcon />
+            <a href="mailto:info@masmgrowth.com" className="button-arrow mt-4 inline-flex w-fit max-w-full items-center gap-2 text-left text-sm text-white/65 hover:text-white">
+              <span>Email us</span>
+              <ArrowIcon className="h-4 w-4 shrink-0" />
             </a>
             <BookingCta
               variant="secondary"
               source="homepage_footer_fit"
-              className="mt-3 !min-h-11 !w-fit !max-w-full !justify-start !gap-2 !border-0 !px-0 !py-2 !text-left !text-sm !text-white/65 hover:!bg-transparent hover:!text-white"
+              className="mt-3 !min-h-11 !w-fit !max-w-full !justify-start !gap-2 !border-0 !px-0 !py-2 !text-left !text-sm !text-white/65 hover:!bg-transparent hover:!text-white [&>svg]:shrink-0"
             >
-              Book a Growth Diagnostic
+              <span>Book a Growth Diagnostic</span>
             </BookingCta>
           </div>
           <div className="lg:col-span-3 lg:text-right">
