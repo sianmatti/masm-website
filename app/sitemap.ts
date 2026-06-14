@@ -5,13 +5,13 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://masmgrowth.com",
+      url: "https://www.masmgrowth.com/",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: "https://masmgrowth.com/diagnostic",
+      url: "https://www.masmgrowth.com/diagnostic",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
