@@ -65,9 +65,12 @@ export function Footer() {
               <BookingCta
                 variant="secondary"
                 source="homepage_footer_fit"
-                className="!min-h-0 !w-fit !max-w-full !justify-start !gap-2 !border-0 !px-0 !py-0 !text-left !text-sm !text-white/65 hover:!bg-transparent hover:!text-white [&>svg]:shrink-0"
+                className="!min-h-0 !w-fit !max-w-full !justify-start !border-0 !px-0 !py-0 !text-left !text-sm !text-white/65 hover:!bg-transparent hover:!text-white [&>svg]:hidden"
               >
-                <span>Book a Growth Diagnostic</span>
+                <span>
+                  Book a Growth Diagnostic
+                  <ArrowIcon className="ml-2 inline-block h-4 w-4 align-[-0.15em]" />
+                </span>
               </BookingCta>
             </div>
           </div>
