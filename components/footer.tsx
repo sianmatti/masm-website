@@ -68,8 +68,11 @@ export function Footer() {
                 className="!min-h-0 !w-fit !max-w-full !justify-start !border-0 !px-0 !py-0 !text-left !text-sm !text-white/65 hover:!bg-transparent hover:!text-white [&>svg]:hidden"
               >
                 <span>
-                  Book a Growth Diagnostic
-                  <ArrowIcon className="ml-2 inline-block h-4 w-4 align-[-0.15em]" />
+                  Book a Growth{" "}
+                  <span className="inline-flex items-center gap-2 whitespace-nowrap">
+                    Diagnostic
+                    <ArrowIcon className="h-4 w-4 shrink-0" />
+                  </span>
                 </span>
               </BookingCta>
             </div>
