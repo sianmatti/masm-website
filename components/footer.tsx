@@ -63,7 +63,7 @@ export function Footer() {
             <BookingCta
               variant="secondary"
               source="homepage_footer_fit"
-              className="mt-3 !min-h-11 !justify-start !border-0 !px-0 !py-2 !text-sm !text-white/65 hover:!bg-transparent hover:!text-white"
+              className="mt-3 !min-h-11 !w-fit !max-w-full !justify-start !gap-2 !border-0 !px-0 !py-2 !text-left !text-sm !text-white/65 hover:!bg-transparent hover:!text-white"
             >
               Book a Growth Diagnostic
             </BookingCta>
