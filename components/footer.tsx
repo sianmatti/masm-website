@@ -1,4 +1,5 @@
 import { growthDiagnosticEmailUrl } from "@/lib/contact";
+import { sitePath } from "@/lib/site";
 import { ArrowIcon, BrandLockup } from "./ui";
 import { BookingCta } from "./booking-cta";
 
@@ -84,7 +85,12 @@ export function Footer() {
         </div>
         <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-5 font-mono text-[9px] uppercase tracking-wider text-white/30 sm:flex-row sm:justify-between">
           <span>© 2026 MASM Growth Systems</span>
-          <span>Growth, engineered.</span>
+          <span className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <a href={sitePath("/privacy/")} className="transition-colors hover:text-white/60">
+              Privacy Policy
+            </a>
+            <span>Growth, engineered.</span>
+          </span>
         </div>
       </div>
       <div className="select-none whitespace-nowrap text-center text-[22vw] font-semibold leading-[0.72] tracking-[-0.075em] text-white/[0.04]">
