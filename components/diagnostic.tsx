@@ -16,6 +16,21 @@ const deliverables = [
   ["Leadership Decision Session", "A recommendation on whether MASM should execute or not"],
 ];
 
+const bookingSteps = [
+  [
+    "Fit Review",
+    "MASM confirms whether the Growth Diagnostic is the right next step.",
+  ],
+  [
+    "Diagnostic Confirmation",
+    "If there is a strong fit, payment and required materials are confirmed.",
+  ],
+  [
+    "Five-Business-Day Readout",
+    "MASM delivers the scorecard, constraint analysis, 90-day roadmap, and leadership decision session.",
+  ],
+];
+
 export function Diagnostic() {
   return (
     <section id="diagnostic" className="bg-paper py-16 sm:py-20 lg:py-24">
@@ -142,6 +157,27 @@ export function Diagnostic() {
                 <ButtonLink href={sitePath("/diagnostic/")} variant="secondary">
                   See what’s included in the Growth Diagnostic
                 </ButtonLink>
+              </div>
+              <div className="mt-7 border-t border-ink/15 pt-6">
+                <span className="eyebrow block">What happens after booking</span>
+                <div className="mt-4 grid border-l border-t border-line sm:grid-cols-3">
+                  {bookingSteps.map(([title, description], index) => (
+                    <div
+                      key={title}
+                      className="border-b border-r border-line p-4 sm:min-h-36 sm:p-5"
+                    >
+                      <span className="font-mono text-[9px] text-muted">
+                        0{index + 1}
+                      </span>
+                      <strong className="mt-3 block text-sm font-medium">
+                        {title}
+                      </strong>
+                      <p className="mt-2 text-xs leading-5 text-muted">
+                        {description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
