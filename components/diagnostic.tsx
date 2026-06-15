@@ -53,11 +53,18 @@ export function Diagnostic() {
                 growth is breaking down, which fixes matter most, and what to
                 prioritize over the next 90 days.
               </p>
-              <p className="mt-5 border-l-2 border-ink pl-4 text-sm leading-6 text-ink">
-                <strong className="font-semibold">Best for:</strong> teams already
-                investing in growth but lacking one clear view of what is working,
-                what is wasting budget, and what should be prioritized next.
-              </p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                <p className="border-l-2 border-ink pl-4 text-sm leading-6 text-ink">
+                  <strong className="block font-semibold">Best for</strong>
+                  Teams already investing in growth but lacking one clear view
+                  of performance or what to prioritize next.
+                </p>
+                <p className="border-l-2 border-ink/20 pl-4 text-sm leading-6 text-muted">
+                  <strong className="block font-semibold text-ink">Not for</strong>
+                  Pre-launch ideas, cheap channel management, or teams expecting
+                  guaranteed revenue or ROAS.
+                </p>
+              </div>
             </div>
             <div className="order-3 border-t border-ink/20 bg-ink p-7 text-white sm:p-10 md:order-none md:border-l md:border-t-0 lg:p-12">
               <div className="flex items-center justify-between border-b border-white/15 pb-5">
