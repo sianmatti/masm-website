@@ -1,5 +1,5 @@
 import { BookingCta } from "./booking-cta";
-import { ButtonLink } from "./ui";
+import { ArrowIcon, ButtonLink } from "./ui";
 import { sitePath } from "@/lib/site";
 
 const checks = [
@@ -161,8 +161,18 @@ export function Diagnostic() {
                 <BookingCta source="homepage_diagnostic">
                   Book a Growth Diagnostic
                 </BookingCta>
-                <ButtonLink href={sitePath("/diagnostic/")} variant="secondary">
-                  See what’s included in the Growth Diagnostic
+                <ButtonLink
+                  href={sitePath("/diagnostic/")}
+                  variant="secondary"
+                  className="[&>svg]:hidden"
+                >
+                  <span>
+                    See what’s included in the Growth{" "}
+                    <span className="inline-flex items-center gap-3 whitespace-nowrap">
+                      Diagnostic
+                      <ArrowIcon />
+                    </span>
+                  </span>
                 </ButtonLink>
               </div>
               <div className="mt-7 border-t border-ink/15 pt-6">
