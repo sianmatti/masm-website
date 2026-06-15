@@ -43,49 +43,8 @@ export function Diagnostic() {
                 investing in growth but lacking one clear view of what is working,
                 what is wasting budget, and what should be prioritized next.
               </p>
-              <span className="eyebrow mt-6 block sm:mt-7">You leave with</span>
-              <div className="mt-4 grid border-l border-t border-line text-sm sm:mt-5 sm:grid-cols-2">
-                {deliverables.map(([title, outcome]) => (
-                  <div key={title} className="flex items-start gap-2.5 border-b border-r border-line px-3.5 py-3.5 sm:min-h-24 sm:gap-3 sm:px-4 sm:py-4">
-                    <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-ink text-[10px] text-white">✓</span>
-                    <span>
-                      <strong className="block font-medium">{title}</strong>
-                      <span className="mt-1.5 block text-xs leading-5 text-muted">{outcome}</span>
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-7 overflow-hidden border border-ink">
-                <div className="bg-paper p-4 sm:p-5">
-                  <span className="eyebrow">Engagement details</span>
-                  <p className="mt-2 text-sm font-medium leading-6 text-ink">
-                    Fixed-scope strategic assessment
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-muted">
-                    Delivered in five business days after payment and required
-                    materials are confirmed.
-                  </p>
-                </div>
-                <div className="border-t border-ink bg-ink p-4 text-white sm:p-5">
-                  <strong className="block text-4xl font-semibold leading-none tracking-[-0.07em]">
-                    $1,250
-                  </strong>
-                  <p className="mt-3 max-w-lg text-xs leading-5 text-white/60">
-                    The Diagnostic fee may be credited toward an eligible Growth
-                    Engine engagement started within 30 days.
-                  </p>
-                </div>
-              </div>
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <BookingCta source="homepage_diagnostic">
-                  Book a Growth Diagnostic
-                </BookingCta>
-                <ButtonLink href={sitePath("/diagnostic/")} variant="secondary">
-                  See what’s included in the Growth Diagnostic
-                </ButtonLink>
-              </div>
             </div>
-            <div className="border-t border-ink/20 bg-ink p-7 text-white sm:p-10 md:border-l md:border-t-0 lg:p-12">
+            <div className="order-3 border-t border-ink/20 bg-ink p-7 text-white sm:p-10 md:order-none md:border-l md:border-t-0 lg:p-12">
               <div className="flex items-center justify-between border-b border-white/15 pb-5">
                 <div>
                   <span className="font-mono text-[10px] tracking-wider text-white/45">DIAGNOSTIC SCORECARD</span>
@@ -140,6 +99,49 @@ export function Diagnostic() {
                   the operating brief for a separately scoped Growth Engine
                   engagement.
                 </p>
+              </div>
+            </div>
+            <div className="order-2 border-t border-ink/20 bg-white p-7 sm:p-10 md:order-none md:col-span-2 lg:p-14">
+              <span className="eyebrow block">You leave with</span>
+              <div className="mt-4 grid border-l border-t border-line text-sm sm:mt-5 sm:grid-cols-2 lg:grid-cols-4">
+                {deliverables.map(([title, outcome]) => (
+                  <div key={title} className="flex items-start gap-2.5 border-b border-r border-line px-3.5 py-3.5 sm:min-h-24 sm:gap-3 sm:px-4 sm:py-4">
+                    <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-ink text-[10px] text-white">✓</span>
+                    <span>
+                      <strong className="block font-medium">{title}</strong>
+                      <span className="mt-1.5 block text-xs leading-5 text-muted">{outcome}</span>
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-7 grid overflow-hidden border border-ink lg:grid-cols-[1fr_0.72fr]">
+                <div className="bg-paper p-4 sm:p-5">
+                  <span className="eyebrow">Engagement details</span>
+                  <p className="mt-2 text-sm font-medium leading-6 text-ink">
+                    Fixed-scope strategic assessment
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-muted">
+                    Delivered in five business days after payment and required
+                    materials are confirmed.
+                  </p>
+                </div>
+                <div className="border-t border-ink bg-ink p-4 text-white sm:p-5 lg:border-l lg:border-t-0">
+                  <strong className="block text-4xl font-semibold leading-none tracking-[-0.07em]">
+                    $1,250
+                  </strong>
+                  <p className="mt-3 max-w-lg text-xs leading-5 text-white/60">
+                    The Diagnostic fee may be credited toward an eligible Growth
+                    Engine engagement started within 30 days.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <BookingCta source="homepage_diagnostic">
+                  Book a Growth Diagnostic
+                </BookingCta>
+                <ButtonLink href={sitePath("/diagnostic/")} variant="secondary">
+                  See what’s included in the Growth Diagnostic
+                </ButtonLink>
               </div>
             </div>
           </div>
