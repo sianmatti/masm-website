@@ -89,6 +89,9 @@ export function Footer() {
             <a href={sitePath("/privacy/")} className="transition-colors hover:text-white/60">
               Privacy Policy
             </a>
+            <a href={sitePath("/terms/")} className="transition-colors hover:text-white/60">
+              Terms of Use
+            </a>
             <span>Growth, engineered.</span>
           </span>
         </div>
