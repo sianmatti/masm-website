@@ -14,8 +14,9 @@ export function Footer() {
               Ready to find the constraint limiting profitable growth?
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-7 text-white/55">
-              Start with a focused consultation. If there is a fit, MASM will
-              recommend the right Diagnostic or execution path.
+              Start with a focused fit review. If the Diagnostic is the right
+              next step, MASM will confirm scope, materials, and timing before
+              the engagement begins.
             </p>
           </div>
           <div className="flex flex-col justify-end gap-3 lg:col-span-3">
