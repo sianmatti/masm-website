@@ -166,8 +166,10 @@ export function Diagnostic() {
                   variant="secondary"
                   className="[&>svg]:hidden"
                 >
-                  <span>
-                    See what’s included in the Growth{" "}
+                  <span className="text-center leading-6">
+                    <span className="block sm:inline">
+                      See what’s included in the Growth
+                    </span>{" "}
                     <span className="inline-flex items-center gap-3 whitespace-nowrap">
                       Diagnostic
                       <ArrowIcon />
