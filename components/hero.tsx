@@ -81,8 +81,8 @@ export function Hero() {
               </ButtonLink>
             </div>
             <p className="mt-4 text-xs leading-5 text-muted">
-              Start with a focused strategy call to confirm whether the Growth
-              Diagnostic is the right next step.
+              The review confirms fit before any Diagnostic engagement begins.
+              No long intake is required.
             </p>
             <p className="mt-5 max-w-xl border-l-2 border-ink pl-4 text-sm leading-6 text-muted">
               For founders and growth leaders spending across multiple channels
