@@ -12,9 +12,9 @@ export const homepageFaqs = [
       "It is for founders and growth leaders already investing across multiple channels but lacking one clear operating model for profitable growth.",
   },
   {
-    question: "What do we receive after five business days?",
+    question: "What does the Growth Diagnostic include?",
     answer:
-      "You receive an executive growth scorecard, primary constraint analysis, prioritized 90-day roadmap, and leadership decision session.",
+      "You receive an Executive Growth Scorecard, Primary Constraint Analysis, Prioritized 90-Day Roadmap, and Leadership Decision Session. Delivery is within five business days after payment and required materials are confirmed.",
   },
   {
     question: "What happens after the Diagnostic?",
@@ -22,9 +22,9 @@ export const homepageFaqs = [
       "If MASM is the right execution partner, the roadmap becomes the operating brief for a Growth Engine engagement. If not, the Diagnostic still gives leadership a clear decision base.",
   },
   {
-    question: "Is the Diagnostic fee credited toward implementation?",
+    question: "What does the Growth Diagnostic cost?",
     answer:
-      "Yes. The fee is credited toward eligible Growth Engine engagements started within 30 days.",
+      "The Growth Diagnostic is a fixed-scope strategic assessment priced at $1,250. The Diagnostic fee may be credited toward an eligible Growth Engine engagement started within 30 days.",
   },
 ];
 
