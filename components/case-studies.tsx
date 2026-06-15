@@ -48,7 +48,7 @@ export function CaseStudies() {
       <div className="section-shell">
         <SectionHeading
           index="02"
-          label="Selected outcomes"
+          label="Selected system outcomes"
           title={<>Proof, measured in <span className="text-muted">business impact.</span></>}
           description="Anonymized engagement outcomes showing how connected growth systems change commercial performance."
         />
