@@ -23,7 +23,7 @@ const steps = [
     number: "04",
     title: "Growth Engine",
     copy: "MASM helps implement, operate, and improve the highest-value parts of the growth system.",
-    duration: "$2.5K–$5K+ / MONTH",
+    duration: "SCOPE-BASED",
   },
 ];
 
