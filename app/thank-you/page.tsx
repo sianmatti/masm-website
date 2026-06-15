@@ -5,8 +5,8 @@ import { ButtonLink } from "@/components/ui";
 import { sitePath } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Strategy Call Booked",
-  description: "Your MASM Growth Systems strategy call is booked.",
+  title: "Growth Diagnostic Review Booked",
+  description: "Your MASM Growth Diagnostic review is booked.",
   robots: {
     index: false,
     follow: false,
@@ -33,18 +33,18 @@ export default function ThankYouPage() {
             <div className="lg:col-span-7">
               <span className="eyebrow">Booking confirmed</span>
               <h1 className="display-xl mt-6 max-w-4xl text-balance">
-                Your strategy call is booked.
+                Your Growth Diagnostic review is booked.
               </h1>
               <div className="mt-8 max-w-2xl space-y-5 text-base leading-7 text-muted">
-                <p>Thank you for booking a MASM Strategy Call.</p>
+                <p>Thank you for booking a MASM Growth Diagnostic review.</p>
                 <p>
-                  Before the call, review your current growth activity, active
+                  Before the review, prepare your current growth activity, active
                   channels, reporting setup, and the biggest constraint you
                   believe is limiting growth.
                 </p>
                 <p>
-                  MASM will use the call to understand whether the Growth
-                  Diagnostic is the right next step.
+                  MASM will use the review to understand your current growth
+                  system and determine the right next step.
                 </p>
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
