@@ -86,27 +86,39 @@ function NodeVisual() {
           Input
         </span>
       </div>
-      <div className="flex items-center">
-        <span className="h-px w-3 bg-ink/25 sm:w-5" />
-        <span className="text-[10px] text-ink/45">→</span>
-        <span className="h-px w-3 bg-ink/25 sm:w-5" />
-      </div>
+      <ConnectorArrow />
       <div className="grid min-h-16 place-items-center border border-ink bg-ink px-2 text-center text-white">
         <span className="font-mono text-[8px] font-medium uppercase leading-4 tracking-[0.12em]">
           AI Workflow
         </span>
       </div>
-      <div className="flex items-center">
-        <span className="h-px w-3 bg-ink/25 sm:w-5" />
-        <span className="text-[10px] text-ink/45">→</span>
-        <span className="h-px w-3 bg-ink/25 sm:w-5" />
-      </div>
+      <ConnectorArrow />
       <div className="grid min-h-12 place-items-center border border-ink/20 bg-white px-2 text-center">
         <span className="font-mono text-[8px] font-medium uppercase tracking-[0.12em] text-muted">
           Output
         </span>
       </div>
     </div>
+  );
+}
+
+function ConnectorArrow() {
+  return (
+    <svg
+      className="h-5 w-8 overflow-visible sm:w-12"
+      viewBox="0 0 48 20"
+      fill="none"
+      preserveAspectRatio="none"
+    >
+      <path d="M1 10h42" stroke="currentColor" strokeOpacity=".55" strokeWidth="1.5" />
+      <path
+        d="m38 5 5 5-5 5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
+      />
+    </svg>
   );
 }
 
