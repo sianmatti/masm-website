@@ -5,7 +5,7 @@ import "./globals.css";
 const GTM_CONTAINER_ID = "GTM-58H8BC26";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://masmgrowth.com"),
+  metadataBase: new URL("https://www.masmgrowth.com"),
   title: {
     default: "MASM Growth Systems | Growth Strategy, Analytics, SEO & AI Automation",
     template: "%s | MASM Growth Systems",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "MASM Growth Systems | Growth Strategy, Analytics, SEO & AI Automation",
     description:
       "MASM helps founders and growth leaders connect strategy, acquisition, SEO, analytics, AI automation, and business optimization into one operating model for profitable growth.",
-    url: "https://masmgrowth.com",
+    url: "https://www.masmgrowth.com",
     siteName: "MASM Growth Systems",
     locale: "en_US",
     type: "website",
