@@ -3,8 +3,8 @@ import { SectionHeading } from "./ui";
 const steps = [
   {
     number: "01",
-    title: "Consultation",
-    copy: "Clarify the business context, current growth constraint, and whether MASM is the right fit.",
+    title: "Growth Diagnostic Fit Review",
+    copy: "Confirm the business context, active growth activity, current constraint, and whether the paid Growth Diagnostic is the right next step.",
     duration: "30 MINUTES",
   },
   {
