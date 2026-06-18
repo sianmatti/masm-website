@@ -1,46 +1,6 @@
-import { ArrowIcon, SectionHeading } from "./ui";
-
-const cases = [
-  {
-    type: "B2B SaaS / Growth system",
-    engagement: "Diagnostic → Growth Engine",
-    title: "Rebuilding acquisition around revenue quality.",
-    constraint: "Lead volume and reporting existed, but revenue quality and payback were unclear.",
-    result: "2.7×",
-    label: "pipeline efficiency",
-    secondary: "−31% CAC",
-    secondaryLabel: "Secondary impact",
-    scope: "Acquisition economics · Measurement · CRO",
-    signal: "The constraint was not lead volume. It was knowing which acquisition created durable revenue.",
-    theme: "bg-white",
-  },
-  {
-    type: "Consumer / Organic search",
-    engagement: "Organic growth system",
-    title: "Turning search demand into a compounding channel.",
-    constraint: "Organic traffic existed, but non-brand search was not consistently converting into revenue.",
-    result: "+184%",
-    label: "non-brand revenue",
-    secondary: "8 months",
-    secondaryLabel: "Timeframe",
-    scope: "Technical SEO · Content system · Conversion",
-    signal: "Search became commercially useful when demand capture and conversion were managed as one system.",
-    theme: "bg-paper",
-  },
-  {
-    type: "Marketplace / Analytics",
-    engagement: "Analytics and automation system",
-    title: "Creating one source of truth for growth decisions.",
-    constraint: "Leadership relied on fragmented reports across platforms.",
-    result: "14 hrs",
-    label: "saved every week",
-    secondary: "99.4% accuracy",
-    secondaryLabel: "Secondary impact",
-    scope: "Analytics architecture · Automation · Reporting",
-    signal: "A shared measurement layer reduced reporting drag and created a faster operating rhythm.",
-    theme: "bg-white",
-  },
-];
+import { clientOutcomes } from "@/lib/client-outcomes";
+import { sitePath } from "@/lib/site";
+import { ArrowIcon, ButtonLink, SectionHeading } from "./ui";
 
 export function CaseStudies() {
   return (
@@ -53,10 +13,12 @@ export function CaseStudies() {
           description="Anonymized engagement outcomes showing how connected growth systems change commercial performance."
         />
         <div className="mt-12 space-y-4 sm:mt-14">
-          {cases.map((item, index) => (
+          {clientOutcomes.map((item, index) => (
             <article
               key={item.title}
-              className={`card-lift group grid overflow-hidden border border-ink/15 ${item.theme} md:grid-cols-12`}
+              className={`card-lift group grid overflow-hidden border border-ink/15 ${
+                index === 1 ? "bg-paper" : "bg-white"
+              } md:grid-cols-12`}
             >
               <div className="flex flex-col p-6 sm:p-9 md:col-span-7 lg:p-10">
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
@@ -75,11 +37,11 @@ export function CaseStudies() {
                 <dl className="mt-7 grid gap-5 border-t border-ink/15 pt-5 text-sm sm:grid-cols-2">
                   <div className="sm:col-span-2">
                     <dt className="font-mono text-[9px] uppercase tracking-wider text-muted">Starting constraint</dt>
-                    <dd className="mt-1.5 leading-6">{item.constraint}</dd>
+                    <dd className="mt-1.5 leading-6">{item.problem}</dd>
                   </div>
                   <div className="sm:col-span-2">
                     <dt className="font-mono text-[9px] uppercase tracking-wider text-muted">MASM focus</dt>
-                    <dd className="mt-1.5 leading-6">{item.scope}</dd>
+                    <dd className="mt-1.5 leading-6">{item.focus.join(" · ")}</dd>
                   </div>
                 </dl>
               </div>
@@ -89,18 +51,24 @@ export function CaseStudies() {
                 </div>
                 <span className="font-mono text-[9px] uppercase tracking-wider text-muted">Outcome</span>
                 <div className="mt-8 sm:mt-10">
-                  <strong className="block text-5xl font-semibold tracking-[-0.08em] sm:text-7xl">{item.result}</strong>
-                  <span className="mt-2 block text-sm text-muted">{item.label}</span>
+                  <strong className="block text-5xl font-semibold tracking-[-0.08em] sm:text-7xl">
+                    {item.outcomes[0].value}
+                  </strong>
+                  <span className="mt-2 block text-sm text-muted">
+                    {item.outcomes[0].label}
+                  </span>
                 </div>
                 <div className="mt-6 border-t border-ink/15 pt-4 sm:mt-7">
                   <span className="font-mono text-[10px] uppercase tracking-wider">
-                    {item.secondaryLabel} · {item.secondary}
+                    {item.outcomes[1].label} · {item.outcomes[1].value}
                   </span>
                   <div className="mt-4 border-t border-ink/10 pt-4 sm:mt-5">
                     <span className="font-mono text-[9px] uppercase tracking-wider text-muted">
                       Strategic signal
                     </span>
-                    <p className="mt-2 max-w-sm text-sm leading-6 text-muted">{item.signal}</p>
+                    <p className="mt-2 max-w-sm text-sm leading-6 text-muted">
+                      {item.constraint}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -110,6 +78,11 @@ export function CaseStudies() {
         <p className="mt-5 font-mono text-[9px] uppercase tracking-wider text-muted">
           Client names are withheld by agreement. Outcomes vary by company, market, and starting point.
         </p>
+        <div className="mt-8">
+          <ButtonLink href={sitePath("/work/")} variant="secondary">
+            Explore all Client Outcomes
+          </ButtonLink>
+        </div>
       </div>
     </section>
   );
