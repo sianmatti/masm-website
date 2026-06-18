@@ -63,51 +63,56 @@ const method = [
 
 function OutcomeSystemVisual() {
   return (
-    <div
-      className="relative mx-auto aspect-square w-full max-w-[17rem] min-[375px]:max-w-[21rem] sm:max-w-[31rem]"
-      aria-label="Fragmented growth signals connected through one growth system"
-    >
-      <div className="absolute inset-[8%] rounded-full border border-ink/15" />
-      <div className="absolute inset-[21%] rounded-full border border-ink/10" />
-      <div className="absolute inset-[33%] grid place-items-center rounded-full bg-ink px-2 text-center text-white shadow-card">
-        <div>
-          <span className="block font-mono text-[6px] uppercase leading-tight tracking-[0.18em] text-white/55 min-[375px]:text-[7px] sm:text-[9px] sm:tracking-[0.24em]">
-            One operating model
-          </span>
-          <strong className="mt-1.5 block text-base font-semibold leading-tight tracking-[-0.04em] min-[375px]:text-lg sm:mt-2 sm:text-2xl">
-            Growth System
-          </strong>
+    <figure className="mx-auto w-full max-w-[220px] sm:max-w-[300px] lg:max-w-[360px]">
+      <div
+        className="relative aspect-square w-full"
+        aria-label="Revenue quality, search demand, decision clarity, and operating capacity organized through one growth system"
+      >
+        <div className="absolute inset-[5%] rounded-full border border-ink/15" />
+        <div className="absolute inset-[18%] animate-slow-spin rounded-full border border-dashed border-ink/25" />
+        <div className="absolute inset-[31%] rounded-full border border-ink/20" />
+        <div className="absolute left-1/2 top-1/2 z-10 grid h-[40%] w-[40%] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/10 bg-ink px-2 text-center text-white shadow-card ring-1 ring-ink/20 ring-offset-4 ring-offset-paper">
+          <div className="flex flex-col items-center justify-center">
+            <span className="block whitespace-nowrap text-[6px] font-medium uppercase leading-none tracking-[0.14em] text-white/70 min-[375px]:text-[7px] sm:text-[8px] sm:tracking-[0.15em]">
+              Growth OS
+            </span>
+            <span className="my-2 block h-px w-6 bg-white/30 sm:my-2.5 sm:w-8" />
+            <strong className="block whitespace-nowrap text-base font-semibold leading-none tracking-[-0.04em] min-[375px]:text-lg sm:text-2xl">
+              MASM
+            </strong>
+          </div>
         </div>
+
+        {[
+          ["Revenue Quality", "right-[72%] top-[43%]"],
+          ["Search Demand", "right-[0%] top-[7%]"],
+          ["Decision Clarity", "left-[72%] top-[59%]"],
+          ["Operating Capacity", "bottom-[1%] left-[13%]"],
+        ].map(([label, position]) => (
+          <div
+            key={label}
+            className={`absolute ${position} z-20 flex items-center gap-1.5 rounded-full border border-ink/15 bg-white/95 px-2.5 py-1.5 shadow-card backdrop-blur-sm sm:gap-2 sm:px-3 sm:py-2`}
+          >
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ink" />
+            <span className="whitespace-nowrap text-[6px] font-medium uppercase tracking-[0.07em] min-[375px]:text-[7px] sm:text-[8px] sm:tracking-[0.09em]">
+              {label}
+            </span>
+          </div>
+        ))}
       </div>
-
-      {[
-        ["Revenue quality", "left-[1%] top-[20%]"],
-        ["Search demand", "right-[0%] top-[18%]"],
-        ["Decision clarity", "right-[0%] bottom-[18%]"],
-        ["Operating capacity", "left-[0%] bottom-[20%]"],
-      ].map(([label, position]) => (
-        <span
-          key={label}
-          className={`absolute ${position} rounded-full border border-ink/20 bg-white px-3 py-2 font-mono text-[8px] uppercase tracking-[0.12em] shadow-card sm:px-4 sm:text-[9px]`}
-        >
-          {label}
-        </span>
-      ))}
-
-      <span className="absolute left-1/2 top-[4%] h-[31%] w-px -translate-x-1/2 bg-ink/15" />
-      <span className="absolute bottom-[4%] left-1/2 h-[31%] w-px -translate-x-1/2 bg-ink/15" />
-      <span className="absolute left-[4%] top-1/2 h-px w-[31%] -translate-y-1/2 bg-ink/15" />
-      <span className="absolute right-[4%] top-1/2 h-px w-[31%] -translate-y-1/2 bg-ink/15" />
-    </div>
+      <figcaption className="mx-auto mt-2.5 max-w-[230px] text-center text-[9px] leading-[1.55] text-ink/45 sm:mt-3 sm:max-w-[280px] sm:text-[10px] sm:leading-[1.6]">
+        Commercial signals organized into one accountable growth system.
+      </figcaption>
+    </figure>
   );
 }
 
 export function ClientOutcomesPage() {
   return (
     <main>
-      <section className="overflow-hidden bg-paper">
-        <div className="section-shell grid items-center gap-10 py-14 sm:gap-12 sm:py-20 lg:min-h-[calc(100vh-4.25rem)] lg:grid-cols-12 lg:gap-16 lg:py-24">
-          <div className="lg:col-span-7">
+      <section className="grid-field relative overflow-hidden bg-paper pb-12 pt-7 sm:pb-14 sm:pt-9 lg:pb-16 lg:pt-10">
+        <div className="section-shell grid items-center gap-8 md:grid-cols-12 md:gap-6 lg:gap-10">
+          <div className="md:col-span-7">
             <span className="eyebrow">Growth Systems in Practice</span>
             <h1 className="display-xl mt-7 max-w-5xl text-balance">
               Growth problems are{" "}
@@ -127,7 +132,7 @@ export function ClientOutcomesPage() {
               </ButtonLink>
             </div>
           </div>
-          <div className="lg:col-span-5">
+          <div className="md:col-span-5">
             <OutcomeSystemVisual />
           </div>
         </div>
