@@ -7,6 +7,16 @@ import { sitePath } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Growth Diagnostic Review Booked",
   description: "Your MASM Growth Diagnostic review is booked.",
+  openGraph: {
+    title: "Growth Diagnostic Review Booked | MASM Growth Systems",
+    description: "Your MASM Growth Diagnostic review is booked.",
+    url: "https://www.masmgrowth.com/thank-you/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Growth Diagnostic Review Booked | MASM Growth Systems",
+    description: "Your MASM Growth Diagnostic review is booked.",
+  },
   robots: {
     index: false,
     follow: false,

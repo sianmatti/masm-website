@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "A senior-led strategic assessment of your growth economics, demand system, measurement, and operations, delivered with a prioritized 90-day roadmap.",
   alternates: {
-    canonical: "/diagnostic",
+    canonical: "https://www.masmgrowth.com/diagnostic/",
   },
   openGraph: {
     title: "Growth Diagnostic | MASM",
     description:
       "Find the constraint limiting your next stage of growth and leave with a clear 90-day direction.",
-    url: "/diagnostic",
+    url: "https://www.masmgrowth.com/diagnostic/",
   },
 };
 
