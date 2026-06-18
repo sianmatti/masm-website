@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { sitePath } from "@/lib/site";
 import { BookingCta } from "./booking-cta";
 import { BrandLockup } from "./ui";
@@ -24,6 +25,10 @@ export function SiteHeader({
   bookingCta = false,
 }: SiteHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href.startsWith(sitePath("/work")) && pathname.startsWith(sitePath("/work"));
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -41,12 +46,15 @@ export function SiteHeader({
           <BrandLockup compact />
         </a>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-6 xl:flex" aria-label="Main navigation">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="text-sm font-medium text-muted transition-colors hover:text-ink"
+              aria-current={isActive(item.href) ? "page" : undefined}
+              className={`text-sm font-medium transition-colors hover:text-ink ${
+                isActive(item.href) ? "text-ink underline decoration-ink/30 underline-offset-8" : "text-muted"
+              }`}
             >
               {item.label}
             </a>
@@ -55,9 +63,11 @@ export function SiteHeader({
 
         <div className="flex items-center gap-2">
           {bookingCta ? (
-            <BookingCta className="!min-h-11 !px-3 !text-xs sm:!px-4 sm:!text-sm" source="sticky_header">
-              <span className="hidden sm:inline">{ctaLabel}</span>
-              <span className="sm:hidden">Growth Diagnostic</span>
+            <BookingCta
+              className="!min-h-11 !gap-2 !px-2.5 !text-[10px] min-[375px]:!px-3 min-[375px]:!text-xs sm:!px-4 sm:!text-sm"
+              source="sticky_header"
+            >
+              {ctaLabel}
             </BookingCta>
           ) : (
             <a
@@ -71,7 +81,7 @@ export function SiteHeader({
           )}
           <button
             type="button"
-            className="grid h-11 w-11 place-items-center rounded-full border border-line bg-white lg:hidden"
+            className="grid h-11 w-11 place-items-center rounded-full border border-line bg-white xl:hidden"
             aria-expanded={menuOpen}
             aria-controls={menuOpen ? "mobile-navigation" : undefined}
             aria-label={menuOpen ? "Close navigation" : "Open navigation"}
@@ -88,7 +98,7 @@ export function SiteHeader({
       {menuOpen ? (
         <div
           id="mobile-navigation"
-          className="border-t border-ink/10 bg-paper lg:hidden"
+          className="border-t border-ink/10 bg-paper xl:hidden"
         >
           <nav className="section-shell py-5" aria-label="Mobile navigation">
             {navItems.map((item, index) => (

@@ -17,6 +17,12 @@ export const metadata: Metadata = {
     url: "https://www.masmgrowth.com/work",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Growth Systems in Practice | MASM Growth Systems",
+    description:
+      "Anonymized client outcomes showing how connected growth systems improve commercial performance, decision clarity, and operating capacity.",
+  },
 };
 
 export default function WorkPage() {
@@ -24,7 +30,7 @@ export default function WorkPage() {
     <>
       <Header />
       <ClientOutcomesPage />
-      <Footer />
+      <Footer compact />
     </>
   );
 }

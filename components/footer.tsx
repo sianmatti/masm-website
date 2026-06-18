@@ -3,11 +3,11 @@ import { sitePath } from "@/lib/site";
 import { ArrowIcon, BrandLockup } from "./ui";
 import { BookingCta } from "./booking-cta";
 
-export function Footer() {
+export function Footer({ compact = false }: { compact?: boolean }) {
   return (
     <footer className="overflow-hidden bg-ink text-white">
-      <div className="section-shell py-16 sm:py-20 lg:py-24">
-        <div className="grid gap-12 lg:grid-cols-12">
+      <div className={`section-shell ${compact ? "py-12 sm:py-16" : "py-16 sm:py-20 lg:py-24"}`}>
+        {!compact ? <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-9">
             <span className="eyebrow !text-white/45">Ready when you are</span>
             <h2 className="display-lg mt-6 max-w-5xl">
@@ -33,9 +33,9 @@ export function Footer() {
               No generic sales pitch. Start with the business constraint.
             </p>
           </div>
-        </div>
+        </div> : null}
 
-        <div className="mt-16 grid gap-10 border-t border-white/20 pt-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-12">
+        <div className={`${compact ? "" : "mt-16 sm:mt-20"} grid gap-10 border-t border-white/20 pt-8 sm:grid-cols-2 lg:grid-cols-12`}>
           <div className="lg:col-span-5">
             <BrandLockup inverse />
             <p className="mt-5 max-w-xs text-sm leading-6 text-white/55">
@@ -84,7 +84,7 @@ export function Footer() {
             <p className="mt-4 text-sm text-white/65">New York / Manila / Remote</p>
           </div>
         </div>
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-5 font-mono text-[9px] uppercase tracking-wider text-white/30 sm:flex-row sm:justify-between">
+        <div className={`${compact ? "mt-9" : "mt-12"} flex flex-col gap-3 border-t border-white/10 pt-5 font-mono text-[9px] uppercase tracking-wider text-white/30 sm:flex-row sm:justify-between`}>
           <span>© 2026 MASM Growth Systems</span>
           <span className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <a href={sitePath("/privacy/")} className="transition-colors hover:text-white/60">
@@ -97,7 +97,7 @@ export function Footer() {
           </span>
         </div>
       </div>
-      <div className="select-none whitespace-nowrap text-center text-[22vw] font-semibold leading-[0.72] tracking-[-0.075em] text-white/[0.04]">
+      <div className={`${compact ? "hidden" : "block"} select-none whitespace-nowrap text-center text-[22vw] font-semibold leading-[0.72] tracking-[-0.075em] text-white/[0.04]`}>
         MASM
       </div>
     </footer>

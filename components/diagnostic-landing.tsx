@@ -34,7 +34,7 @@ const deliverables = [
 ];
 
 const processSteps = [
-  ["01", "Consultation", "A focused call to understand the business, confirm fit, and define the decision the diagnostic must support.", "30 min"],
+  ["01", "Growth Diagnostic Fit Review", "Confirm the business context, active growth activity, current constraint, and whether the paid Growth Diagnostic is the right next step.", "30 min"],
   ["02", "Diagnostic", "Complete the intake, share existing data, and let MASM isolate the highest-cost growth constraint.", "5 days"],
   ["03", "Readout", "Your leadership team receives the scorecard, roadmap, and a facilitated decision session.", "60 min"],
   ["04", "Proposal", "If MASM is the right execution partner, receive a focused Growth Engine proposal built from the findings.", "Optional"],
@@ -164,7 +164,7 @@ function DiagnosticHero() {
                 type="strategy"
                 variant="secondary"
               >
-                Book a strategy call
+                Book a Growth Diagnostic Fit Review
               </BookingCta>
             </div>
             <a href="#scorecard" className="mt-4 inline-block text-xs font-medium underline decoration-ink/30 underline-offset-4 hover:decoration-ink">
@@ -487,7 +487,7 @@ function FinalCta() {
               source="diagnostic_final_cta_strategy"
               className="mt-3 w-full !border-white/30 !text-white hover:!bg-white hover:!text-ink"
             >
-              Book a strategy call
+              Book a Growth Diagnostic Fit Review
             </BookingCta>
             <p className="mt-4 text-center font-mono text-[9px] uppercase tracking-wider text-white/35">
               $1,250 · Five business days

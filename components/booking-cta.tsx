@@ -105,7 +105,7 @@ export function BookingCta({
               aria-modal="true"
               aria-label={
                 type === "strategy"
-                  ? "Book a strategy call"
+                  ? "Book a Growth Diagnostic Fit Review"
                   : "Book a Growth Diagnostic"
               }
               onClick={(event) => {
@@ -120,7 +120,7 @@ export function BookingCta({
                   <div>
                     <span className="eyebrow">
                       {type === "strategy"
-                        ? "MASM strategy call"
+                        ? "Growth Diagnostic Fit Review"
                         : "Growth Diagnostic"}
                     </span>
                     <span className="ml-3 hidden text-xs text-muted sm:inline">
@@ -140,7 +140,7 @@ export function BookingCta({
                 <iframe
                   title={
                     type === "strategy"
-                      ? "Schedule a MASM strategy call"
+                      ? "Schedule a Growth Diagnostic Fit Review"
                       : "Schedule a Growth Diagnostic"
                   }
                   src={calendlyEmbedUrl(bookingUrl.toString())}

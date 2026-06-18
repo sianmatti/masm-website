@@ -64,17 +64,17 @@ const method = [
 function OutcomeSystemVisual() {
   return (
     <div
-      className="relative mx-auto aspect-square w-full max-w-[31rem]"
+      className="relative mx-auto aspect-square w-full max-w-[17rem] min-[375px]:max-w-[21rem] sm:max-w-[31rem]"
       aria-label="Fragmented growth signals connected through one growth system"
     >
       <div className="absolute inset-[8%] rounded-full border border-ink/15" />
       <div className="absolute inset-[21%] rounded-full border border-ink/10" />
-      <div className="absolute inset-[35%] grid place-items-center rounded-full bg-ink text-center text-white shadow-card">
+      <div className="absolute inset-[33%] grid place-items-center rounded-full bg-ink px-2 text-center text-white shadow-card">
         <div>
-          <span className="block font-mono text-[8px] uppercase tracking-[0.24em] text-white/55 sm:text-[9px]">
+          <span className="block font-mono text-[6px] uppercase leading-tight tracking-[0.18em] text-white/55 min-[375px]:text-[7px] sm:text-[9px] sm:tracking-[0.24em]">
             One operating model
           </span>
-          <strong className="mt-2 block text-xl font-semibold tracking-[-0.04em] sm:text-2xl">
+          <strong className="mt-1.5 block text-base font-semibold leading-tight tracking-[-0.04em] min-[375px]:text-lg sm:mt-2 sm:text-2xl">
             Growth System
           </strong>
         </div>
@@ -106,7 +106,7 @@ export function ClientOutcomesPage() {
   return (
     <main>
       <section className="overflow-hidden bg-paper">
-        <div className="section-shell grid items-center gap-12 py-16 sm:py-20 lg:min-h-[calc(100vh-4.25rem)] lg:grid-cols-12 lg:gap-16 lg:py-24">
+        <div className="section-shell grid items-center gap-10 py-14 sm:gap-12 sm:py-20 lg:min-h-[calc(100vh-4.25rem)] lg:grid-cols-12 lg:gap-16 lg:py-24">
           <div className="lg:col-span-7">
             <span className="eyebrow">Growth Systems in Practice</span>
             <h1 className="display-xl mt-7 max-w-5xl text-balance">
@@ -148,32 +148,48 @@ export function ClientOutcomesPage() {
                 growth systems can change commercial performance and operating
                 capacity.
               </p>
+              <p className="mt-4 max-w-2xl text-xs leading-5 text-muted">
+                Client names are withheld by agreement. Outcomes reflect specific
+                engagement circumstances and vary by company, market, execution,
+                and starting point.
+              </p>
             </div>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3">
-            {clientOutcomes.flatMap((outcome) =>
-              outcome.outcomes.map((metric) => (
-                <article
-                  key={`${outcome.id}-${metric.value}`}
-                  className="border-b border-ink/15 py-8 sm:min-h-56 sm:border-r sm:px-7 sm:first:pl-0 sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0"
-                >
+          <div className="grid border-l border-t border-ink/15 sm:grid-cols-2 lg:grid-cols-3">
+            {clientOutcomes.map((outcome) => (
+              <article
+                key={outcome.id}
+                className="border-b border-r border-ink/15 p-5 sm:min-h-64 sm:p-7"
+              >
+                <span className="font-mono text-[9px] uppercase tracking-wider text-muted">
+                  {outcome.type}
+                </span>
+                <strong className="mt-7 block text-5xl font-semibold tracking-[-0.07em] sm:text-6xl">
+                  {outcome.outcomes[0].value}
+                </strong>
+                <span className="mt-2 block text-sm leading-6 text-muted">
+                  {outcome.outcomes[0].label}
+                </span>
+                <div className="mt-6 border-t border-ink/10 pt-4">
                   <span className="font-mono text-[9px] uppercase tracking-wider text-muted">
-                    {outcome.type}
+                    Supporting evidence
                   </span>
-                  <strong className="mt-8 block text-5xl font-semibold tracking-[-0.07em] sm:text-6xl">
-                    {metric.value}
-                  </strong>
-                  <span className="mt-3 block max-w-xs text-sm leading-6 text-muted">
-                    {metric.label}
+                  <p className={`mt-2 font-medium ${
+                    outcome.id === "consumer-search" ? "text-lg" : "text-2xl tracking-[-0.04em]"
+                  }`}>
+                    {outcome.outcomes[1].value}
+                  </p>
+                  <span className="mt-1 block text-xs leading-5 text-muted">
+                    {outcome.outcomes[1].label}
                   </span>
-                </article>
-              )),
-            )}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section-pad bg-paper">
+      <section className="bg-paper py-16 sm:py-section">
         <div className="section-shell">
           <SectionHeading
             index="01"
@@ -187,7 +203,7 @@ export function ClientOutcomesPage() {
             description="A B2B SaaS growth system reframed around acquisition economics, measurement, and conversion quality."
           />
 
-          <div className="mt-12 grid border border-ink/15 bg-white lg:mt-16 lg:grid-cols-12">
+          <div className="mt-10 grid border border-ink/15 bg-white sm:mt-12 lg:mt-16 lg:grid-cols-12">
             <div className="p-6 sm:p-9 lg:col-span-4 lg:p-10">
               <span className="eyebrow">{featuredOutcome.type}</span>
               <p className="mt-5 font-mono text-[9px] uppercase tracking-wider text-muted">
@@ -242,7 +258,7 @@ export function ClientOutcomesPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-white">
+      <section className="bg-white py-16 sm:py-section">
         <div className="section-shell">
           <SectionHeading
             index="02"
@@ -256,11 +272,11 @@ export function ClientOutcomesPage() {
             description="MASM evaluates the connected commercial system behind the visible channel problem."
           />
 
-          <div className="mt-12 grid gap-5 lg:mt-16 lg:grid-cols-2">
+          <div className="mt-10 grid gap-4 sm:mt-12 lg:mt-16 lg:grid-cols-2">
             {supportingOutcomes.map((outcome, index) => (
               <article
                 key={outcome.id}
-                className={`flex flex-col border border-ink/15 p-6 sm:p-9 lg:p-10 ${
+                className={`flex flex-col border border-ink/15 p-5 sm:p-9 lg:p-10 ${
                   index === 1 ? "bg-paper" : "bg-white"
                 }`}
               >
@@ -272,9 +288,13 @@ export function ClientOutcomesPage() {
                 </div>
                 <h3 className="heading-section mt-10 max-w-xl">{outcome.title}</h3>
                 <div className="mt-8 grid grid-cols-2 gap-5 border-y border-ink/15 py-6">
-                  {outcome.outcomes.map((metric) => (
+                  {outcome.outcomes.map((metric, metricIndex) => (
                     <div key={metric.value}>
-                      <strong className="block text-4xl font-semibold tracking-[-0.06em] sm:text-5xl">
+                      <strong className={`block font-semibold ${
+                        outcome.id === "consumer-search" && metricIndex === 1
+                          ? "text-2xl tracking-[-0.04em] sm:text-3xl"
+                          : "text-4xl tracking-[-0.06em] sm:text-5xl"
+                      }`}>
                         {metric.value}
                       </strong>
                       <span className="mt-2 block text-xs leading-5 text-muted">
@@ -321,7 +341,7 @@ export function ClientOutcomesPage() {
         </div>
       </section>
 
-      <section className="section-pad relative overflow-hidden bg-ink text-white">
+      <section className="relative overflow-hidden bg-ink py-16 text-white sm:py-section">
         <div className="section-shell">
           <SectionHeading
             index="03"
@@ -360,7 +380,7 @@ export function ClientOutcomesPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-paper">
+      <section className="bg-paper py-16 sm:py-section">
         <div className="section-shell">
           <SectionHeading
             index="04"
@@ -391,7 +411,7 @@ export function ClientOutcomesPage() {
             ))}
           </div>
 
-          <p className="mt-6 max-w-4xl border-t border-ink/15 pt-5 font-mono text-[9px] uppercase leading-5 tracking-wider text-muted">
+          <p className="mt-6 max-w-4xl border-t border-ink/15 pt-5 text-xs leading-5 text-muted">
             Client names are withheld by agreement. Outcomes vary by company,
             market, execution, and starting point. Selected results reflect
             specific engagement circumstances and do not guarantee equivalent

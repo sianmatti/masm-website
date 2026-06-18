@@ -10,10 +10,22 @@ const checks = [
 ];
 
 const deliverables = [
-  ["Executive Growth Scorecard", "A clear diagnosis of the primary growth constraint"],
-  ["Primary Constraint Analysis", "A ranked 90-day action direction"],
-  ["Prioritized 90-Day Roadmap", "A leadership-ready decision readout"],
-  ["Leadership Decision Session", "A recommendation on whether MASM should execute or not"],
+  [
+    "Executive Growth Scorecard",
+    "A structured view of the current growth system across acquisition, search visibility, measurement, automation, and commercial readiness.",
+  ],
+  [
+    "Primary Constraint Analysis",
+    "A clear diagnosis of the constraint most limiting profitable growth right now.",
+  ],
+  [
+    "Prioritized 90-Day Roadmap",
+    "A ranked action plan showing what to fix first, what to defer, and what leadership should prioritize over the next 90 days.",
+  ],
+  [
+    "Leadership Decision Session",
+    "A focused readout to review findings, priorities, and whether a Growth Engine engagement is justified.",
+  ],
 ];
 
 const bookingSteps = [
@@ -112,6 +124,11 @@ export function Diagnostic() {
                 flow, channel dependency, search visibility, reporting
                 reliability, and workflow maturity.
               </p>
+              <p className="mt-4 border-l border-white/20 pl-4 text-xs leading-5 text-white/50">
+                Example categories shown. Final scoring depends on the client&apos;s
+                active channels, available data, funnel maturity, and operating
+                constraints.
+              </p>
               <div className="mt-7 border-t border-white/15 pt-6">
                 <span className="text-[9px] font-medium uppercase tracking-[0.14em] text-white/40">
                   Natural next step
@@ -125,9 +142,9 @@ export function Diagnostic() {
             </div>
             <div className="order-2 border-t border-ink/20 bg-white p-7 sm:p-10 md:order-none md:col-span-2 lg:p-14">
               <span className="eyebrow block">You leave with</span>
-              <div className="mt-4 grid border-l border-t border-line text-sm sm:mt-5 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mt-4 grid border-l border-t border-line text-sm sm:mt-5 sm:grid-cols-2">
                 {deliverables.map(([title, outcome]) => (
-                  <div key={title} className="flex items-start gap-2.5 border-b border-r border-line px-3.5 py-3.5 sm:min-h-24 sm:gap-3 sm:px-4 sm:py-4">
+                  <div key={title} className="flex items-start gap-2.5 border-b border-r border-line px-3.5 py-3.5 sm:min-h-32 sm:gap-3 sm:px-5 sm:py-5">
                     <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-ink text-[10px] text-white">✓</span>
                     <span>
                       <strong className="block font-medium">{title}</strong>
