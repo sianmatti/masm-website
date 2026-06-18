@@ -46,10 +46,10 @@ export function Footer() {
             <span className="font-mono text-[9px] uppercase tracking-wider text-white/35">Navigate</span>
             <div className="mt-4 space-y-3">
               {[
-                ["Diagnostic", "#diagnostic"],
-                ["Growth System", "#services"],
-                ["Client Outcomes", "#work"],
-                ["Why MASM", "#approach"],
+                ["Diagnostic", sitePath("/#diagnostic")],
+                ["Growth System", sitePath("/#services")],
+                ["Client Outcomes", sitePath("/work/")],
+                ["Why MASM", sitePath("/#approach")],
               ].map(([label, href]) => (
                 <a key={label} href={href} className="block text-sm text-white/65 hover:text-white">
                   {label}
