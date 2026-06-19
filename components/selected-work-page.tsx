@@ -268,17 +268,17 @@ function SupportingProject({ project }: { project: SelectedWorkProject }) {
 export function SelectedWorkPage() {
   return (
     <main>
-      <section className="grid-field bg-paper py-14 sm:py-20 lg:py-24">
-        <div className="section-shell grid gap-10 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-8">
+      <section className="grid-field bg-paper pb-12 pt-8 sm:pb-14 sm:pt-10 lg:pb-16 lg:pt-11">
+        <div className="section-shell grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-12">
+          <div className="lg:col-span-7">
             <span className="eyebrow">Selected Work</span>
-            <h1 className="display-xl mt-7 max-w-5xl text-balance">
+            <h1 className="display-xl mt-6 max-w-4xl text-balance sm:mt-7">
               Evidence of systems{" "}
               <span className="text-muted">built to work.</span>
             </h1>
           </div>
-          <div className="lg:col-span-4">
-            <p className="text-base leading-7 text-muted">
+          <div className="max-w-xl lg:col-span-5 lg:justify-self-end">
+            <p className="text-base leading-7 text-muted lg:text-lg lg:leading-8">
               Selected brand, platform, website, campaign, and operating work.
               Each project is presented through the constraint, the system built,
               and the outcome it supported.
