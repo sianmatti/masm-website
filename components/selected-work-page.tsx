@@ -1,6 +1,7 @@
 import { featuredWork, supportingWork, type SelectedWorkProject } from "@/lib/selected-work";
 import { sitePath } from "@/lib/site";
 import { BookingCta } from "./booking-cta";
+import { PlatformEcosystem } from "./platform-ecosystem";
 import { ButtonLink, SectionHeading } from "./ui";
 
 function IdentityPlate({ project }: { project: SelectedWorkProject }) {
@@ -337,6 +338,8 @@ export function SelectedWorkPage() {
           </div>
         </div>
       </section>
+
+      <PlatformEcosystem />
 
       <section className="section-pad bg-ink text-white">
         <div className="section-shell grid gap-10 lg:grid-cols-12 lg:items-end">
