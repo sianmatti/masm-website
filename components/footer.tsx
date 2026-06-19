@@ -49,6 +49,7 @@ export function Footer({ compact = false }: { compact?: boolean }) {
                 ["Diagnostic", sitePath("/#diagnostic")],
                 ["Growth System", sitePath("/#services")],
                 ["Client Outcomes", sitePath("/work/")],
+                ["Selected Work", sitePath("/projects/")],
                 ["Why MASM", sitePath("/#approach")],
               ].map(([label, href]) => (
                 <a key={label} href={href} className="block text-sm text-white/65 hover:text-white">
