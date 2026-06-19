@@ -139,6 +139,16 @@ export const platforms: Platform[] = [
     featured: true,
   },
   {
+    name: "GoHighLevel",
+    category: "CRM and operations",
+    logoPath: "/platforms/gohighlevel.svg",
+    assetSource: "Official brand asset",
+    brandSource:
+      "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https%3A//assets.cdn.filesafe.space/knES3eSWYIsc5YSZ3YLl/media/68dc14d7a969ba71daf21593.png",
+    relationship: "used",
+    featured: true,
+  },
+  {
     name: "Make",
     category: "Automation and AI",
     logoPath: "/platforms/make.svg",
