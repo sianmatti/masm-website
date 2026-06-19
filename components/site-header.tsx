@@ -28,7 +28,9 @@ export function SiteHeader({
   const pathname = usePathname();
 
   const isActive = (href: string) =>
-    href.startsWith(sitePath("/work")) && pathname.startsWith(sitePath("/work"));
+    ["/work", "/projects"].some(
+      (route) => href.startsWith(sitePath(route)) && pathname.startsWith(sitePath(route)),
+    );
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -106,7 +108,12 @@ export function SiteHeader({
                 key={item.label}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-between border-b border-line py-4 text-lg font-medium tracking-[-0.025em]"
+                aria-current={isActive(item.href) ? "page" : undefined}
+                className={`flex items-center justify-between border-b border-line py-4 text-lg font-medium tracking-[-0.025em] ${
+                  isActive(item.href)
+                    ? "underline decoration-ink/30 underline-offset-8"
+                    : ""
+                }`}
               >
                 <span>{item.label}</span>
                 <span className="font-mono text-[9px] text-muted">0{index + 1}</span>
