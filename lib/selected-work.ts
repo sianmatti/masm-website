@@ -19,7 +19,9 @@ export type SelectedWorkProject = {
     | "campaign"
     | "commerce"
     | "website"
+    | "learning"
     | "communications"
+    | "content-system"
     | "creative";
   public: boolean;
 };
@@ -181,6 +183,24 @@ export const supportingWork: SelectedWorkProject[] = [
     public: true,
   },
   {
+    id: "enrichly",
+    name: "Enrichly",
+    mark: "E",
+    descriptor: "Educational game and course development",
+    year: "2024",
+    summary:
+      "Collaborated across product, education, design, and development teams to translate learning objectives into interactive games, original illustrations, educational activities, and structured course experiences for families and youth-focused organizations.",
+    scope: [
+      "Educational games",
+      "Game interfaces",
+      "Illustration",
+      "Course creation",
+      "Product collaboration",
+    ],
+    proof: "learning",
+    public: true,
+  },
+  {
     id: "spa-alhambra",
     name: "Spa Alhambra",
     mark: "SA",
@@ -197,6 +217,29 @@ export const supportingWork: SelectedWorkProject[] = [
     ],
     proof: "communications",
     public: true,
+  },
+  {
+    id: "health-food-beverage-content",
+    name: "Confidential US Health, Food & Beverage Marketing Agency",
+    descriptor: "Integrated content and campaign execution",
+    year: "2026",
+    summary:
+      "Created a coordinated monthly marketing system for a US agency serving health, food, and beverage brands—connecting content planning, email and social copywriting, email graphics, branded social assets, and paid-social creative across client campaigns.",
+    scope: [
+      "Monthly content planning",
+      "Email copy and graphics",
+      "Social copywriting",
+      "Organic social creative",
+      "Paid-social ad assets",
+      "Brand consistency",
+    ],
+    result: {
+      value: "Coordinated",
+      label: "monthly content and campaign execution",
+      note: "Supporting engagement, lead-generation activity, and brand consistency.",
+    },
+    proof: "content-system",
+    public: false,
   },
   {
     id: "oral-care-creative",

@@ -169,6 +169,48 @@ function ProofVisual({ type }: { type: SelectedWorkProject["proof"] }) {
     );
   }
 
+  if (type === "learning") {
+    return (
+      <div
+        className="grid h-full min-h-52 place-items-center p-6"
+        role="img"
+        aria-label="Interactive educational game and course system"
+      >
+        <div className="w-full max-w-sm">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+            <div className="border border-ink/15 bg-white p-4 text-center shadow-card">
+              <span className="font-mono text-[8px] uppercase tracking-wider text-muted">
+                Learn
+              </span>
+              <div className="mx-auto mt-3 grid h-12 w-12 place-items-center rounded-full bg-paper text-lg">
+                A
+              </div>
+            </div>
+            <span className="text-ink/25">→</span>
+            <div className="border border-ink bg-ink p-4 text-center text-white shadow-card">
+              <span className="font-mono text-[8px] uppercase tracking-wider text-white/55">
+                Play
+              </span>
+              <div className="mx-auto mt-3 grid h-12 w-12 place-items-center rounded-full border border-white/25 text-lg">
+                ✓
+              </div>
+            </div>
+          </div>
+          <div className="mt-3 grid grid-cols-3 gap-2">
+            {["Activity", "Course", "Progress"].map((label) => (
+              <div
+                key={label}
+                className="border border-ink/15 bg-white px-2 py-3 text-center text-[8px] font-medium uppercase tracking-wider"
+              >
+                {label}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (type === "communications") {
     return (
       <div className="grid h-full min-h-52 place-items-center p-6" role="img" aria-label="Integrated marketing communications model">
@@ -178,6 +220,44 @@ function ProofVisual({ type }: { type: SelectedWorkProject["proof"] }) {
               {label}
             </div>
           ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (type === "content-system") {
+    return (
+      <div
+        className="grid h-full min-h-52 place-items-center p-6"
+        role="img"
+        aria-label="Monthly content and campaign workflow"
+      >
+        <div className="w-full max-w-sm">
+          <div className="grid grid-cols-4 items-center">
+            {["Plan", "Create", "Distribute", "Engage"].map((label, index) => (
+              <div className="contents" key={label}>
+                <div
+                  className={`grid min-h-16 place-items-center border px-1 text-center text-[7px] font-medium uppercase tracking-wider sm:text-[8px] ${
+                    index === 3
+                      ? "border-ink bg-ink text-white"
+                      : "border-ink/15 bg-white"
+                  }`}
+                >
+                  {label}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            {["Content", "Email", "Creative", "Paid social"].map((label) => (
+              <div
+                key={label}
+                className="border border-ink/15 bg-white px-2 py-3 text-center text-[7px] font-medium uppercase tracking-wider"
+              >
+                {label}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );

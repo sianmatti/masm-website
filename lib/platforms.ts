@@ -4,6 +4,7 @@ export const platformCategories = [
   "Web and commerce",
   "CRM and operations",
   "Automation and AI",
+  "Creative production",
 ] as const;
 
 export type PlatformCategory = (typeof platformCategories)[number];
@@ -182,6 +183,16 @@ export const platforms: Platform[] = [
     logoPath: "/platforms/claude.svg",
     assetSource: "Simple Icons",
     brandSource: "https://claude.ai/",
+    relationship: "used",
+    featured: true,
+  },
+  {
+    name: "Adobe Creative Cloud",
+    category: "Creative production",
+    logoPath: "/platforms/adobe-creative-cloud.svg",
+    assetSource: "Official brand asset",
+    brandSource:
+      "https://www.adobe.com/cc-shared/assets/img/product-icons/svg/creative-cloud.svg",
     relationship: "used",
     featured: true,
   },
