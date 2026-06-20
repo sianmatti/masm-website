@@ -220,7 +220,7 @@ export const supportingWork: SelectedWorkProject[] = [
   },
   {
     id: "health-food-beverage-content",
-    name: "Confidential US Health, Food & Beverage Marketing Agency",
+    name: "Confidential Marketing Agency",
     descriptor: "Integrated content and campaign execution",
     year: "2026",
     summary:
